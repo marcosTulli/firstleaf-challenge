@@ -9,9 +9,10 @@ module.exports = {
   transform: {
     "^.+\\.(ts|tsx)$": ["ts-jest", { tsconfig: "tsconfig.json" }],
   },
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
+  setupFilesAfterEnv: ["./jest.setup.ts"],
   moduleNameMapper: {
     '\\.scss$': 'identity-obj-proxy',
-    '\\.svg$': '<rootDir>/__mocks__/fileMock.js',
+    '\\.svg$': './test/__mocks__/fileMock.js',
   },
 };
+
