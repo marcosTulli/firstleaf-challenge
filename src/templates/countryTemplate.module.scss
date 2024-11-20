@@ -1,0 +1,30 @@
+@import '../styles/colors.scss';
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: $light-background;
+}
+
+.content {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    background-color: $white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    border: 1px solid $border-light;
+}
+
+
+button {
+    padding: 2rem 0 2rem 0;
+    background-color: transparent;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+}

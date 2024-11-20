@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, Link, PageProps } from 'gatsby';
 import Layout from '../components/Common/Layout';
+import * as styles from './countryTemplate.module.scss';
 
 interface CountryData {
   country: {
@@ -17,19 +18,22 @@ const CountryTemplate: React.FC<PageProps<CountryData>> = ({ data }) => {
 
   return (
     <Layout>
-      <h1>{country.name.common}</h1>
-      <p><strong>Region:</strong> {country.region}</p>
-      <p><strong>Population:</strong> {country.population.toLocaleString()}</p>
-      <p><strong>Capital:</strong> {country.capital?.[0]}</p>
-      <img src={country.flags.svg} alt={`${country.name.common} flag`} width="200" />
-      <Link to={'/countries'}>
-        <div>
-          <button >
-            Back to list
-          </button>
-        </div>
-      </Link>
-    </Layout>
+      <div className={styles.buttonContainer}>
+        <Link to={'/countries'}>
+          <button style={{ borderColor: '$primary-color', color: '$primary-color' }}>{'< '}Back to list</button>
+        </Link>
+      </div>
+
+      <div className={styles.container}>
+        <div className={styles.content}>
+          <h1>{country.name.common}</h1>
+          <p>Region:{country.region}</p>
+          <p>Population: {country.population.toLocaleString()}</p>
+          <p>Capital:{country.capital?.[0]}</p>
+          <img src={country.flags.svg} alt={`${country.name.common} flag`} width="200" />
+        </div >
+      </div >
+    </Layout >
   );
 };
 
