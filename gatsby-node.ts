@@ -16,22 +16,29 @@ interface GraphQLResult {
 const COUNTRIES_URL = process.env.GATSBY_COUNTRIES_API || "";
 
 export const sourceNodes: GatsbyNode['sourceNodes'] = async ({ actions, createNodeId, createContentDigest }) => {
-    const { createNode } = actions;
-    const response = await axios.get<ICountry[]>(COUNTRIES_URL);
-    const countries = response.data;
+    try {
+        const { createNode } = actions;
+        const response = await axios.get<ICountry[]>(COUNTRIES_URL);
+        const countries = response.data;
 
-    countries.forEach((country) => {
-        createNode({
-            ...country,
-            id: createNodeId(`country-${country.cca3}`),
-            parent: null,
-            children: [],
-            internal: {
-                type: 'Country',
-                contentDigest: createContentDigest(country),
-            },
+        countries.forEach((country) => {
+            createNode({
+                ...country,
+                id: createNodeId(`country-${country.cca3}`),
+                parent: null,
+                children: [],
+                internal: {
+                    type: 'Country',
+                    contentDigest: createContentDigest(country),
+                },
+            });
         });
-    });
+
+    }
+
+    catch (error) {
+        console.error({ error: "Error loading data" });
+    }
 };
 
 export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions }) => {

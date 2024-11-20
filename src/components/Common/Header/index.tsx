@@ -2,11 +2,7 @@ import * as React from 'react';
 import * as styles from './index.module.scss';
 import Logo from '../../../assets/logo.svg';
 
-interface IHeaderProps {
-    children: React.ReactNode;
-}
-
-const Header: React.FC<IHeaderProps> = ({ children }) => {
+const Header: React.FC<React.PropsWithChildren<{}>> = ({ children }) => {
     return (
         <header className={styles.header} id='header'>
             <div className={styles.container}>
