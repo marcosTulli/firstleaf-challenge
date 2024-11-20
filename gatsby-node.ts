@@ -2,7 +2,7 @@ import axios from 'axios';
 import path from 'path';
 import { GatsbyNode } from 'gatsby';
 import { slugify } from './src/utils/slugify';
-import { ICountry } from './src/models/Country';
+import { ICountry } from './src/types/Country';
 
 interface GraphQLResult {
     data: {
