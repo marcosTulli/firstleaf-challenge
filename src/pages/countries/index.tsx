@@ -1,12 +1,15 @@
-import React from 'react';
+import * as React from 'react';
 import { graphql, Link, PageProps } from 'gatsby';
 import { slugify } from '../../utils/slugify';
 import Layout from '../../components/Common/Layout';
+import { FixedSizeList as List } from 'react-window';
+import * as styles from './index.module.scss';
 
 interface CountryListData {
   allCountry: {
     nodes: {
       name: { common: string; };
+      flags: { svg: string; };
       cca3: string;
     }[];
   };
@@ -15,23 +18,35 @@ interface CountryListData {
 const CountriesPage: React.FC<PageProps<CountryListData>> = ({ data }) => {
   const countries = data.allCountry.nodes;
 
+  const renderRow = ({ index, style }: { index: number; style: React.CSSProperties; }) => {
+    const country = countries[index];
+
+    return (
+      <div style={style} key={country.cca3} >
+        <Link to={`/countries/${slugify(country.name.common)}`} className={styles.country}>
+          <img src={country?.flags?.svg} alt={`${country.name.common} flag`} width="20" height='15' />
+          {country.name.common}
+        </Link>
+      </div>
+    );
+  };
+
   return (
     <Layout>
-      <h1>Countries</h1>
       <Link to={'/'}>
         <div>
-          <button >Home</button>
+          <button className={styles.button}> {'<'} Home</button>
         </div>
       </Link>
-      <ul>
-        {countries.map((country) => (
-          <li key={country.cca3}>
-            <Link to={`/countries/${slugify(country.name.common)}`}>
-              {country.name.common}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <p className={styles.title}>Countries</p>
+      <List
+        height={400}
+        itemCount={countries.length}
+        itemSize={50}
+        width="30%"
+      >
+        {renderRow}
+      </List>
     </Layout>
   );
 };
@@ -46,6 +61,9 @@ export const query = graphql`
           common
         }
         cca3
+        flags {
+          svg
+        }
       }
     }
   }

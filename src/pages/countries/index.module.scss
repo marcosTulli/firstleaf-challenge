@@ -1,0 +1,27 @@
+@import '../../styles/colors.scss';
+
+.button {
+    padding: 2rem 0 2rem 0;
+    background-color: transparent;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.title {
+    font-size: 4rem;
+    padding-bottom: 1rem;
+}
+
+
+.country {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+
+    &:hover {
+        background-color: $secondary-color;
+    }
+}

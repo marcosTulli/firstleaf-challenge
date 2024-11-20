@@ -53,6 +53,9 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
             common
           }
           cca3
+          flags {
+            svg 
+            }
         }
       }
     }
@@ -73,6 +76,7 @@ export const createPages: GatsbyNode['createPages'] = async ({ graphql, actions 
             component: countryTemplate,
             context: {
                 name: country.name.common,
+                flags: country.flags.svg
             },
         });
     });

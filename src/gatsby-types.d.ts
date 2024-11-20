@@ -11217,7 +11217,7 @@ type StringQueryOperatorInput = {
 type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type Unnamed_1_Query = { readonly allCountry: { readonly nodes: ReadonlyArray<{ readonly cca3: string | null, readonly name: { readonly common: string | null } | null }> } };
+type Unnamed_1_Query = { readonly allCountry: { readonly nodes: ReadonlyArray<{ readonly cca3: string | null, readonly name: { readonly common: string | null } | null, readonly flags: { readonly svg: string | null } | null }> } };
 
 
 }

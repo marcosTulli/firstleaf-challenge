@@ -2,6 +2,7 @@ import * as React from 'react';
 import * as styles from './index.module.scss';
 import { Product } from '../../../../types/Products';
 
+
 interface IProductCardProps {
     product: Product;
 }
