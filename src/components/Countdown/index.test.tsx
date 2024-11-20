@@ -4,6 +4,6 @@ import Countdown from './index';
 
 test('renders Countdown component', () => {
     render(<Countdown seconds={300} />);
-    const countdownElement = screen.getByText(/countdown/i);
+    const countdownElement = screen.getByText(/Reserving your wines for/i);
     expect(countdownElement).toBeInTheDocument();
 });
