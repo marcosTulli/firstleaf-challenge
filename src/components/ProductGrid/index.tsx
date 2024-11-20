@@ -33,8 +33,8 @@ const ProductGrid = () => {
         onChange={handleChange}
       />
       <div className={styles.productGrid}>
-        {filteredData?.map((product, index) => (
-          <ProductCard key={index} product={product} />
+        {filteredData?.map((product) => (
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>
