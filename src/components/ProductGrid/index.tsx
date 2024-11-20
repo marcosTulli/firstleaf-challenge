@@ -1,5 +1,5 @@
-import React from 'react'
-import { useProducts } from '../../hooks/useProducts';
+import React from 'react';
+import { useProducts } from '../../hooks';
 
 const ProductGrid = () => {
   const { data } = useProducts();
@@ -12,7 +12,7 @@ const ProductGrid = () => {
     <ul>
       {data?.map(product => <li>{product.name}</li>)}
     </ul>
-  )
-}
+  );
+};
 
 export default ProductGrid;

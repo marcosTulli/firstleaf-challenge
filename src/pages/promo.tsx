@@ -1,13 +1,14 @@
 import React from "react";
 import Countdown from "../components/Countdown";
 import ProductGrid from "../components/ProductGrid";
+import Header from "../components/Common/Header";
 
 const Counter = (): JSX.Element => (
   <>
-    <header>
+    <Header>
       <Countdown seconds={300} />
-    </header>
-    
+    </Header>
+
     <ProductGrid />
   </>
 );
