@@ -1,17 +1,43 @@
-import React from 'react';
-import { useProducts } from '../../hooks';
+import * as React from 'react';
+import { useProducts } from '../../hooks/';
+import ProductCard from './components/ProductCard';
+import * as styles from './index.module.scss';
+import ProductFilter from './components/ProductFilter';
 
 const ProductGrid = () => {
+  const [searchValue, setSearchValue] = React.useState<string>("");
   const { data } = useProducts();
+
+  const filteredData = data?.filter(
+    product => product
+      .color
+      .toLowerCase()
+      .includes(searchValue.toLocaleLowerCase()));
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value);
+  };
+  const handleClear = () => {
+    setSearchValue("");
+  };
 
   if (!data) {
     return <div>Loading...</div>;
   }
 
   return (
-    <ul>
-      {data?.map(product => <li>{product.name}</li>)}
-    </ul>
+    <div className={styles.productGridContainer}>
+      <ProductFilter
+        defaultValue={searchValue}
+        onClear={handleClear}
+        onChange={handleChange}
+      />
+      <div className={styles.productGrid}>
+        {filteredData?.map((product, index) => (
+          <ProductCard key={index} product={product} />
+        ))}
+      </div>
+    </div>
   );
 };
 
