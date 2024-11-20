@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import Countdown from './index';
 
 test('renders Countdown component', () => {
-    render(<Countdown />);
+    render(<Countdown seconds={300} />);
     const countdownElement = screen.getByText(/countdown/i);
     expect(countdownElement).toBeInTheDocument();
 });

@@ -1,11 +1,11 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import ExamplePage from "../src/pages/example";
+import HomePage from '../src/pages/index';
 
 describe("example page", () => {
   it("renders without errors", async () => {
     expect.assertions(0);
 
-    render(<ExamplePage />);
+    render(<HomePage />);
   });
 });
