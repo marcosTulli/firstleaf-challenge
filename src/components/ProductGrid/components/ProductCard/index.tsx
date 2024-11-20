@@ -1,26 +1,9 @@
-import React from 'react';
+import * as React from 'react';
 import * as styles from './index.module.scss';
+import { Product } from '../../../../types/Products';
 
 interface IProductCardProps {
-    product: {
-        id: number;
-        special_notes: string;
-        name: string;
-        tag_line: string;
-        vintage: string;
-        origin: string;
-        fanciful_varietal: string;
-        msrp: number;
-        price: number;
-        display_msrp: string;
-        display_price: string;
-        award_highlights: { [key: string]: number; };
-        pairings: string;
-        color: string;
-        images: string;
-        ratings_pct: number;
-        display_name: string;
-    };
+    product: Product;
 }
 
 const ProductCard: React.FC<IProductCardProps> = ({ product }) => {
@@ -31,32 +14,20 @@ const ProductCard: React.FC<IProductCardProps> = ({ product }) => {
             </div>
             <div className={styles.contentContainer}>
                 <h2 className={styles.productName}>{product.display_name}</h2>
-                <p className={styles.tagline}>{product.tag_line}</p>
+                <p className={styles.tagline}>{product.vintage} - {product.tag_line}</p>
                 <div className={styles.details}>
                     <div className={styles.detailItem}>
-                        <span className={styles.label}>Vintage:</span> {product.vintage}
+                        {product.origin}
                     </div>
                     <div className={styles.detailItem}>
-                        <span className={styles.label}>Origin:</span> {product.origin}
-                    </div>
-                    <div className={styles.detailItem}>
-                        <span className={styles.label}>Varietal:</span> {product.fanciful_varietal}
-                    </div>
-                    <div className={styles.detailItem}>
-                        <span className={styles.label}>Color:</span> {product.color}
+                        {product.fanciful_varietal}
                     </div>
                 </div>
                 <div className={styles.priceRating}>
                     <div className={styles.prices}>
-                        <span className={styles.originalPrice}>{product.display_msrp}</span>
-                        <span className={styles.salePrice}>{product.display_price}</span>
+                        <p className={styles.originalPrice}>{product.display_msrp} Retail Price</p>
+                        <p className={styles.salePrice}>{product.display_price} Member Price </p>
                     </div>
-                    <div className={styles.ratings}>
-                        <span className={styles.label}>Ratings:</span> {product.ratings_pct}%
-                    </div>
-                </div>
-                <div className={styles.pairings}>
-                    <span className={styles.label}>Pairings:</span> {product.pairings}
                 </div>
             </div>
         </div>
