@@ -36,6 +36,9400 @@ type BooleanQueryOperatorInput = {
   readonly nin: InputMaybe<ReadonlyArray<InputMaybe<Scalars['Boolean']>>>;
 };
 
+type Country = Node & {
+  readonly altSpellings: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly area: Maybe<Scalars['Float']>;
+  readonly borders: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly capital: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly capitalInfo: Maybe<CountryCapitalInfo>;
+  readonly car: Maybe<CountryCar>;
+  readonly cca2: Maybe<Scalars['String']>;
+  readonly cca3: Maybe<Scalars['String']>;
+  readonly ccn3: Maybe<Scalars['String']>;
+  readonly children: ReadonlyArray<Node>;
+  readonly cioc: Maybe<Scalars['String']>;
+  readonly coatOfArms: Maybe<CountryCoatOfArms>;
+  readonly continents: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly currencies: Maybe<CountryCurrencies>;
+  readonly demonyms: Maybe<CountryDemonyms>;
+  readonly fifa: Maybe<Scalars['String']>;
+  readonly flag: Maybe<Scalars['String']>;
+  readonly flags: Maybe<CountryFlags>;
+  readonly gini: Maybe<CountryGini>;
+  readonly id: Scalars['ID'];
+  readonly idd: Maybe<CountryIdd>;
+  readonly independent: Maybe<Scalars['Boolean']>;
+  readonly internal: Internal;
+  readonly landlocked: Maybe<Scalars['Boolean']>;
+  readonly languages: Maybe<CountryLanguages>;
+  readonly latlng: Maybe<ReadonlyArray<Maybe<Scalars['Float']>>>;
+  readonly maps: Maybe<CountryMaps>;
+  readonly name: Maybe<CountryName>;
+  readonly parent: Maybe<Node>;
+  readonly population: Maybe<Scalars['Int']>;
+  readonly postalCode: Maybe<CountryPostalCode>;
+  readonly region: Maybe<Scalars['String']>;
+  readonly startOfWeek: Maybe<Scalars['String']>;
+  readonly status: Maybe<Scalars['String']>;
+  readonly subregion: Maybe<Scalars['String']>;
+  readonly timezones: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly tld: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly translations: Maybe<CountryTranslations>;
+  readonly unMember: Maybe<Scalars['Boolean']>;
+};
+
+type CountryCapitalInfo = {
+  readonly latlng: Maybe<ReadonlyArray<Maybe<Scalars['Float']>>>;
+};
+
+type CountryCapitalInfoFieldSelector = {
+  readonly latlng: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCapitalInfoFilterInput = {
+  readonly latlng: InputMaybe<FloatQueryOperatorInput>;
+};
+
+type CountryCapitalInfoSortInput = {
+  readonly latlng: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCar = {
+  readonly side: Maybe<Scalars['String']>;
+  readonly signs: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+};
+
+type CountryCarFieldSelector = {
+  readonly side: InputMaybe<FieldSelectorEnum>;
+  readonly signs: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCarFilterInput = {
+  readonly side: InputMaybe<StringQueryOperatorInput>;
+  readonly signs: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCarSortInput = {
+  readonly side: InputMaybe<SortOrderEnum>;
+  readonly signs: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCoatOfArms = {
+  readonly png: Maybe<Scalars['String']>;
+  readonly svg: Maybe<Scalars['String']>;
+};
+
+type CountryCoatOfArmsFieldSelector = {
+  readonly png: InputMaybe<FieldSelectorEnum>;
+  readonly svg: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCoatOfArmsFilterInput = {
+  readonly png: InputMaybe<StringQueryOperatorInput>;
+  readonly svg: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCoatOfArmsSortInput = {
+  readonly png: InputMaybe<SortOrderEnum>;
+  readonly svg: InputMaybe<SortOrderEnum>;
+};
+
+type CountryConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<CountryEdge>;
+  readonly group: ReadonlyArray<CountryGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<Country>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type CountryConnection_distinctArgs = {
+  field: CountryFieldSelector;
+};
+
+
+type CountryConnection_groupArgs = {
+  field: CountryFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type CountryConnection_maxArgs = {
+  field: CountryFieldSelector;
+};
+
+
+type CountryConnection_minArgs = {
+  field: CountryFieldSelector;
+};
+
+
+type CountryConnection_sumArgs = {
+  field: CountryFieldSelector;
+};
+
+type CountryCurrencies = {
+  readonly AED: Maybe<CountryCurrenciesAED>;
+  readonly AFN: Maybe<CountryCurrenciesAFN>;
+  readonly ALL: Maybe<CountryCurrenciesALL>;
+  readonly AMD: Maybe<CountryCurrenciesAMD>;
+  readonly ANG: Maybe<CountryCurrenciesANG>;
+  readonly AOA: Maybe<CountryCurrenciesAOA>;
+  readonly ARS: Maybe<CountryCurrenciesARS>;
+  readonly AUD: Maybe<CountryCurrenciesAUD>;
+  readonly AWG: Maybe<CountryCurrenciesAWG>;
+  readonly AZN: Maybe<CountryCurrenciesAZN>;
+  readonly BAM: Maybe<CountryCurrenciesBAM>;
+  readonly BBD: Maybe<CountryCurrenciesBBD>;
+  readonly BDT: Maybe<CountryCurrenciesBDT>;
+  readonly BGN: Maybe<CountryCurrenciesBGN>;
+  readonly BHD: Maybe<CountryCurrenciesBHD>;
+  readonly BIF: Maybe<CountryCurrenciesBIF>;
+  readonly BMD: Maybe<CountryCurrenciesBMD>;
+  readonly BND: Maybe<CountryCurrenciesBND>;
+  readonly BOB: Maybe<CountryCurrenciesBOB>;
+  readonly BRL: Maybe<CountryCurrenciesBRL>;
+  readonly BSD: Maybe<CountryCurrenciesBSD>;
+  readonly BTN: Maybe<CountryCurrenciesBTN>;
+  readonly BWP: Maybe<CountryCurrenciesBWP>;
+  readonly BYN: Maybe<CountryCurrenciesBYN>;
+  readonly BZD: Maybe<CountryCurrenciesBZD>;
+  readonly CAD: Maybe<CountryCurrenciesCAD>;
+  readonly CDF: Maybe<CountryCurrenciesCDF>;
+  readonly CHF: Maybe<CountryCurrenciesCHF>;
+  readonly CKD: Maybe<CountryCurrenciesCKD>;
+  readonly CLP: Maybe<CountryCurrenciesCLP>;
+  readonly CNY: Maybe<CountryCurrenciesCNY>;
+  readonly COP: Maybe<CountryCurrenciesCOP>;
+  readonly CRC: Maybe<CountryCurrenciesCRC>;
+  readonly CUC: Maybe<CountryCurrenciesCUC>;
+  readonly CUP: Maybe<CountryCurrenciesCUP>;
+  readonly CVE: Maybe<CountryCurrenciesCVE>;
+  readonly CZK: Maybe<CountryCurrenciesCZK>;
+  readonly DJF: Maybe<CountryCurrenciesDJF>;
+  readonly DKK: Maybe<CountryCurrenciesDKK>;
+  readonly DOP: Maybe<CountryCurrenciesDOP>;
+  readonly DZD: Maybe<CountryCurrenciesDZD>;
+  readonly EGP: Maybe<CountryCurrenciesEGP>;
+  readonly ERN: Maybe<CountryCurrenciesERN>;
+  readonly ETB: Maybe<CountryCurrenciesETB>;
+  readonly EUR: Maybe<CountryCurrenciesEUR>;
+  readonly FJD: Maybe<CountryCurrenciesFJD>;
+  readonly FKP: Maybe<CountryCurrenciesFKP>;
+  readonly FOK: Maybe<CountryCurrenciesFOK>;
+  readonly GBP: Maybe<CountryCurrenciesGBP>;
+  readonly GEL: Maybe<CountryCurrenciesGEL>;
+  readonly GGP: Maybe<CountryCurrenciesGGP>;
+  readonly GHS: Maybe<CountryCurrenciesGHS>;
+  readonly GIP: Maybe<CountryCurrenciesGIP>;
+  readonly GMD: Maybe<CountryCurrenciesGMD>;
+  readonly GNF: Maybe<CountryCurrenciesGNF>;
+  readonly GTQ: Maybe<CountryCurrenciesGTQ>;
+  readonly GYD: Maybe<CountryCurrenciesGYD>;
+  readonly HKD: Maybe<CountryCurrenciesHKD>;
+  readonly HNL: Maybe<CountryCurrenciesHNL>;
+  readonly HTG: Maybe<CountryCurrenciesHTG>;
+  readonly HUF: Maybe<CountryCurrenciesHUF>;
+  readonly IDR: Maybe<CountryCurrenciesIDR>;
+  readonly ILS: Maybe<CountryCurrenciesILS>;
+  readonly IMP: Maybe<CountryCurrenciesIMP>;
+  readonly INR: Maybe<CountryCurrenciesINR>;
+  readonly IQD: Maybe<CountryCurrenciesIQD>;
+  readonly IRR: Maybe<CountryCurrenciesIRR>;
+  readonly ISK: Maybe<CountryCurrenciesISK>;
+  readonly JEP: Maybe<CountryCurrenciesJEP>;
+  readonly JMD: Maybe<CountryCurrenciesJMD>;
+  readonly JOD: Maybe<CountryCurrenciesJOD>;
+  readonly JPY: Maybe<CountryCurrenciesJPY>;
+  readonly KES: Maybe<CountryCurrenciesKES>;
+  readonly KGS: Maybe<CountryCurrenciesKGS>;
+  readonly KHR: Maybe<CountryCurrenciesKHR>;
+  readonly KID: Maybe<CountryCurrenciesKID>;
+  readonly KMF: Maybe<CountryCurrenciesKMF>;
+  readonly KPW: Maybe<CountryCurrenciesKPW>;
+  readonly KRW: Maybe<CountryCurrenciesKRW>;
+  readonly KWD: Maybe<CountryCurrenciesKWD>;
+  readonly KYD: Maybe<CountryCurrenciesKYD>;
+  readonly KZT: Maybe<CountryCurrenciesKZT>;
+  readonly LAK: Maybe<CountryCurrenciesLAK>;
+  readonly LBP: Maybe<CountryCurrenciesLBP>;
+  readonly LKR: Maybe<CountryCurrenciesLKR>;
+  readonly LRD: Maybe<CountryCurrenciesLRD>;
+  readonly LSL: Maybe<CountryCurrenciesLSL>;
+  readonly LYD: Maybe<CountryCurrenciesLYD>;
+  readonly MAD: Maybe<CountryCurrenciesMAD>;
+  readonly MDL: Maybe<CountryCurrenciesMDL>;
+  readonly MGA: Maybe<CountryCurrenciesMGA>;
+  readonly MKD: Maybe<CountryCurrenciesMKD>;
+  readonly MMK: Maybe<CountryCurrenciesMMK>;
+  readonly MNT: Maybe<CountryCurrenciesMNT>;
+  readonly MOP: Maybe<CountryCurrenciesMOP>;
+  readonly MRU: Maybe<CountryCurrenciesMRU>;
+  readonly MUR: Maybe<CountryCurrenciesMUR>;
+  readonly MVR: Maybe<CountryCurrenciesMVR>;
+  readonly MWK: Maybe<CountryCurrenciesMWK>;
+  readonly MXN: Maybe<CountryCurrenciesMXN>;
+  readonly MYR: Maybe<CountryCurrenciesMYR>;
+  readonly MZN: Maybe<CountryCurrenciesMZN>;
+  readonly NAD: Maybe<CountryCurrenciesNAD>;
+  readonly NGN: Maybe<CountryCurrenciesNGN>;
+  readonly NIO: Maybe<CountryCurrenciesNIO>;
+  readonly NOK: Maybe<CountryCurrenciesNOK>;
+  readonly NPR: Maybe<CountryCurrenciesNPR>;
+  readonly NZD: Maybe<CountryCurrenciesNZD>;
+  readonly OMR: Maybe<CountryCurrenciesOMR>;
+  readonly PAB: Maybe<CountryCurrenciesPAB>;
+  readonly PEN: Maybe<CountryCurrenciesPEN>;
+  readonly PGK: Maybe<CountryCurrenciesPGK>;
+  readonly PHP: Maybe<CountryCurrenciesPHP>;
+  readonly PKR: Maybe<CountryCurrenciesPKR>;
+  readonly PLN: Maybe<CountryCurrenciesPLN>;
+  readonly PYG: Maybe<CountryCurrenciesPYG>;
+  readonly QAR: Maybe<CountryCurrenciesQAR>;
+  readonly RON: Maybe<CountryCurrenciesRON>;
+  readonly RSD: Maybe<CountryCurrenciesRSD>;
+  readonly RUB: Maybe<CountryCurrenciesRUB>;
+  readonly RWF: Maybe<CountryCurrenciesRWF>;
+  readonly SAR: Maybe<CountryCurrenciesSAR>;
+  readonly SBD: Maybe<CountryCurrenciesSBD>;
+  readonly SCR: Maybe<CountryCurrenciesSCR>;
+  readonly SDG: Maybe<CountryCurrenciesSDG>;
+  readonly SEK: Maybe<CountryCurrenciesSEK>;
+  readonly SGD: Maybe<CountryCurrenciesSGD>;
+  readonly SHP: Maybe<CountryCurrenciesSHP>;
+  readonly SLL: Maybe<CountryCurrenciesSLL>;
+  readonly SOS: Maybe<CountryCurrenciesSOS>;
+  readonly SRD: Maybe<CountryCurrenciesSRD>;
+  readonly SSP: Maybe<CountryCurrenciesSSP>;
+  readonly STN: Maybe<CountryCurrenciesSTN>;
+  readonly SYP: Maybe<CountryCurrenciesSYP>;
+  readonly SZL: Maybe<CountryCurrenciesSZL>;
+  readonly THB: Maybe<CountryCurrenciesTHB>;
+  readonly TJS: Maybe<CountryCurrenciesTJS>;
+  readonly TMT: Maybe<CountryCurrenciesTMT>;
+  readonly TND: Maybe<CountryCurrenciesTND>;
+  readonly TOP: Maybe<CountryCurrenciesTOP>;
+  readonly TRY: Maybe<CountryCurrenciesTRY>;
+  readonly TTD: Maybe<CountryCurrenciesTTD>;
+  readonly TVD: Maybe<CountryCurrenciesTVD>;
+  readonly TWD: Maybe<CountryCurrenciesTWD>;
+  readonly TZS: Maybe<CountryCurrenciesTZS>;
+  readonly UAH: Maybe<CountryCurrenciesUAH>;
+  readonly UGX: Maybe<CountryCurrenciesUGX>;
+  readonly USD: Maybe<CountryCurrenciesUSD>;
+  readonly UYU: Maybe<CountryCurrenciesUYU>;
+  readonly UZS: Maybe<CountryCurrenciesUZS>;
+  readonly VES: Maybe<CountryCurrenciesVES>;
+  readonly VND: Maybe<CountryCurrenciesVND>;
+  readonly VUV: Maybe<CountryCurrenciesVUV>;
+  readonly WST: Maybe<CountryCurrenciesWST>;
+  readonly XAF: Maybe<CountryCurrenciesXAF>;
+  readonly XCD: Maybe<CountryCurrenciesXCD>;
+  readonly XOF: Maybe<CountryCurrenciesXOF>;
+  readonly XPF: Maybe<CountryCurrenciesXPF>;
+  readonly YER: Maybe<CountryCurrenciesYER>;
+  readonly ZAR: Maybe<CountryCurrenciesZAR>;
+  readonly ZMW: Maybe<CountryCurrenciesZMW>;
+  readonly ZWL: Maybe<CountryCurrenciesZWL>;
+};
+
+type CountryCurrenciesAED = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesAEDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesAEDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesAEDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesAFN = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesAFNFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesAFNFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesAFNSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesALL = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesALLFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesALLFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesALLSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesAMD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesAMDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesAMDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesAMDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesANG = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesANGFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesANGFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesANGSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesAOA = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesAOAFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesAOAFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesAOASortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesARS = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesARSFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesARSFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesARSSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesAUD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesAUDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesAUDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesAUDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesAWG = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesAWGFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesAWGFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesAWGSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesAZN = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesAZNFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesAZNFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesAZNSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesBAM = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesBAMFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesBAMFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesBAMSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesBBD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesBBDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesBBDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesBBDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesBDT = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesBDTFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesBDTFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesBDTSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesBGN = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesBGNFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesBGNFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesBGNSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesBHD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesBHDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesBHDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesBHDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesBIF = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesBIFFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesBIFFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesBIFSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesBMD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesBMDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesBMDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesBMDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesBND = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesBNDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesBNDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesBNDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesBOB = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesBOBFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesBOBFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesBOBSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesBRL = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesBRLFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesBRLFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesBRLSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesBSD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesBSDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesBSDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesBSDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesBTN = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesBTNFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesBTNFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesBTNSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesBWP = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesBWPFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesBWPFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesBWPSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesBYN = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesBYNFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesBYNFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesBYNSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesBZD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesBZDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesBZDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesBZDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesCAD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesCADFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesCADFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesCADSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesCDF = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesCDFFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesCDFFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesCDFSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesCHF = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesCHFFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesCHFFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesCHFSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesCKD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesCKDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesCKDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesCKDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesCLP = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesCLPFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesCLPFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesCLPSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesCNY = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesCNYFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesCNYFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesCNYSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesCOP = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesCOPFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesCOPFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesCOPSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesCRC = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesCRCFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesCRCFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesCRCSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesCUC = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesCUCFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesCUCFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesCUCSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesCUP = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesCUPFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesCUPFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesCUPSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesCVE = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesCVEFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesCVEFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesCVESortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesCZK = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesCZKFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesCZKFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesCZKSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesDJF = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesDJFFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesDJFFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesDJFSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesDKK = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesDKKFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesDKKFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesDKKSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesDOP = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesDOPFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesDOPFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesDOPSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesDZD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesDZDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesDZDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesDZDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesEGP = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesEGPFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesEGPFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesEGPSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesERN = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesERNFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesERNFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesERNSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesETB = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesETBFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesETBFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesETBSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesEUR = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesEURFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesEURFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesEURSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesFJD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesFJDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesFJDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesFJDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesFKP = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesFKPFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesFKPFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesFKPSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesFOK = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesFOKFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesFOKFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesFOKSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesFieldSelector = {
+  readonly AED: InputMaybe<CountryCurrenciesAEDFieldSelector>;
+  readonly AFN: InputMaybe<CountryCurrenciesAFNFieldSelector>;
+  readonly ALL: InputMaybe<CountryCurrenciesALLFieldSelector>;
+  readonly AMD: InputMaybe<CountryCurrenciesAMDFieldSelector>;
+  readonly ANG: InputMaybe<CountryCurrenciesANGFieldSelector>;
+  readonly AOA: InputMaybe<CountryCurrenciesAOAFieldSelector>;
+  readonly ARS: InputMaybe<CountryCurrenciesARSFieldSelector>;
+  readonly AUD: InputMaybe<CountryCurrenciesAUDFieldSelector>;
+  readonly AWG: InputMaybe<CountryCurrenciesAWGFieldSelector>;
+  readonly AZN: InputMaybe<CountryCurrenciesAZNFieldSelector>;
+  readonly BAM: InputMaybe<CountryCurrenciesBAMFieldSelector>;
+  readonly BBD: InputMaybe<CountryCurrenciesBBDFieldSelector>;
+  readonly BDT: InputMaybe<CountryCurrenciesBDTFieldSelector>;
+  readonly BGN: InputMaybe<CountryCurrenciesBGNFieldSelector>;
+  readonly BHD: InputMaybe<CountryCurrenciesBHDFieldSelector>;
+  readonly BIF: InputMaybe<CountryCurrenciesBIFFieldSelector>;
+  readonly BMD: InputMaybe<CountryCurrenciesBMDFieldSelector>;
+  readonly BND: InputMaybe<CountryCurrenciesBNDFieldSelector>;
+  readonly BOB: InputMaybe<CountryCurrenciesBOBFieldSelector>;
+  readonly BRL: InputMaybe<CountryCurrenciesBRLFieldSelector>;
+  readonly BSD: InputMaybe<CountryCurrenciesBSDFieldSelector>;
+  readonly BTN: InputMaybe<CountryCurrenciesBTNFieldSelector>;
+  readonly BWP: InputMaybe<CountryCurrenciesBWPFieldSelector>;
+  readonly BYN: InputMaybe<CountryCurrenciesBYNFieldSelector>;
+  readonly BZD: InputMaybe<CountryCurrenciesBZDFieldSelector>;
+  readonly CAD: InputMaybe<CountryCurrenciesCADFieldSelector>;
+  readonly CDF: InputMaybe<CountryCurrenciesCDFFieldSelector>;
+  readonly CHF: InputMaybe<CountryCurrenciesCHFFieldSelector>;
+  readonly CKD: InputMaybe<CountryCurrenciesCKDFieldSelector>;
+  readonly CLP: InputMaybe<CountryCurrenciesCLPFieldSelector>;
+  readonly CNY: InputMaybe<CountryCurrenciesCNYFieldSelector>;
+  readonly COP: InputMaybe<CountryCurrenciesCOPFieldSelector>;
+  readonly CRC: InputMaybe<CountryCurrenciesCRCFieldSelector>;
+  readonly CUC: InputMaybe<CountryCurrenciesCUCFieldSelector>;
+  readonly CUP: InputMaybe<CountryCurrenciesCUPFieldSelector>;
+  readonly CVE: InputMaybe<CountryCurrenciesCVEFieldSelector>;
+  readonly CZK: InputMaybe<CountryCurrenciesCZKFieldSelector>;
+  readonly DJF: InputMaybe<CountryCurrenciesDJFFieldSelector>;
+  readonly DKK: InputMaybe<CountryCurrenciesDKKFieldSelector>;
+  readonly DOP: InputMaybe<CountryCurrenciesDOPFieldSelector>;
+  readonly DZD: InputMaybe<CountryCurrenciesDZDFieldSelector>;
+  readonly EGP: InputMaybe<CountryCurrenciesEGPFieldSelector>;
+  readonly ERN: InputMaybe<CountryCurrenciesERNFieldSelector>;
+  readonly ETB: InputMaybe<CountryCurrenciesETBFieldSelector>;
+  readonly EUR: InputMaybe<CountryCurrenciesEURFieldSelector>;
+  readonly FJD: InputMaybe<CountryCurrenciesFJDFieldSelector>;
+  readonly FKP: InputMaybe<CountryCurrenciesFKPFieldSelector>;
+  readonly FOK: InputMaybe<CountryCurrenciesFOKFieldSelector>;
+  readonly GBP: InputMaybe<CountryCurrenciesGBPFieldSelector>;
+  readonly GEL: InputMaybe<CountryCurrenciesGELFieldSelector>;
+  readonly GGP: InputMaybe<CountryCurrenciesGGPFieldSelector>;
+  readonly GHS: InputMaybe<CountryCurrenciesGHSFieldSelector>;
+  readonly GIP: InputMaybe<CountryCurrenciesGIPFieldSelector>;
+  readonly GMD: InputMaybe<CountryCurrenciesGMDFieldSelector>;
+  readonly GNF: InputMaybe<CountryCurrenciesGNFFieldSelector>;
+  readonly GTQ: InputMaybe<CountryCurrenciesGTQFieldSelector>;
+  readonly GYD: InputMaybe<CountryCurrenciesGYDFieldSelector>;
+  readonly HKD: InputMaybe<CountryCurrenciesHKDFieldSelector>;
+  readonly HNL: InputMaybe<CountryCurrenciesHNLFieldSelector>;
+  readonly HTG: InputMaybe<CountryCurrenciesHTGFieldSelector>;
+  readonly HUF: InputMaybe<CountryCurrenciesHUFFieldSelector>;
+  readonly IDR: InputMaybe<CountryCurrenciesIDRFieldSelector>;
+  readonly ILS: InputMaybe<CountryCurrenciesILSFieldSelector>;
+  readonly IMP: InputMaybe<CountryCurrenciesIMPFieldSelector>;
+  readonly INR: InputMaybe<CountryCurrenciesINRFieldSelector>;
+  readonly IQD: InputMaybe<CountryCurrenciesIQDFieldSelector>;
+  readonly IRR: InputMaybe<CountryCurrenciesIRRFieldSelector>;
+  readonly ISK: InputMaybe<CountryCurrenciesISKFieldSelector>;
+  readonly JEP: InputMaybe<CountryCurrenciesJEPFieldSelector>;
+  readonly JMD: InputMaybe<CountryCurrenciesJMDFieldSelector>;
+  readonly JOD: InputMaybe<CountryCurrenciesJODFieldSelector>;
+  readonly JPY: InputMaybe<CountryCurrenciesJPYFieldSelector>;
+  readonly KES: InputMaybe<CountryCurrenciesKESFieldSelector>;
+  readonly KGS: InputMaybe<CountryCurrenciesKGSFieldSelector>;
+  readonly KHR: InputMaybe<CountryCurrenciesKHRFieldSelector>;
+  readonly KID: InputMaybe<CountryCurrenciesKIDFieldSelector>;
+  readonly KMF: InputMaybe<CountryCurrenciesKMFFieldSelector>;
+  readonly KPW: InputMaybe<CountryCurrenciesKPWFieldSelector>;
+  readonly KRW: InputMaybe<CountryCurrenciesKRWFieldSelector>;
+  readonly KWD: InputMaybe<CountryCurrenciesKWDFieldSelector>;
+  readonly KYD: InputMaybe<CountryCurrenciesKYDFieldSelector>;
+  readonly KZT: InputMaybe<CountryCurrenciesKZTFieldSelector>;
+  readonly LAK: InputMaybe<CountryCurrenciesLAKFieldSelector>;
+  readonly LBP: InputMaybe<CountryCurrenciesLBPFieldSelector>;
+  readonly LKR: InputMaybe<CountryCurrenciesLKRFieldSelector>;
+  readonly LRD: InputMaybe<CountryCurrenciesLRDFieldSelector>;
+  readonly LSL: InputMaybe<CountryCurrenciesLSLFieldSelector>;
+  readonly LYD: InputMaybe<CountryCurrenciesLYDFieldSelector>;
+  readonly MAD: InputMaybe<CountryCurrenciesMADFieldSelector>;
+  readonly MDL: InputMaybe<CountryCurrenciesMDLFieldSelector>;
+  readonly MGA: InputMaybe<CountryCurrenciesMGAFieldSelector>;
+  readonly MKD: InputMaybe<CountryCurrenciesMKDFieldSelector>;
+  readonly MMK: InputMaybe<CountryCurrenciesMMKFieldSelector>;
+  readonly MNT: InputMaybe<CountryCurrenciesMNTFieldSelector>;
+  readonly MOP: InputMaybe<CountryCurrenciesMOPFieldSelector>;
+  readonly MRU: InputMaybe<CountryCurrenciesMRUFieldSelector>;
+  readonly MUR: InputMaybe<CountryCurrenciesMURFieldSelector>;
+  readonly MVR: InputMaybe<CountryCurrenciesMVRFieldSelector>;
+  readonly MWK: InputMaybe<CountryCurrenciesMWKFieldSelector>;
+  readonly MXN: InputMaybe<CountryCurrenciesMXNFieldSelector>;
+  readonly MYR: InputMaybe<CountryCurrenciesMYRFieldSelector>;
+  readonly MZN: InputMaybe<CountryCurrenciesMZNFieldSelector>;
+  readonly NAD: InputMaybe<CountryCurrenciesNADFieldSelector>;
+  readonly NGN: InputMaybe<CountryCurrenciesNGNFieldSelector>;
+  readonly NIO: InputMaybe<CountryCurrenciesNIOFieldSelector>;
+  readonly NOK: InputMaybe<CountryCurrenciesNOKFieldSelector>;
+  readonly NPR: InputMaybe<CountryCurrenciesNPRFieldSelector>;
+  readonly NZD: InputMaybe<CountryCurrenciesNZDFieldSelector>;
+  readonly OMR: InputMaybe<CountryCurrenciesOMRFieldSelector>;
+  readonly PAB: InputMaybe<CountryCurrenciesPABFieldSelector>;
+  readonly PEN: InputMaybe<CountryCurrenciesPENFieldSelector>;
+  readonly PGK: InputMaybe<CountryCurrenciesPGKFieldSelector>;
+  readonly PHP: InputMaybe<CountryCurrenciesPHPFieldSelector>;
+  readonly PKR: InputMaybe<CountryCurrenciesPKRFieldSelector>;
+  readonly PLN: InputMaybe<CountryCurrenciesPLNFieldSelector>;
+  readonly PYG: InputMaybe<CountryCurrenciesPYGFieldSelector>;
+  readonly QAR: InputMaybe<CountryCurrenciesQARFieldSelector>;
+  readonly RON: InputMaybe<CountryCurrenciesRONFieldSelector>;
+  readonly RSD: InputMaybe<CountryCurrenciesRSDFieldSelector>;
+  readonly RUB: InputMaybe<CountryCurrenciesRUBFieldSelector>;
+  readonly RWF: InputMaybe<CountryCurrenciesRWFFieldSelector>;
+  readonly SAR: InputMaybe<CountryCurrenciesSARFieldSelector>;
+  readonly SBD: InputMaybe<CountryCurrenciesSBDFieldSelector>;
+  readonly SCR: InputMaybe<CountryCurrenciesSCRFieldSelector>;
+  readonly SDG: InputMaybe<CountryCurrenciesSDGFieldSelector>;
+  readonly SEK: InputMaybe<CountryCurrenciesSEKFieldSelector>;
+  readonly SGD: InputMaybe<CountryCurrenciesSGDFieldSelector>;
+  readonly SHP: InputMaybe<CountryCurrenciesSHPFieldSelector>;
+  readonly SLL: InputMaybe<CountryCurrenciesSLLFieldSelector>;
+  readonly SOS: InputMaybe<CountryCurrenciesSOSFieldSelector>;
+  readonly SRD: InputMaybe<CountryCurrenciesSRDFieldSelector>;
+  readonly SSP: InputMaybe<CountryCurrenciesSSPFieldSelector>;
+  readonly STN: InputMaybe<CountryCurrenciesSTNFieldSelector>;
+  readonly SYP: InputMaybe<CountryCurrenciesSYPFieldSelector>;
+  readonly SZL: InputMaybe<CountryCurrenciesSZLFieldSelector>;
+  readonly THB: InputMaybe<CountryCurrenciesTHBFieldSelector>;
+  readonly TJS: InputMaybe<CountryCurrenciesTJSFieldSelector>;
+  readonly TMT: InputMaybe<CountryCurrenciesTMTFieldSelector>;
+  readonly TND: InputMaybe<CountryCurrenciesTNDFieldSelector>;
+  readonly TOP: InputMaybe<CountryCurrenciesTOPFieldSelector>;
+  readonly TRY: InputMaybe<CountryCurrenciesTRYFieldSelector>;
+  readonly TTD: InputMaybe<CountryCurrenciesTTDFieldSelector>;
+  readonly TVD: InputMaybe<CountryCurrenciesTVDFieldSelector>;
+  readonly TWD: InputMaybe<CountryCurrenciesTWDFieldSelector>;
+  readonly TZS: InputMaybe<CountryCurrenciesTZSFieldSelector>;
+  readonly UAH: InputMaybe<CountryCurrenciesUAHFieldSelector>;
+  readonly UGX: InputMaybe<CountryCurrenciesUGXFieldSelector>;
+  readonly USD: InputMaybe<CountryCurrenciesUSDFieldSelector>;
+  readonly UYU: InputMaybe<CountryCurrenciesUYUFieldSelector>;
+  readonly UZS: InputMaybe<CountryCurrenciesUZSFieldSelector>;
+  readonly VES: InputMaybe<CountryCurrenciesVESFieldSelector>;
+  readonly VND: InputMaybe<CountryCurrenciesVNDFieldSelector>;
+  readonly VUV: InputMaybe<CountryCurrenciesVUVFieldSelector>;
+  readonly WST: InputMaybe<CountryCurrenciesWSTFieldSelector>;
+  readonly XAF: InputMaybe<CountryCurrenciesXAFFieldSelector>;
+  readonly XCD: InputMaybe<CountryCurrenciesXCDFieldSelector>;
+  readonly XOF: InputMaybe<CountryCurrenciesXOFFieldSelector>;
+  readonly XPF: InputMaybe<CountryCurrenciesXPFFieldSelector>;
+  readonly YER: InputMaybe<CountryCurrenciesYERFieldSelector>;
+  readonly ZAR: InputMaybe<CountryCurrenciesZARFieldSelector>;
+  readonly ZMW: InputMaybe<CountryCurrenciesZMWFieldSelector>;
+  readonly ZWL: InputMaybe<CountryCurrenciesZWLFieldSelector>;
+};
+
+type CountryCurrenciesFilterInput = {
+  readonly AED: InputMaybe<CountryCurrenciesAEDFilterInput>;
+  readonly AFN: InputMaybe<CountryCurrenciesAFNFilterInput>;
+  readonly ALL: InputMaybe<CountryCurrenciesALLFilterInput>;
+  readonly AMD: InputMaybe<CountryCurrenciesAMDFilterInput>;
+  readonly ANG: InputMaybe<CountryCurrenciesANGFilterInput>;
+  readonly AOA: InputMaybe<CountryCurrenciesAOAFilterInput>;
+  readonly ARS: InputMaybe<CountryCurrenciesARSFilterInput>;
+  readonly AUD: InputMaybe<CountryCurrenciesAUDFilterInput>;
+  readonly AWG: InputMaybe<CountryCurrenciesAWGFilterInput>;
+  readonly AZN: InputMaybe<CountryCurrenciesAZNFilterInput>;
+  readonly BAM: InputMaybe<CountryCurrenciesBAMFilterInput>;
+  readonly BBD: InputMaybe<CountryCurrenciesBBDFilterInput>;
+  readonly BDT: InputMaybe<CountryCurrenciesBDTFilterInput>;
+  readonly BGN: InputMaybe<CountryCurrenciesBGNFilterInput>;
+  readonly BHD: InputMaybe<CountryCurrenciesBHDFilterInput>;
+  readonly BIF: InputMaybe<CountryCurrenciesBIFFilterInput>;
+  readonly BMD: InputMaybe<CountryCurrenciesBMDFilterInput>;
+  readonly BND: InputMaybe<CountryCurrenciesBNDFilterInput>;
+  readonly BOB: InputMaybe<CountryCurrenciesBOBFilterInput>;
+  readonly BRL: InputMaybe<CountryCurrenciesBRLFilterInput>;
+  readonly BSD: InputMaybe<CountryCurrenciesBSDFilterInput>;
+  readonly BTN: InputMaybe<CountryCurrenciesBTNFilterInput>;
+  readonly BWP: InputMaybe<CountryCurrenciesBWPFilterInput>;
+  readonly BYN: InputMaybe<CountryCurrenciesBYNFilterInput>;
+  readonly BZD: InputMaybe<CountryCurrenciesBZDFilterInput>;
+  readonly CAD: InputMaybe<CountryCurrenciesCADFilterInput>;
+  readonly CDF: InputMaybe<CountryCurrenciesCDFFilterInput>;
+  readonly CHF: InputMaybe<CountryCurrenciesCHFFilterInput>;
+  readonly CKD: InputMaybe<CountryCurrenciesCKDFilterInput>;
+  readonly CLP: InputMaybe<CountryCurrenciesCLPFilterInput>;
+  readonly CNY: InputMaybe<CountryCurrenciesCNYFilterInput>;
+  readonly COP: InputMaybe<CountryCurrenciesCOPFilterInput>;
+  readonly CRC: InputMaybe<CountryCurrenciesCRCFilterInput>;
+  readonly CUC: InputMaybe<CountryCurrenciesCUCFilterInput>;
+  readonly CUP: InputMaybe<CountryCurrenciesCUPFilterInput>;
+  readonly CVE: InputMaybe<CountryCurrenciesCVEFilterInput>;
+  readonly CZK: InputMaybe<CountryCurrenciesCZKFilterInput>;
+  readonly DJF: InputMaybe<CountryCurrenciesDJFFilterInput>;
+  readonly DKK: InputMaybe<CountryCurrenciesDKKFilterInput>;
+  readonly DOP: InputMaybe<CountryCurrenciesDOPFilterInput>;
+  readonly DZD: InputMaybe<CountryCurrenciesDZDFilterInput>;
+  readonly EGP: InputMaybe<CountryCurrenciesEGPFilterInput>;
+  readonly ERN: InputMaybe<CountryCurrenciesERNFilterInput>;
+  readonly ETB: InputMaybe<CountryCurrenciesETBFilterInput>;
+  readonly EUR: InputMaybe<CountryCurrenciesEURFilterInput>;
+  readonly FJD: InputMaybe<CountryCurrenciesFJDFilterInput>;
+  readonly FKP: InputMaybe<CountryCurrenciesFKPFilterInput>;
+  readonly FOK: InputMaybe<CountryCurrenciesFOKFilterInput>;
+  readonly GBP: InputMaybe<CountryCurrenciesGBPFilterInput>;
+  readonly GEL: InputMaybe<CountryCurrenciesGELFilterInput>;
+  readonly GGP: InputMaybe<CountryCurrenciesGGPFilterInput>;
+  readonly GHS: InputMaybe<CountryCurrenciesGHSFilterInput>;
+  readonly GIP: InputMaybe<CountryCurrenciesGIPFilterInput>;
+  readonly GMD: InputMaybe<CountryCurrenciesGMDFilterInput>;
+  readonly GNF: InputMaybe<CountryCurrenciesGNFFilterInput>;
+  readonly GTQ: InputMaybe<CountryCurrenciesGTQFilterInput>;
+  readonly GYD: InputMaybe<CountryCurrenciesGYDFilterInput>;
+  readonly HKD: InputMaybe<CountryCurrenciesHKDFilterInput>;
+  readonly HNL: InputMaybe<CountryCurrenciesHNLFilterInput>;
+  readonly HTG: InputMaybe<CountryCurrenciesHTGFilterInput>;
+  readonly HUF: InputMaybe<CountryCurrenciesHUFFilterInput>;
+  readonly IDR: InputMaybe<CountryCurrenciesIDRFilterInput>;
+  readonly ILS: InputMaybe<CountryCurrenciesILSFilterInput>;
+  readonly IMP: InputMaybe<CountryCurrenciesIMPFilterInput>;
+  readonly INR: InputMaybe<CountryCurrenciesINRFilterInput>;
+  readonly IQD: InputMaybe<CountryCurrenciesIQDFilterInput>;
+  readonly IRR: InputMaybe<CountryCurrenciesIRRFilterInput>;
+  readonly ISK: InputMaybe<CountryCurrenciesISKFilterInput>;
+  readonly JEP: InputMaybe<CountryCurrenciesJEPFilterInput>;
+  readonly JMD: InputMaybe<CountryCurrenciesJMDFilterInput>;
+  readonly JOD: InputMaybe<CountryCurrenciesJODFilterInput>;
+  readonly JPY: InputMaybe<CountryCurrenciesJPYFilterInput>;
+  readonly KES: InputMaybe<CountryCurrenciesKESFilterInput>;
+  readonly KGS: InputMaybe<CountryCurrenciesKGSFilterInput>;
+  readonly KHR: InputMaybe<CountryCurrenciesKHRFilterInput>;
+  readonly KID: InputMaybe<CountryCurrenciesKIDFilterInput>;
+  readonly KMF: InputMaybe<CountryCurrenciesKMFFilterInput>;
+  readonly KPW: InputMaybe<CountryCurrenciesKPWFilterInput>;
+  readonly KRW: InputMaybe<CountryCurrenciesKRWFilterInput>;
+  readonly KWD: InputMaybe<CountryCurrenciesKWDFilterInput>;
+  readonly KYD: InputMaybe<CountryCurrenciesKYDFilterInput>;
+  readonly KZT: InputMaybe<CountryCurrenciesKZTFilterInput>;
+  readonly LAK: InputMaybe<CountryCurrenciesLAKFilterInput>;
+  readonly LBP: InputMaybe<CountryCurrenciesLBPFilterInput>;
+  readonly LKR: InputMaybe<CountryCurrenciesLKRFilterInput>;
+  readonly LRD: InputMaybe<CountryCurrenciesLRDFilterInput>;
+  readonly LSL: InputMaybe<CountryCurrenciesLSLFilterInput>;
+  readonly LYD: InputMaybe<CountryCurrenciesLYDFilterInput>;
+  readonly MAD: InputMaybe<CountryCurrenciesMADFilterInput>;
+  readonly MDL: InputMaybe<CountryCurrenciesMDLFilterInput>;
+  readonly MGA: InputMaybe<CountryCurrenciesMGAFilterInput>;
+  readonly MKD: InputMaybe<CountryCurrenciesMKDFilterInput>;
+  readonly MMK: InputMaybe<CountryCurrenciesMMKFilterInput>;
+  readonly MNT: InputMaybe<CountryCurrenciesMNTFilterInput>;
+  readonly MOP: InputMaybe<CountryCurrenciesMOPFilterInput>;
+  readonly MRU: InputMaybe<CountryCurrenciesMRUFilterInput>;
+  readonly MUR: InputMaybe<CountryCurrenciesMURFilterInput>;
+  readonly MVR: InputMaybe<CountryCurrenciesMVRFilterInput>;
+  readonly MWK: InputMaybe<CountryCurrenciesMWKFilterInput>;
+  readonly MXN: InputMaybe<CountryCurrenciesMXNFilterInput>;
+  readonly MYR: InputMaybe<CountryCurrenciesMYRFilterInput>;
+  readonly MZN: InputMaybe<CountryCurrenciesMZNFilterInput>;
+  readonly NAD: InputMaybe<CountryCurrenciesNADFilterInput>;
+  readonly NGN: InputMaybe<CountryCurrenciesNGNFilterInput>;
+  readonly NIO: InputMaybe<CountryCurrenciesNIOFilterInput>;
+  readonly NOK: InputMaybe<CountryCurrenciesNOKFilterInput>;
+  readonly NPR: InputMaybe<CountryCurrenciesNPRFilterInput>;
+  readonly NZD: InputMaybe<CountryCurrenciesNZDFilterInput>;
+  readonly OMR: InputMaybe<CountryCurrenciesOMRFilterInput>;
+  readonly PAB: InputMaybe<CountryCurrenciesPABFilterInput>;
+  readonly PEN: InputMaybe<CountryCurrenciesPENFilterInput>;
+  readonly PGK: InputMaybe<CountryCurrenciesPGKFilterInput>;
+  readonly PHP: InputMaybe<CountryCurrenciesPHPFilterInput>;
+  readonly PKR: InputMaybe<CountryCurrenciesPKRFilterInput>;
+  readonly PLN: InputMaybe<CountryCurrenciesPLNFilterInput>;
+  readonly PYG: InputMaybe<CountryCurrenciesPYGFilterInput>;
+  readonly QAR: InputMaybe<CountryCurrenciesQARFilterInput>;
+  readonly RON: InputMaybe<CountryCurrenciesRONFilterInput>;
+  readonly RSD: InputMaybe<CountryCurrenciesRSDFilterInput>;
+  readonly RUB: InputMaybe<CountryCurrenciesRUBFilterInput>;
+  readonly RWF: InputMaybe<CountryCurrenciesRWFFilterInput>;
+  readonly SAR: InputMaybe<CountryCurrenciesSARFilterInput>;
+  readonly SBD: InputMaybe<CountryCurrenciesSBDFilterInput>;
+  readonly SCR: InputMaybe<CountryCurrenciesSCRFilterInput>;
+  readonly SDG: InputMaybe<CountryCurrenciesSDGFilterInput>;
+  readonly SEK: InputMaybe<CountryCurrenciesSEKFilterInput>;
+  readonly SGD: InputMaybe<CountryCurrenciesSGDFilterInput>;
+  readonly SHP: InputMaybe<CountryCurrenciesSHPFilterInput>;
+  readonly SLL: InputMaybe<CountryCurrenciesSLLFilterInput>;
+  readonly SOS: InputMaybe<CountryCurrenciesSOSFilterInput>;
+  readonly SRD: InputMaybe<CountryCurrenciesSRDFilterInput>;
+  readonly SSP: InputMaybe<CountryCurrenciesSSPFilterInput>;
+  readonly STN: InputMaybe<CountryCurrenciesSTNFilterInput>;
+  readonly SYP: InputMaybe<CountryCurrenciesSYPFilterInput>;
+  readonly SZL: InputMaybe<CountryCurrenciesSZLFilterInput>;
+  readonly THB: InputMaybe<CountryCurrenciesTHBFilterInput>;
+  readonly TJS: InputMaybe<CountryCurrenciesTJSFilterInput>;
+  readonly TMT: InputMaybe<CountryCurrenciesTMTFilterInput>;
+  readonly TND: InputMaybe<CountryCurrenciesTNDFilterInput>;
+  readonly TOP: InputMaybe<CountryCurrenciesTOPFilterInput>;
+  readonly TRY: InputMaybe<CountryCurrenciesTRYFilterInput>;
+  readonly TTD: InputMaybe<CountryCurrenciesTTDFilterInput>;
+  readonly TVD: InputMaybe<CountryCurrenciesTVDFilterInput>;
+  readonly TWD: InputMaybe<CountryCurrenciesTWDFilterInput>;
+  readonly TZS: InputMaybe<CountryCurrenciesTZSFilterInput>;
+  readonly UAH: InputMaybe<CountryCurrenciesUAHFilterInput>;
+  readonly UGX: InputMaybe<CountryCurrenciesUGXFilterInput>;
+  readonly USD: InputMaybe<CountryCurrenciesUSDFilterInput>;
+  readonly UYU: InputMaybe<CountryCurrenciesUYUFilterInput>;
+  readonly UZS: InputMaybe<CountryCurrenciesUZSFilterInput>;
+  readonly VES: InputMaybe<CountryCurrenciesVESFilterInput>;
+  readonly VND: InputMaybe<CountryCurrenciesVNDFilterInput>;
+  readonly VUV: InputMaybe<CountryCurrenciesVUVFilterInput>;
+  readonly WST: InputMaybe<CountryCurrenciesWSTFilterInput>;
+  readonly XAF: InputMaybe<CountryCurrenciesXAFFilterInput>;
+  readonly XCD: InputMaybe<CountryCurrenciesXCDFilterInput>;
+  readonly XOF: InputMaybe<CountryCurrenciesXOFFilterInput>;
+  readonly XPF: InputMaybe<CountryCurrenciesXPFFilterInput>;
+  readonly YER: InputMaybe<CountryCurrenciesYERFilterInput>;
+  readonly ZAR: InputMaybe<CountryCurrenciesZARFilterInput>;
+  readonly ZMW: InputMaybe<CountryCurrenciesZMWFilterInput>;
+  readonly ZWL: InputMaybe<CountryCurrenciesZWLFilterInput>;
+};
+
+type CountryCurrenciesGBP = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesGBPFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesGBPFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesGBPSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesGEL = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesGELFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesGELFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesGELSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesGGP = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesGGPFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesGGPFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesGGPSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesGHS = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesGHSFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesGHSFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesGHSSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesGIP = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesGIPFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesGIPFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesGIPSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesGMD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesGMDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesGMDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesGMDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesGNF = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesGNFFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesGNFFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesGNFSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesGTQ = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesGTQFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesGTQFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesGTQSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesGYD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesGYDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesGYDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesGYDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesHKD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesHKDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesHKDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesHKDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesHNL = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesHNLFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesHNLFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesHNLSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesHTG = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesHTGFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesHTGFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesHTGSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesHUF = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesHUFFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesHUFFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesHUFSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesIDR = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesIDRFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesIDRFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesIDRSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesILS = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesILSFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesILSFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesILSSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesIMP = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesIMPFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesIMPFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesIMPSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesINR = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesINRFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesINRFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesINRSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesIQD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesIQDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesIQDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesIQDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesIRR = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesIRRFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesIRRFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesIRRSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesISK = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesISKFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesISKFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesISKSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesJEP = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesJEPFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesJEPFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesJEPSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesJMD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesJMDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesJMDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesJMDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesJOD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesJODFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesJODFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesJODSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesJPY = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesJPYFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesJPYFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesJPYSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesKES = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesKESFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesKESFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesKESSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesKGS = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesKGSFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesKGSFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesKGSSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesKHR = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesKHRFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesKHRFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesKHRSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesKID = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesKIDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesKIDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesKIDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesKMF = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesKMFFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesKMFFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesKMFSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesKPW = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesKPWFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesKPWFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesKPWSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesKRW = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesKRWFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesKRWFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesKRWSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesKWD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesKWDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesKWDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesKWDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesKYD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesKYDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesKYDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesKYDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesKZT = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesKZTFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesKZTFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesKZTSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesLAK = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesLAKFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesLAKFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesLAKSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesLBP = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesLBPFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesLBPFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesLBPSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesLKR = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesLKRFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesLKRFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesLKRSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesLRD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesLRDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesLRDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesLRDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesLSL = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesLSLFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesLSLFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesLSLSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesLYD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesLYDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesLYDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesLYDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesMAD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesMADFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesMADFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesMADSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesMDL = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesMDLFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesMDLFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesMDLSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesMGA = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesMGAFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesMGAFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesMGASortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesMKD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesMKDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesMKDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesMKDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesMMK = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesMMKFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesMMKFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesMMKSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesMNT = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesMNTFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesMNTFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesMNTSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesMOP = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesMOPFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesMOPFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesMOPSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesMRU = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesMRUFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesMRUFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesMRUSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesMUR = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesMURFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesMURFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesMURSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesMVR = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesMVRFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesMVRFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesMVRSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesMWK = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesMWKFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesMWKFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesMWKSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesMXN = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesMXNFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesMXNFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesMXNSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesMYR = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesMYRFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesMYRFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesMYRSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesMZN = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesMZNFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesMZNFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesMZNSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesNAD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesNADFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesNADFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesNADSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesNGN = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesNGNFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesNGNFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesNGNSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesNIO = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesNIOFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesNIOFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesNIOSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesNOK = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesNOKFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesNOKFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesNOKSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesNPR = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesNPRFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesNPRFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesNPRSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesNZD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesNZDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesNZDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesNZDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesOMR = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesOMRFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesOMRFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesOMRSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesPAB = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesPABFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesPABFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesPABSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesPEN = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesPENFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesPENFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesPENSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesPGK = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesPGKFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesPGKFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesPGKSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesPHP = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesPHPFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesPHPFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesPHPSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesPKR = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesPKRFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesPKRFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesPKRSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesPLN = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesPLNFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesPLNFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesPLNSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesPYG = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesPYGFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesPYGFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesPYGSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesQAR = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesQARFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesQARFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesQARSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesRON = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesRONFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesRONFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesRONSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesRSD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesRSDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesRSDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesRSDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesRUB = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesRUBFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesRUBFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesRUBSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesRWF = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesRWFFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesRWFFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesRWFSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesSAR = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesSARFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesSARFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesSARSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesSBD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesSBDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesSBDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesSBDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesSCR = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesSCRFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesSCRFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesSCRSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesSDG = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesSDGFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesSDGFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesSDGSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesSEK = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesSEKFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesSEKFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesSEKSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesSGD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesSGDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesSGDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesSGDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesSHP = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesSHPFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesSHPFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesSHPSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesSLL = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesSLLFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesSLLFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesSLLSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesSOS = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesSOSFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesSOSFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesSOSSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesSRD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesSRDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesSRDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesSRDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesSSP = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesSSPFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesSSPFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesSSPSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesSTN = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesSTNFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesSTNFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesSTNSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesSYP = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesSYPFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesSYPFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesSYPSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesSZL = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesSZLFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesSZLFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesSZLSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesSortInput = {
+  readonly AED: InputMaybe<CountryCurrenciesAEDSortInput>;
+  readonly AFN: InputMaybe<CountryCurrenciesAFNSortInput>;
+  readonly ALL: InputMaybe<CountryCurrenciesALLSortInput>;
+  readonly AMD: InputMaybe<CountryCurrenciesAMDSortInput>;
+  readonly ANG: InputMaybe<CountryCurrenciesANGSortInput>;
+  readonly AOA: InputMaybe<CountryCurrenciesAOASortInput>;
+  readonly ARS: InputMaybe<CountryCurrenciesARSSortInput>;
+  readonly AUD: InputMaybe<CountryCurrenciesAUDSortInput>;
+  readonly AWG: InputMaybe<CountryCurrenciesAWGSortInput>;
+  readonly AZN: InputMaybe<CountryCurrenciesAZNSortInput>;
+  readonly BAM: InputMaybe<CountryCurrenciesBAMSortInput>;
+  readonly BBD: InputMaybe<CountryCurrenciesBBDSortInput>;
+  readonly BDT: InputMaybe<CountryCurrenciesBDTSortInput>;
+  readonly BGN: InputMaybe<CountryCurrenciesBGNSortInput>;
+  readonly BHD: InputMaybe<CountryCurrenciesBHDSortInput>;
+  readonly BIF: InputMaybe<CountryCurrenciesBIFSortInput>;
+  readonly BMD: InputMaybe<CountryCurrenciesBMDSortInput>;
+  readonly BND: InputMaybe<CountryCurrenciesBNDSortInput>;
+  readonly BOB: InputMaybe<CountryCurrenciesBOBSortInput>;
+  readonly BRL: InputMaybe<CountryCurrenciesBRLSortInput>;
+  readonly BSD: InputMaybe<CountryCurrenciesBSDSortInput>;
+  readonly BTN: InputMaybe<CountryCurrenciesBTNSortInput>;
+  readonly BWP: InputMaybe<CountryCurrenciesBWPSortInput>;
+  readonly BYN: InputMaybe<CountryCurrenciesBYNSortInput>;
+  readonly BZD: InputMaybe<CountryCurrenciesBZDSortInput>;
+  readonly CAD: InputMaybe<CountryCurrenciesCADSortInput>;
+  readonly CDF: InputMaybe<CountryCurrenciesCDFSortInput>;
+  readonly CHF: InputMaybe<CountryCurrenciesCHFSortInput>;
+  readonly CKD: InputMaybe<CountryCurrenciesCKDSortInput>;
+  readonly CLP: InputMaybe<CountryCurrenciesCLPSortInput>;
+  readonly CNY: InputMaybe<CountryCurrenciesCNYSortInput>;
+  readonly COP: InputMaybe<CountryCurrenciesCOPSortInput>;
+  readonly CRC: InputMaybe<CountryCurrenciesCRCSortInput>;
+  readonly CUC: InputMaybe<CountryCurrenciesCUCSortInput>;
+  readonly CUP: InputMaybe<CountryCurrenciesCUPSortInput>;
+  readonly CVE: InputMaybe<CountryCurrenciesCVESortInput>;
+  readonly CZK: InputMaybe<CountryCurrenciesCZKSortInput>;
+  readonly DJF: InputMaybe<CountryCurrenciesDJFSortInput>;
+  readonly DKK: InputMaybe<CountryCurrenciesDKKSortInput>;
+  readonly DOP: InputMaybe<CountryCurrenciesDOPSortInput>;
+  readonly DZD: InputMaybe<CountryCurrenciesDZDSortInput>;
+  readonly EGP: InputMaybe<CountryCurrenciesEGPSortInput>;
+  readonly ERN: InputMaybe<CountryCurrenciesERNSortInput>;
+  readonly ETB: InputMaybe<CountryCurrenciesETBSortInput>;
+  readonly EUR: InputMaybe<CountryCurrenciesEURSortInput>;
+  readonly FJD: InputMaybe<CountryCurrenciesFJDSortInput>;
+  readonly FKP: InputMaybe<CountryCurrenciesFKPSortInput>;
+  readonly FOK: InputMaybe<CountryCurrenciesFOKSortInput>;
+  readonly GBP: InputMaybe<CountryCurrenciesGBPSortInput>;
+  readonly GEL: InputMaybe<CountryCurrenciesGELSortInput>;
+  readonly GGP: InputMaybe<CountryCurrenciesGGPSortInput>;
+  readonly GHS: InputMaybe<CountryCurrenciesGHSSortInput>;
+  readonly GIP: InputMaybe<CountryCurrenciesGIPSortInput>;
+  readonly GMD: InputMaybe<CountryCurrenciesGMDSortInput>;
+  readonly GNF: InputMaybe<CountryCurrenciesGNFSortInput>;
+  readonly GTQ: InputMaybe<CountryCurrenciesGTQSortInput>;
+  readonly GYD: InputMaybe<CountryCurrenciesGYDSortInput>;
+  readonly HKD: InputMaybe<CountryCurrenciesHKDSortInput>;
+  readonly HNL: InputMaybe<CountryCurrenciesHNLSortInput>;
+  readonly HTG: InputMaybe<CountryCurrenciesHTGSortInput>;
+  readonly HUF: InputMaybe<CountryCurrenciesHUFSortInput>;
+  readonly IDR: InputMaybe<CountryCurrenciesIDRSortInput>;
+  readonly ILS: InputMaybe<CountryCurrenciesILSSortInput>;
+  readonly IMP: InputMaybe<CountryCurrenciesIMPSortInput>;
+  readonly INR: InputMaybe<CountryCurrenciesINRSortInput>;
+  readonly IQD: InputMaybe<CountryCurrenciesIQDSortInput>;
+  readonly IRR: InputMaybe<CountryCurrenciesIRRSortInput>;
+  readonly ISK: InputMaybe<CountryCurrenciesISKSortInput>;
+  readonly JEP: InputMaybe<CountryCurrenciesJEPSortInput>;
+  readonly JMD: InputMaybe<CountryCurrenciesJMDSortInput>;
+  readonly JOD: InputMaybe<CountryCurrenciesJODSortInput>;
+  readonly JPY: InputMaybe<CountryCurrenciesJPYSortInput>;
+  readonly KES: InputMaybe<CountryCurrenciesKESSortInput>;
+  readonly KGS: InputMaybe<CountryCurrenciesKGSSortInput>;
+  readonly KHR: InputMaybe<CountryCurrenciesKHRSortInput>;
+  readonly KID: InputMaybe<CountryCurrenciesKIDSortInput>;
+  readonly KMF: InputMaybe<CountryCurrenciesKMFSortInput>;
+  readonly KPW: InputMaybe<CountryCurrenciesKPWSortInput>;
+  readonly KRW: InputMaybe<CountryCurrenciesKRWSortInput>;
+  readonly KWD: InputMaybe<CountryCurrenciesKWDSortInput>;
+  readonly KYD: InputMaybe<CountryCurrenciesKYDSortInput>;
+  readonly KZT: InputMaybe<CountryCurrenciesKZTSortInput>;
+  readonly LAK: InputMaybe<CountryCurrenciesLAKSortInput>;
+  readonly LBP: InputMaybe<CountryCurrenciesLBPSortInput>;
+  readonly LKR: InputMaybe<CountryCurrenciesLKRSortInput>;
+  readonly LRD: InputMaybe<CountryCurrenciesLRDSortInput>;
+  readonly LSL: InputMaybe<CountryCurrenciesLSLSortInput>;
+  readonly LYD: InputMaybe<CountryCurrenciesLYDSortInput>;
+  readonly MAD: InputMaybe<CountryCurrenciesMADSortInput>;
+  readonly MDL: InputMaybe<CountryCurrenciesMDLSortInput>;
+  readonly MGA: InputMaybe<CountryCurrenciesMGASortInput>;
+  readonly MKD: InputMaybe<CountryCurrenciesMKDSortInput>;
+  readonly MMK: InputMaybe<CountryCurrenciesMMKSortInput>;
+  readonly MNT: InputMaybe<CountryCurrenciesMNTSortInput>;
+  readonly MOP: InputMaybe<CountryCurrenciesMOPSortInput>;
+  readonly MRU: InputMaybe<CountryCurrenciesMRUSortInput>;
+  readonly MUR: InputMaybe<CountryCurrenciesMURSortInput>;
+  readonly MVR: InputMaybe<CountryCurrenciesMVRSortInput>;
+  readonly MWK: InputMaybe<CountryCurrenciesMWKSortInput>;
+  readonly MXN: InputMaybe<CountryCurrenciesMXNSortInput>;
+  readonly MYR: InputMaybe<CountryCurrenciesMYRSortInput>;
+  readonly MZN: InputMaybe<CountryCurrenciesMZNSortInput>;
+  readonly NAD: InputMaybe<CountryCurrenciesNADSortInput>;
+  readonly NGN: InputMaybe<CountryCurrenciesNGNSortInput>;
+  readonly NIO: InputMaybe<CountryCurrenciesNIOSortInput>;
+  readonly NOK: InputMaybe<CountryCurrenciesNOKSortInput>;
+  readonly NPR: InputMaybe<CountryCurrenciesNPRSortInput>;
+  readonly NZD: InputMaybe<CountryCurrenciesNZDSortInput>;
+  readonly OMR: InputMaybe<CountryCurrenciesOMRSortInput>;
+  readonly PAB: InputMaybe<CountryCurrenciesPABSortInput>;
+  readonly PEN: InputMaybe<CountryCurrenciesPENSortInput>;
+  readonly PGK: InputMaybe<CountryCurrenciesPGKSortInput>;
+  readonly PHP: InputMaybe<CountryCurrenciesPHPSortInput>;
+  readonly PKR: InputMaybe<CountryCurrenciesPKRSortInput>;
+  readonly PLN: InputMaybe<CountryCurrenciesPLNSortInput>;
+  readonly PYG: InputMaybe<CountryCurrenciesPYGSortInput>;
+  readonly QAR: InputMaybe<CountryCurrenciesQARSortInput>;
+  readonly RON: InputMaybe<CountryCurrenciesRONSortInput>;
+  readonly RSD: InputMaybe<CountryCurrenciesRSDSortInput>;
+  readonly RUB: InputMaybe<CountryCurrenciesRUBSortInput>;
+  readonly RWF: InputMaybe<CountryCurrenciesRWFSortInput>;
+  readonly SAR: InputMaybe<CountryCurrenciesSARSortInput>;
+  readonly SBD: InputMaybe<CountryCurrenciesSBDSortInput>;
+  readonly SCR: InputMaybe<CountryCurrenciesSCRSortInput>;
+  readonly SDG: InputMaybe<CountryCurrenciesSDGSortInput>;
+  readonly SEK: InputMaybe<CountryCurrenciesSEKSortInput>;
+  readonly SGD: InputMaybe<CountryCurrenciesSGDSortInput>;
+  readonly SHP: InputMaybe<CountryCurrenciesSHPSortInput>;
+  readonly SLL: InputMaybe<CountryCurrenciesSLLSortInput>;
+  readonly SOS: InputMaybe<CountryCurrenciesSOSSortInput>;
+  readonly SRD: InputMaybe<CountryCurrenciesSRDSortInput>;
+  readonly SSP: InputMaybe<CountryCurrenciesSSPSortInput>;
+  readonly STN: InputMaybe<CountryCurrenciesSTNSortInput>;
+  readonly SYP: InputMaybe<CountryCurrenciesSYPSortInput>;
+  readonly SZL: InputMaybe<CountryCurrenciesSZLSortInput>;
+  readonly THB: InputMaybe<CountryCurrenciesTHBSortInput>;
+  readonly TJS: InputMaybe<CountryCurrenciesTJSSortInput>;
+  readonly TMT: InputMaybe<CountryCurrenciesTMTSortInput>;
+  readonly TND: InputMaybe<CountryCurrenciesTNDSortInput>;
+  readonly TOP: InputMaybe<CountryCurrenciesTOPSortInput>;
+  readonly TRY: InputMaybe<CountryCurrenciesTRYSortInput>;
+  readonly TTD: InputMaybe<CountryCurrenciesTTDSortInput>;
+  readonly TVD: InputMaybe<CountryCurrenciesTVDSortInput>;
+  readonly TWD: InputMaybe<CountryCurrenciesTWDSortInput>;
+  readonly TZS: InputMaybe<CountryCurrenciesTZSSortInput>;
+  readonly UAH: InputMaybe<CountryCurrenciesUAHSortInput>;
+  readonly UGX: InputMaybe<CountryCurrenciesUGXSortInput>;
+  readonly USD: InputMaybe<CountryCurrenciesUSDSortInput>;
+  readonly UYU: InputMaybe<CountryCurrenciesUYUSortInput>;
+  readonly UZS: InputMaybe<CountryCurrenciesUZSSortInput>;
+  readonly VES: InputMaybe<CountryCurrenciesVESSortInput>;
+  readonly VND: InputMaybe<CountryCurrenciesVNDSortInput>;
+  readonly VUV: InputMaybe<CountryCurrenciesVUVSortInput>;
+  readonly WST: InputMaybe<CountryCurrenciesWSTSortInput>;
+  readonly XAF: InputMaybe<CountryCurrenciesXAFSortInput>;
+  readonly XCD: InputMaybe<CountryCurrenciesXCDSortInput>;
+  readonly XOF: InputMaybe<CountryCurrenciesXOFSortInput>;
+  readonly XPF: InputMaybe<CountryCurrenciesXPFSortInput>;
+  readonly YER: InputMaybe<CountryCurrenciesYERSortInput>;
+  readonly ZAR: InputMaybe<CountryCurrenciesZARSortInput>;
+  readonly ZMW: InputMaybe<CountryCurrenciesZMWSortInput>;
+  readonly ZWL: InputMaybe<CountryCurrenciesZWLSortInput>;
+};
+
+type CountryCurrenciesTHB = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesTHBFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesTHBFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesTHBSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesTJS = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesTJSFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesTJSFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesTJSSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesTMT = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesTMTFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesTMTFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesTMTSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesTND = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesTNDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesTNDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesTNDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesTOP = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesTOPFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesTOPFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesTOPSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesTRY = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesTRYFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesTRYFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesTRYSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesTTD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesTTDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesTTDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesTTDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesTVD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesTVDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesTVDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesTVDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesTWD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesTWDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesTWDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesTWDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesTZS = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesTZSFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesTZSFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesTZSSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesUAH = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesUAHFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesUAHFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesUAHSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesUGX = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesUGXFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesUGXFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesUGXSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesUSD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesUSDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesUSDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesUSDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesUYU = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesUYUFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesUYUFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesUYUSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesUZS = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesUZSFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesUZSFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesUZSSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesVES = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesVESFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesVESFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesVESSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesVND = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesVNDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesVNDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesVNDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesVUV = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesVUVFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesVUVFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesVUVSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesWST = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesWSTFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesWSTFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesWSTSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesXAF = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesXAFFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesXAFFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesXAFSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesXCD = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesXCDFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesXCDFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesXCDSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesXOF = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesXOFFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesXOFFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesXOFSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesXPF = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesXPFFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesXPFFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesXPFSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesYER = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesYERFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesYERFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesYERSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesZAR = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesZARFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesZARFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesZARSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesZMW = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesZMWFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesZMWFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesZMWSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryCurrenciesZWL = {
+  readonly name: Maybe<Scalars['String']>;
+  readonly symbol: Maybe<Scalars['String']>;
+};
+
+type CountryCurrenciesZWLFieldSelector = {
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly symbol: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryCurrenciesZWLFilterInput = {
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly symbol: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryCurrenciesZWLSortInput = {
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly symbol: InputMaybe<SortOrderEnum>;
+};
+
+type CountryDemonyms = {
+  readonly eng: Maybe<CountryDemonymsEng>;
+  readonly fra: Maybe<CountryDemonymsFra>;
+};
+
+type CountryDemonymsEng = {
+  readonly f: Maybe<Scalars['String']>;
+  readonly m: Maybe<Scalars['String']>;
+};
+
+type CountryDemonymsEngFieldSelector = {
+  readonly f: InputMaybe<FieldSelectorEnum>;
+  readonly m: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryDemonymsEngFilterInput = {
+  readonly f: InputMaybe<StringQueryOperatorInput>;
+  readonly m: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryDemonymsEngSortInput = {
+  readonly f: InputMaybe<SortOrderEnum>;
+  readonly m: InputMaybe<SortOrderEnum>;
+};
+
+type CountryDemonymsFieldSelector = {
+  readonly eng: InputMaybe<CountryDemonymsEngFieldSelector>;
+  readonly fra: InputMaybe<CountryDemonymsFraFieldSelector>;
+};
+
+type CountryDemonymsFilterInput = {
+  readonly eng: InputMaybe<CountryDemonymsEngFilterInput>;
+  readonly fra: InputMaybe<CountryDemonymsFraFilterInput>;
+};
+
+type CountryDemonymsFra = {
+  readonly f: Maybe<Scalars['String']>;
+  readonly m: Maybe<Scalars['String']>;
+};
+
+type CountryDemonymsFraFieldSelector = {
+  readonly f: InputMaybe<FieldSelectorEnum>;
+  readonly m: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryDemonymsFraFilterInput = {
+  readonly f: InputMaybe<StringQueryOperatorInput>;
+  readonly m: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryDemonymsFraSortInput = {
+  readonly f: InputMaybe<SortOrderEnum>;
+  readonly m: InputMaybe<SortOrderEnum>;
+};
+
+type CountryDemonymsSortInput = {
+  readonly eng: InputMaybe<CountryDemonymsEngSortInput>;
+  readonly fra: InputMaybe<CountryDemonymsFraSortInput>;
+};
+
+type CountryEdge = {
+  readonly next: Maybe<Country>;
+  readonly node: Country;
+  readonly previous: Maybe<Country>;
+};
+
+type CountryFieldSelector = {
+  readonly altSpellings: InputMaybe<FieldSelectorEnum>;
+  readonly area: InputMaybe<FieldSelectorEnum>;
+  readonly borders: InputMaybe<FieldSelectorEnum>;
+  readonly capital: InputMaybe<FieldSelectorEnum>;
+  readonly capitalInfo: InputMaybe<CountryCapitalInfoFieldSelector>;
+  readonly car: InputMaybe<CountryCarFieldSelector>;
+  readonly cca2: InputMaybe<FieldSelectorEnum>;
+  readonly cca3: InputMaybe<FieldSelectorEnum>;
+  readonly ccn3: InputMaybe<FieldSelectorEnum>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly cioc: InputMaybe<FieldSelectorEnum>;
+  readonly coatOfArms: InputMaybe<CountryCoatOfArmsFieldSelector>;
+  readonly continents: InputMaybe<FieldSelectorEnum>;
+  readonly currencies: InputMaybe<CountryCurrenciesFieldSelector>;
+  readonly demonyms: InputMaybe<CountryDemonymsFieldSelector>;
+  readonly fifa: InputMaybe<FieldSelectorEnum>;
+  readonly flag: InputMaybe<FieldSelectorEnum>;
+  readonly flags: InputMaybe<CountryFlagsFieldSelector>;
+  readonly gini: InputMaybe<CountryGiniFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly idd: InputMaybe<CountryIddFieldSelector>;
+  readonly independent: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly landlocked: InputMaybe<FieldSelectorEnum>;
+  readonly languages: InputMaybe<CountryLanguagesFieldSelector>;
+  readonly latlng: InputMaybe<FieldSelectorEnum>;
+  readonly maps: InputMaybe<CountryMapsFieldSelector>;
+  readonly name: InputMaybe<CountryNameFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly population: InputMaybe<FieldSelectorEnum>;
+  readonly postalCode: InputMaybe<CountryPostalCodeFieldSelector>;
+  readonly region: InputMaybe<FieldSelectorEnum>;
+  readonly startOfWeek: InputMaybe<FieldSelectorEnum>;
+  readonly status: InputMaybe<FieldSelectorEnum>;
+  readonly subregion: InputMaybe<FieldSelectorEnum>;
+  readonly timezones: InputMaybe<FieldSelectorEnum>;
+  readonly tld: InputMaybe<FieldSelectorEnum>;
+  readonly translations: InputMaybe<CountryTranslationsFieldSelector>;
+  readonly unMember: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryFilterInput = {
+  readonly altSpellings: InputMaybe<StringQueryOperatorInput>;
+  readonly area: InputMaybe<FloatQueryOperatorInput>;
+  readonly borders: InputMaybe<StringQueryOperatorInput>;
+  readonly capital: InputMaybe<StringQueryOperatorInput>;
+  readonly capitalInfo: InputMaybe<CountryCapitalInfoFilterInput>;
+  readonly car: InputMaybe<CountryCarFilterInput>;
+  readonly cca2: InputMaybe<StringQueryOperatorInput>;
+  readonly cca3: InputMaybe<StringQueryOperatorInput>;
+  readonly ccn3: InputMaybe<StringQueryOperatorInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly cioc: InputMaybe<StringQueryOperatorInput>;
+  readonly coatOfArms: InputMaybe<CountryCoatOfArmsFilterInput>;
+  readonly continents: InputMaybe<StringQueryOperatorInput>;
+  readonly currencies: InputMaybe<CountryCurrenciesFilterInput>;
+  readonly demonyms: InputMaybe<CountryDemonymsFilterInput>;
+  readonly fifa: InputMaybe<StringQueryOperatorInput>;
+  readonly flag: InputMaybe<StringQueryOperatorInput>;
+  readonly flags: InputMaybe<CountryFlagsFilterInput>;
+  readonly gini: InputMaybe<CountryGiniFilterInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly idd: InputMaybe<CountryIddFilterInput>;
+  readonly independent: InputMaybe<BooleanQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly landlocked: InputMaybe<BooleanQueryOperatorInput>;
+  readonly languages: InputMaybe<CountryLanguagesFilterInput>;
+  readonly latlng: InputMaybe<FloatQueryOperatorInput>;
+  readonly maps: InputMaybe<CountryMapsFilterInput>;
+  readonly name: InputMaybe<CountryNameFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly population: InputMaybe<IntQueryOperatorInput>;
+  readonly postalCode: InputMaybe<CountryPostalCodeFilterInput>;
+  readonly region: InputMaybe<StringQueryOperatorInput>;
+  readonly startOfWeek: InputMaybe<StringQueryOperatorInput>;
+  readonly status: InputMaybe<StringQueryOperatorInput>;
+  readonly subregion: InputMaybe<StringQueryOperatorInput>;
+  readonly timezones: InputMaybe<StringQueryOperatorInput>;
+  readonly tld: InputMaybe<StringQueryOperatorInput>;
+  readonly translations: InputMaybe<CountryTranslationsFilterInput>;
+  readonly unMember: InputMaybe<BooleanQueryOperatorInput>;
+};
+
+type CountryFlags = {
+  readonly alt: Maybe<Scalars['String']>;
+  readonly png: Maybe<Scalars['String']>;
+  readonly svg: Maybe<Scalars['String']>;
+};
+
+type CountryFlagsFieldSelector = {
+  readonly alt: InputMaybe<FieldSelectorEnum>;
+  readonly png: InputMaybe<FieldSelectorEnum>;
+  readonly svg: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryFlagsFilterInput = {
+  readonly alt: InputMaybe<StringQueryOperatorInput>;
+  readonly png: InputMaybe<StringQueryOperatorInput>;
+  readonly svg: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryFlagsSortInput = {
+  readonly alt: InputMaybe<SortOrderEnum>;
+  readonly png: InputMaybe<SortOrderEnum>;
+  readonly svg: InputMaybe<SortOrderEnum>;
+};
+
+type CountryGini = {
+  readonly _1992: Maybe<Scalars['Float']>;
+  readonly _1998: Maybe<Scalars['Float']>;
+  readonly _1999: Maybe<Scalars['Float']>;
+  readonly _2003: Maybe<Scalars['Float']>;
+  readonly _2004: Maybe<Scalars['Float']>;
+  readonly _2005: Maybe<Scalars['Float']>;
+  readonly _2006: Maybe<Scalars['Float']>;
+  readonly _2008: Maybe<Scalars['Float']>;
+  readonly _2009: Maybe<Scalars['Float']>;
+  readonly _2010: Maybe<Scalars['Float']>;
+  readonly _2011: Maybe<Scalars['Float']>;
+  readonly _2012: Maybe<Scalars['Float']>;
+  readonly _2013: Maybe<Scalars['Float']>;
+  readonly _2014: Maybe<Scalars['Float']>;
+  readonly _2015: Maybe<Scalars['Float']>;
+  readonly _2016: Maybe<Scalars['Float']>;
+  readonly _2017: Maybe<Scalars['Float']>;
+  readonly _2018: Maybe<Scalars['Float']>;
+  readonly _2019: Maybe<Scalars['Float']>;
+};
+
+type CountryGiniFieldSelector = {
+  readonly _1992: InputMaybe<FieldSelectorEnum>;
+  readonly _1998: InputMaybe<FieldSelectorEnum>;
+  readonly _1999: InputMaybe<FieldSelectorEnum>;
+  readonly _2003: InputMaybe<FieldSelectorEnum>;
+  readonly _2004: InputMaybe<FieldSelectorEnum>;
+  readonly _2005: InputMaybe<FieldSelectorEnum>;
+  readonly _2006: InputMaybe<FieldSelectorEnum>;
+  readonly _2008: InputMaybe<FieldSelectorEnum>;
+  readonly _2009: InputMaybe<FieldSelectorEnum>;
+  readonly _2010: InputMaybe<FieldSelectorEnum>;
+  readonly _2011: InputMaybe<FieldSelectorEnum>;
+  readonly _2012: InputMaybe<FieldSelectorEnum>;
+  readonly _2013: InputMaybe<FieldSelectorEnum>;
+  readonly _2014: InputMaybe<FieldSelectorEnum>;
+  readonly _2015: InputMaybe<FieldSelectorEnum>;
+  readonly _2016: InputMaybe<FieldSelectorEnum>;
+  readonly _2017: InputMaybe<FieldSelectorEnum>;
+  readonly _2018: InputMaybe<FieldSelectorEnum>;
+  readonly _2019: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryGiniFilterInput = {
+  readonly _1992: InputMaybe<FloatQueryOperatorInput>;
+  readonly _1998: InputMaybe<FloatQueryOperatorInput>;
+  readonly _1999: InputMaybe<FloatQueryOperatorInput>;
+  readonly _2003: InputMaybe<FloatQueryOperatorInput>;
+  readonly _2004: InputMaybe<FloatQueryOperatorInput>;
+  readonly _2005: InputMaybe<FloatQueryOperatorInput>;
+  readonly _2006: InputMaybe<FloatQueryOperatorInput>;
+  readonly _2008: InputMaybe<FloatQueryOperatorInput>;
+  readonly _2009: InputMaybe<FloatQueryOperatorInput>;
+  readonly _2010: InputMaybe<FloatQueryOperatorInput>;
+  readonly _2011: InputMaybe<FloatQueryOperatorInput>;
+  readonly _2012: InputMaybe<FloatQueryOperatorInput>;
+  readonly _2013: InputMaybe<FloatQueryOperatorInput>;
+  readonly _2014: InputMaybe<FloatQueryOperatorInput>;
+  readonly _2015: InputMaybe<FloatQueryOperatorInput>;
+  readonly _2016: InputMaybe<FloatQueryOperatorInput>;
+  readonly _2017: InputMaybe<FloatQueryOperatorInput>;
+  readonly _2018: InputMaybe<FloatQueryOperatorInput>;
+  readonly _2019: InputMaybe<FloatQueryOperatorInput>;
+};
+
+type CountryGiniSortInput = {
+  readonly _1992: InputMaybe<SortOrderEnum>;
+  readonly _1998: InputMaybe<SortOrderEnum>;
+  readonly _1999: InputMaybe<SortOrderEnum>;
+  readonly _2003: InputMaybe<SortOrderEnum>;
+  readonly _2004: InputMaybe<SortOrderEnum>;
+  readonly _2005: InputMaybe<SortOrderEnum>;
+  readonly _2006: InputMaybe<SortOrderEnum>;
+  readonly _2008: InputMaybe<SortOrderEnum>;
+  readonly _2009: InputMaybe<SortOrderEnum>;
+  readonly _2010: InputMaybe<SortOrderEnum>;
+  readonly _2011: InputMaybe<SortOrderEnum>;
+  readonly _2012: InputMaybe<SortOrderEnum>;
+  readonly _2013: InputMaybe<SortOrderEnum>;
+  readonly _2014: InputMaybe<SortOrderEnum>;
+  readonly _2015: InputMaybe<SortOrderEnum>;
+  readonly _2016: InputMaybe<SortOrderEnum>;
+  readonly _2017: InputMaybe<SortOrderEnum>;
+  readonly _2018: InputMaybe<SortOrderEnum>;
+  readonly _2019: InputMaybe<SortOrderEnum>;
+};
+
+type CountryGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<CountryEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<CountryGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<Country>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type CountryGroupConnection_distinctArgs = {
+  field: CountryFieldSelector;
+};
+
+
+type CountryGroupConnection_groupArgs = {
+  field: CountryFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type CountryGroupConnection_maxArgs = {
+  field: CountryFieldSelector;
+};
+
+
+type CountryGroupConnection_minArgs = {
+  field: CountryFieldSelector;
+};
+
+
+type CountryGroupConnection_sumArgs = {
+  field: CountryFieldSelector;
+};
+
+type CountryIdd = {
+  readonly root: Maybe<Scalars['String']>;
+  readonly suffixes: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+};
+
+type CountryIddFieldSelector = {
+  readonly root: InputMaybe<FieldSelectorEnum>;
+  readonly suffixes: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryIddFilterInput = {
+  readonly root: InputMaybe<StringQueryOperatorInput>;
+  readonly suffixes: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryIddSortInput = {
+  readonly root: InputMaybe<SortOrderEnum>;
+  readonly suffixes: InputMaybe<SortOrderEnum>;
+};
+
+type CountryLanguages = {
+  readonly afr: Maybe<Scalars['String']>;
+  readonly amh: Maybe<Scalars['String']>;
+  readonly ara: Maybe<Scalars['String']>;
+  readonly arc: Maybe<Scalars['String']>;
+  readonly aym: Maybe<Scalars['String']>;
+  readonly aze: Maybe<Scalars['String']>;
+  readonly bel: Maybe<Scalars['String']>;
+  readonly ben: Maybe<Scalars['String']>;
+  readonly ber: Maybe<Scalars['String']>;
+  readonly bis: Maybe<Scalars['String']>;
+  readonly bjz: Maybe<Scalars['String']>;
+  readonly bos: Maybe<Scalars['String']>;
+  readonly bul: Maybe<Scalars['String']>;
+  readonly bwg: Maybe<Scalars['String']>;
+  readonly cal: Maybe<Scalars['String']>;
+  readonly cat: Maybe<Scalars['String']>;
+  readonly ces: Maybe<Scalars['String']>;
+  readonly cha: Maybe<Scalars['String']>;
+  readonly ckb: Maybe<Scalars['String']>;
+  readonly cnr: Maybe<Scalars['String']>;
+  readonly crs: Maybe<Scalars['String']>;
+  readonly dan: Maybe<Scalars['String']>;
+  readonly de: Maybe<Scalars['String']>;
+  readonly deu: Maybe<Scalars['String']>;
+  readonly div: Maybe<Scalars['String']>;
+  readonly dzo: Maybe<Scalars['String']>;
+  readonly ell: Maybe<Scalars['String']>;
+  readonly eng: Maybe<Scalars['String']>;
+  readonly est: Maybe<Scalars['String']>;
+  readonly eus: Maybe<Scalars['String']>;
+  readonly fao: Maybe<Scalars['String']>;
+  readonly fas: Maybe<Scalars['String']>;
+  readonly fij: Maybe<Scalars['String']>;
+  readonly fil: Maybe<Scalars['String']>;
+  readonly fin: Maybe<Scalars['String']>;
+  readonly fra: Maybe<Scalars['String']>;
+  readonly gil: Maybe<Scalars['String']>;
+  readonly glc: Maybe<Scalars['String']>;
+  readonly gle: Maybe<Scalars['String']>;
+  readonly glv: Maybe<Scalars['String']>;
+  readonly grn: Maybe<Scalars['String']>;
+  readonly gsw: Maybe<Scalars['String']>;
+  readonly hat: Maybe<Scalars['String']>;
+  readonly heb: Maybe<Scalars['String']>;
+  readonly her: Maybe<Scalars['String']>;
+  readonly hgm: Maybe<Scalars['String']>;
+  readonly hif: Maybe<Scalars['String']>;
+  readonly hin: Maybe<Scalars['String']>;
+  readonly hmo: Maybe<Scalars['String']>;
+  readonly hrv: Maybe<Scalars['String']>;
+  readonly hun: Maybe<Scalars['String']>;
+  readonly hye: Maybe<Scalars['String']>;
+  readonly ind: Maybe<Scalars['String']>;
+  readonly isl: Maybe<Scalars['String']>;
+  readonly ita: Maybe<Scalars['String']>;
+  readonly jam: Maybe<Scalars['String']>;
+  readonly jpn: Maybe<Scalars['String']>;
+  readonly kal: Maybe<Scalars['String']>;
+  readonly kat: Maybe<Scalars['String']>;
+  readonly kaz: Maybe<Scalars['String']>;
+  readonly kck: Maybe<Scalars['String']>;
+  readonly khi: Maybe<Scalars['String']>;
+  readonly khm: Maybe<Scalars['String']>;
+  readonly kin: Maybe<Scalars['String']>;
+  readonly kir: Maybe<Scalars['String']>;
+  readonly kon: Maybe<Scalars['String']>;
+  readonly kor: Maybe<Scalars['String']>;
+  readonly kwn: Maybe<Scalars['String']>;
+  readonly lao: Maybe<Scalars['String']>;
+  readonly lat: Maybe<Scalars['String']>;
+  readonly lav: Maybe<Scalars['String']>;
+  readonly lin: Maybe<Scalars['String']>;
+  readonly lit: Maybe<Scalars['String']>;
+  readonly loz: Maybe<Scalars['String']>;
+  readonly ltz: Maybe<Scalars['String']>;
+  readonly lua: Maybe<Scalars['String']>;
+  readonly mah: Maybe<Scalars['String']>;
+  readonly mey: Maybe<Scalars['String']>;
+  readonly mfe: Maybe<Scalars['String']>;
+  readonly mkd: Maybe<Scalars['String']>;
+  readonly mlg: Maybe<Scalars['String']>;
+  readonly mlt: Maybe<Scalars['String']>;
+  readonly mon: Maybe<Scalars['String']>;
+  readonly mri: Maybe<Scalars['String']>;
+  readonly msa: Maybe<Scalars['String']>;
+  readonly mya: Maybe<Scalars['String']>;
+  readonly nau: Maybe<Scalars['String']>;
+  readonly nbl: Maybe<Scalars['String']>;
+  readonly ndc: Maybe<Scalars['String']>;
+  readonly nde: Maybe<Scalars['String']>;
+  readonly ndo: Maybe<Scalars['String']>;
+  readonly nep: Maybe<Scalars['String']>;
+  readonly nfr: Maybe<Scalars['String']>;
+  readonly niu: Maybe<Scalars['String']>;
+  readonly nld: Maybe<Scalars['String']>;
+  readonly nno: Maybe<Scalars['String']>;
+  readonly nob: Maybe<Scalars['String']>;
+  readonly nor: Maybe<Scalars['String']>;
+  readonly nrf: Maybe<Scalars['String']>;
+  readonly nso: Maybe<Scalars['String']>;
+  readonly nya: Maybe<Scalars['String']>;
+  readonly nzs: Maybe<Scalars['String']>;
+  readonly pap: Maybe<Scalars['String']>;
+  readonly pau: Maybe<Scalars['String']>;
+  readonly pih: Maybe<Scalars['String']>;
+  readonly pol: Maybe<Scalars['String']>;
+  readonly por: Maybe<Scalars['String']>;
+  readonly pov: Maybe<Scalars['String']>;
+  readonly prs: Maybe<Scalars['String']>;
+  readonly pus: Maybe<Scalars['String']>;
+  readonly que: Maybe<Scalars['String']>;
+  readonly rar: Maybe<Scalars['String']>;
+  readonly roh: Maybe<Scalars['String']>;
+  readonly ron: Maybe<Scalars['String']>;
+  readonly run: Maybe<Scalars['String']>;
+  readonly rus: Maybe<Scalars['String']>;
+  readonly sag: Maybe<Scalars['String']>;
+  readonly sin: Maybe<Scalars['String']>;
+  readonly slk: Maybe<Scalars['String']>;
+  readonly slv: Maybe<Scalars['String']>;
+  readonly smi: Maybe<Scalars['String']>;
+  readonly smo: Maybe<Scalars['String']>;
+  readonly sna: Maybe<Scalars['String']>;
+  readonly som: Maybe<Scalars['String']>;
+  readonly sot: Maybe<Scalars['String']>;
+  readonly spa: Maybe<Scalars['String']>;
+  readonly sqi: Maybe<Scalars['String']>;
+  readonly srp: Maybe<Scalars['String']>;
+  readonly ssw: Maybe<Scalars['String']>;
+  readonly swa: Maybe<Scalars['String']>;
+  readonly swe: Maybe<Scalars['String']>;
+  readonly tam: Maybe<Scalars['String']>;
+  readonly tet: Maybe<Scalars['String']>;
+  readonly tgk: Maybe<Scalars['String']>;
+  readonly tha: Maybe<Scalars['String']>;
+  readonly tir: Maybe<Scalars['String']>;
+  readonly tkl: Maybe<Scalars['String']>;
+  readonly toi: Maybe<Scalars['String']>;
+  readonly ton: Maybe<Scalars['String']>;
+  readonly tpi: Maybe<Scalars['String']>;
+  readonly tsn: Maybe<Scalars['String']>;
+  readonly tso: Maybe<Scalars['String']>;
+  readonly tuk: Maybe<Scalars['String']>;
+  readonly tur: Maybe<Scalars['String']>;
+  readonly tvl: Maybe<Scalars['String']>;
+  readonly ukr: Maybe<Scalars['String']>;
+  readonly urd: Maybe<Scalars['String']>;
+  readonly uzb: Maybe<Scalars['String']>;
+  readonly ven: Maybe<Scalars['String']>;
+  readonly vie: Maybe<Scalars['String']>;
+  readonly xho: Maybe<Scalars['String']>;
+  readonly zdj: Maybe<Scalars['String']>;
+  readonly zho: Maybe<Scalars['String']>;
+  readonly zib: Maybe<Scalars['String']>;
+  readonly zul: Maybe<Scalars['String']>;
+};
+
+type CountryLanguagesFieldSelector = {
+  readonly afr: InputMaybe<FieldSelectorEnum>;
+  readonly amh: InputMaybe<FieldSelectorEnum>;
+  readonly ara: InputMaybe<FieldSelectorEnum>;
+  readonly arc: InputMaybe<FieldSelectorEnum>;
+  readonly aym: InputMaybe<FieldSelectorEnum>;
+  readonly aze: InputMaybe<FieldSelectorEnum>;
+  readonly bel: InputMaybe<FieldSelectorEnum>;
+  readonly ben: InputMaybe<FieldSelectorEnum>;
+  readonly ber: InputMaybe<FieldSelectorEnum>;
+  readonly bis: InputMaybe<FieldSelectorEnum>;
+  readonly bjz: InputMaybe<FieldSelectorEnum>;
+  readonly bos: InputMaybe<FieldSelectorEnum>;
+  readonly bul: InputMaybe<FieldSelectorEnum>;
+  readonly bwg: InputMaybe<FieldSelectorEnum>;
+  readonly cal: InputMaybe<FieldSelectorEnum>;
+  readonly cat: InputMaybe<FieldSelectorEnum>;
+  readonly ces: InputMaybe<FieldSelectorEnum>;
+  readonly cha: InputMaybe<FieldSelectorEnum>;
+  readonly ckb: InputMaybe<FieldSelectorEnum>;
+  readonly cnr: InputMaybe<FieldSelectorEnum>;
+  readonly crs: InputMaybe<FieldSelectorEnum>;
+  readonly dan: InputMaybe<FieldSelectorEnum>;
+  readonly de: InputMaybe<FieldSelectorEnum>;
+  readonly deu: InputMaybe<FieldSelectorEnum>;
+  readonly div: InputMaybe<FieldSelectorEnum>;
+  readonly dzo: InputMaybe<FieldSelectorEnum>;
+  readonly ell: InputMaybe<FieldSelectorEnum>;
+  readonly eng: InputMaybe<FieldSelectorEnum>;
+  readonly est: InputMaybe<FieldSelectorEnum>;
+  readonly eus: InputMaybe<FieldSelectorEnum>;
+  readonly fao: InputMaybe<FieldSelectorEnum>;
+  readonly fas: InputMaybe<FieldSelectorEnum>;
+  readonly fij: InputMaybe<FieldSelectorEnum>;
+  readonly fil: InputMaybe<FieldSelectorEnum>;
+  readonly fin: InputMaybe<FieldSelectorEnum>;
+  readonly fra: InputMaybe<FieldSelectorEnum>;
+  readonly gil: InputMaybe<FieldSelectorEnum>;
+  readonly glc: InputMaybe<FieldSelectorEnum>;
+  readonly gle: InputMaybe<FieldSelectorEnum>;
+  readonly glv: InputMaybe<FieldSelectorEnum>;
+  readonly grn: InputMaybe<FieldSelectorEnum>;
+  readonly gsw: InputMaybe<FieldSelectorEnum>;
+  readonly hat: InputMaybe<FieldSelectorEnum>;
+  readonly heb: InputMaybe<FieldSelectorEnum>;
+  readonly her: InputMaybe<FieldSelectorEnum>;
+  readonly hgm: InputMaybe<FieldSelectorEnum>;
+  readonly hif: InputMaybe<FieldSelectorEnum>;
+  readonly hin: InputMaybe<FieldSelectorEnum>;
+  readonly hmo: InputMaybe<FieldSelectorEnum>;
+  readonly hrv: InputMaybe<FieldSelectorEnum>;
+  readonly hun: InputMaybe<FieldSelectorEnum>;
+  readonly hye: InputMaybe<FieldSelectorEnum>;
+  readonly ind: InputMaybe<FieldSelectorEnum>;
+  readonly isl: InputMaybe<FieldSelectorEnum>;
+  readonly ita: InputMaybe<FieldSelectorEnum>;
+  readonly jam: InputMaybe<FieldSelectorEnum>;
+  readonly jpn: InputMaybe<FieldSelectorEnum>;
+  readonly kal: InputMaybe<FieldSelectorEnum>;
+  readonly kat: InputMaybe<FieldSelectorEnum>;
+  readonly kaz: InputMaybe<FieldSelectorEnum>;
+  readonly kck: InputMaybe<FieldSelectorEnum>;
+  readonly khi: InputMaybe<FieldSelectorEnum>;
+  readonly khm: InputMaybe<FieldSelectorEnum>;
+  readonly kin: InputMaybe<FieldSelectorEnum>;
+  readonly kir: InputMaybe<FieldSelectorEnum>;
+  readonly kon: InputMaybe<FieldSelectorEnum>;
+  readonly kor: InputMaybe<FieldSelectorEnum>;
+  readonly kwn: InputMaybe<FieldSelectorEnum>;
+  readonly lao: InputMaybe<FieldSelectorEnum>;
+  readonly lat: InputMaybe<FieldSelectorEnum>;
+  readonly lav: InputMaybe<FieldSelectorEnum>;
+  readonly lin: InputMaybe<FieldSelectorEnum>;
+  readonly lit: InputMaybe<FieldSelectorEnum>;
+  readonly loz: InputMaybe<FieldSelectorEnum>;
+  readonly ltz: InputMaybe<FieldSelectorEnum>;
+  readonly lua: InputMaybe<FieldSelectorEnum>;
+  readonly mah: InputMaybe<FieldSelectorEnum>;
+  readonly mey: InputMaybe<FieldSelectorEnum>;
+  readonly mfe: InputMaybe<FieldSelectorEnum>;
+  readonly mkd: InputMaybe<FieldSelectorEnum>;
+  readonly mlg: InputMaybe<FieldSelectorEnum>;
+  readonly mlt: InputMaybe<FieldSelectorEnum>;
+  readonly mon: InputMaybe<FieldSelectorEnum>;
+  readonly mri: InputMaybe<FieldSelectorEnum>;
+  readonly msa: InputMaybe<FieldSelectorEnum>;
+  readonly mya: InputMaybe<FieldSelectorEnum>;
+  readonly nau: InputMaybe<FieldSelectorEnum>;
+  readonly nbl: InputMaybe<FieldSelectorEnum>;
+  readonly ndc: InputMaybe<FieldSelectorEnum>;
+  readonly nde: InputMaybe<FieldSelectorEnum>;
+  readonly ndo: InputMaybe<FieldSelectorEnum>;
+  readonly nep: InputMaybe<FieldSelectorEnum>;
+  readonly nfr: InputMaybe<FieldSelectorEnum>;
+  readonly niu: InputMaybe<FieldSelectorEnum>;
+  readonly nld: InputMaybe<FieldSelectorEnum>;
+  readonly nno: InputMaybe<FieldSelectorEnum>;
+  readonly nob: InputMaybe<FieldSelectorEnum>;
+  readonly nor: InputMaybe<FieldSelectorEnum>;
+  readonly nrf: InputMaybe<FieldSelectorEnum>;
+  readonly nso: InputMaybe<FieldSelectorEnum>;
+  readonly nya: InputMaybe<FieldSelectorEnum>;
+  readonly nzs: InputMaybe<FieldSelectorEnum>;
+  readonly pap: InputMaybe<FieldSelectorEnum>;
+  readonly pau: InputMaybe<FieldSelectorEnum>;
+  readonly pih: InputMaybe<FieldSelectorEnum>;
+  readonly pol: InputMaybe<FieldSelectorEnum>;
+  readonly por: InputMaybe<FieldSelectorEnum>;
+  readonly pov: InputMaybe<FieldSelectorEnum>;
+  readonly prs: InputMaybe<FieldSelectorEnum>;
+  readonly pus: InputMaybe<FieldSelectorEnum>;
+  readonly que: InputMaybe<FieldSelectorEnum>;
+  readonly rar: InputMaybe<FieldSelectorEnum>;
+  readonly roh: InputMaybe<FieldSelectorEnum>;
+  readonly ron: InputMaybe<FieldSelectorEnum>;
+  readonly run: InputMaybe<FieldSelectorEnum>;
+  readonly rus: InputMaybe<FieldSelectorEnum>;
+  readonly sag: InputMaybe<FieldSelectorEnum>;
+  readonly sin: InputMaybe<FieldSelectorEnum>;
+  readonly slk: InputMaybe<FieldSelectorEnum>;
+  readonly slv: InputMaybe<FieldSelectorEnum>;
+  readonly smi: InputMaybe<FieldSelectorEnum>;
+  readonly smo: InputMaybe<FieldSelectorEnum>;
+  readonly sna: InputMaybe<FieldSelectorEnum>;
+  readonly som: InputMaybe<FieldSelectorEnum>;
+  readonly sot: InputMaybe<FieldSelectorEnum>;
+  readonly spa: InputMaybe<FieldSelectorEnum>;
+  readonly sqi: InputMaybe<FieldSelectorEnum>;
+  readonly srp: InputMaybe<FieldSelectorEnum>;
+  readonly ssw: InputMaybe<FieldSelectorEnum>;
+  readonly swa: InputMaybe<FieldSelectorEnum>;
+  readonly swe: InputMaybe<FieldSelectorEnum>;
+  readonly tam: InputMaybe<FieldSelectorEnum>;
+  readonly tet: InputMaybe<FieldSelectorEnum>;
+  readonly tgk: InputMaybe<FieldSelectorEnum>;
+  readonly tha: InputMaybe<FieldSelectorEnum>;
+  readonly tir: InputMaybe<FieldSelectorEnum>;
+  readonly tkl: InputMaybe<FieldSelectorEnum>;
+  readonly toi: InputMaybe<FieldSelectorEnum>;
+  readonly ton: InputMaybe<FieldSelectorEnum>;
+  readonly tpi: InputMaybe<FieldSelectorEnum>;
+  readonly tsn: InputMaybe<FieldSelectorEnum>;
+  readonly tso: InputMaybe<FieldSelectorEnum>;
+  readonly tuk: InputMaybe<FieldSelectorEnum>;
+  readonly tur: InputMaybe<FieldSelectorEnum>;
+  readonly tvl: InputMaybe<FieldSelectorEnum>;
+  readonly ukr: InputMaybe<FieldSelectorEnum>;
+  readonly urd: InputMaybe<FieldSelectorEnum>;
+  readonly uzb: InputMaybe<FieldSelectorEnum>;
+  readonly ven: InputMaybe<FieldSelectorEnum>;
+  readonly vie: InputMaybe<FieldSelectorEnum>;
+  readonly xho: InputMaybe<FieldSelectorEnum>;
+  readonly zdj: InputMaybe<FieldSelectorEnum>;
+  readonly zho: InputMaybe<FieldSelectorEnum>;
+  readonly zib: InputMaybe<FieldSelectorEnum>;
+  readonly zul: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryLanguagesFilterInput = {
+  readonly afr: InputMaybe<StringQueryOperatorInput>;
+  readonly amh: InputMaybe<StringQueryOperatorInput>;
+  readonly ara: InputMaybe<StringQueryOperatorInput>;
+  readonly arc: InputMaybe<StringQueryOperatorInput>;
+  readonly aym: InputMaybe<StringQueryOperatorInput>;
+  readonly aze: InputMaybe<StringQueryOperatorInput>;
+  readonly bel: InputMaybe<StringQueryOperatorInput>;
+  readonly ben: InputMaybe<StringQueryOperatorInput>;
+  readonly ber: InputMaybe<StringQueryOperatorInput>;
+  readonly bis: InputMaybe<StringQueryOperatorInput>;
+  readonly bjz: InputMaybe<StringQueryOperatorInput>;
+  readonly bos: InputMaybe<StringQueryOperatorInput>;
+  readonly bul: InputMaybe<StringQueryOperatorInput>;
+  readonly bwg: InputMaybe<StringQueryOperatorInput>;
+  readonly cal: InputMaybe<StringQueryOperatorInput>;
+  readonly cat: InputMaybe<StringQueryOperatorInput>;
+  readonly ces: InputMaybe<StringQueryOperatorInput>;
+  readonly cha: InputMaybe<StringQueryOperatorInput>;
+  readonly ckb: InputMaybe<StringQueryOperatorInput>;
+  readonly cnr: InputMaybe<StringQueryOperatorInput>;
+  readonly crs: InputMaybe<StringQueryOperatorInput>;
+  readonly dan: InputMaybe<StringQueryOperatorInput>;
+  readonly de: InputMaybe<StringQueryOperatorInput>;
+  readonly deu: InputMaybe<StringQueryOperatorInput>;
+  readonly div: InputMaybe<StringQueryOperatorInput>;
+  readonly dzo: InputMaybe<StringQueryOperatorInput>;
+  readonly ell: InputMaybe<StringQueryOperatorInput>;
+  readonly eng: InputMaybe<StringQueryOperatorInput>;
+  readonly est: InputMaybe<StringQueryOperatorInput>;
+  readonly eus: InputMaybe<StringQueryOperatorInput>;
+  readonly fao: InputMaybe<StringQueryOperatorInput>;
+  readonly fas: InputMaybe<StringQueryOperatorInput>;
+  readonly fij: InputMaybe<StringQueryOperatorInput>;
+  readonly fil: InputMaybe<StringQueryOperatorInput>;
+  readonly fin: InputMaybe<StringQueryOperatorInput>;
+  readonly fra: InputMaybe<StringQueryOperatorInput>;
+  readonly gil: InputMaybe<StringQueryOperatorInput>;
+  readonly glc: InputMaybe<StringQueryOperatorInput>;
+  readonly gle: InputMaybe<StringQueryOperatorInput>;
+  readonly glv: InputMaybe<StringQueryOperatorInput>;
+  readonly grn: InputMaybe<StringQueryOperatorInput>;
+  readonly gsw: InputMaybe<StringQueryOperatorInput>;
+  readonly hat: InputMaybe<StringQueryOperatorInput>;
+  readonly heb: InputMaybe<StringQueryOperatorInput>;
+  readonly her: InputMaybe<StringQueryOperatorInput>;
+  readonly hgm: InputMaybe<StringQueryOperatorInput>;
+  readonly hif: InputMaybe<StringQueryOperatorInput>;
+  readonly hin: InputMaybe<StringQueryOperatorInput>;
+  readonly hmo: InputMaybe<StringQueryOperatorInput>;
+  readonly hrv: InputMaybe<StringQueryOperatorInput>;
+  readonly hun: InputMaybe<StringQueryOperatorInput>;
+  readonly hye: InputMaybe<StringQueryOperatorInput>;
+  readonly ind: InputMaybe<StringQueryOperatorInput>;
+  readonly isl: InputMaybe<StringQueryOperatorInput>;
+  readonly ita: InputMaybe<StringQueryOperatorInput>;
+  readonly jam: InputMaybe<StringQueryOperatorInput>;
+  readonly jpn: InputMaybe<StringQueryOperatorInput>;
+  readonly kal: InputMaybe<StringQueryOperatorInput>;
+  readonly kat: InputMaybe<StringQueryOperatorInput>;
+  readonly kaz: InputMaybe<StringQueryOperatorInput>;
+  readonly kck: InputMaybe<StringQueryOperatorInput>;
+  readonly khi: InputMaybe<StringQueryOperatorInput>;
+  readonly khm: InputMaybe<StringQueryOperatorInput>;
+  readonly kin: InputMaybe<StringQueryOperatorInput>;
+  readonly kir: InputMaybe<StringQueryOperatorInput>;
+  readonly kon: InputMaybe<StringQueryOperatorInput>;
+  readonly kor: InputMaybe<StringQueryOperatorInput>;
+  readonly kwn: InputMaybe<StringQueryOperatorInput>;
+  readonly lao: InputMaybe<StringQueryOperatorInput>;
+  readonly lat: InputMaybe<StringQueryOperatorInput>;
+  readonly lav: InputMaybe<StringQueryOperatorInput>;
+  readonly lin: InputMaybe<StringQueryOperatorInput>;
+  readonly lit: InputMaybe<StringQueryOperatorInput>;
+  readonly loz: InputMaybe<StringQueryOperatorInput>;
+  readonly ltz: InputMaybe<StringQueryOperatorInput>;
+  readonly lua: InputMaybe<StringQueryOperatorInput>;
+  readonly mah: InputMaybe<StringQueryOperatorInput>;
+  readonly mey: InputMaybe<StringQueryOperatorInput>;
+  readonly mfe: InputMaybe<StringQueryOperatorInput>;
+  readonly mkd: InputMaybe<StringQueryOperatorInput>;
+  readonly mlg: InputMaybe<StringQueryOperatorInput>;
+  readonly mlt: InputMaybe<StringQueryOperatorInput>;
+  readonly mon: InputMaybe<StringQueryOperatorInput>;
+  readonly mri: InputMaybe<StringQueryOperatorInput>;
+  readonly msa: InputMaybe<StringQueryOperatorInput>;
+  readonly mya: InputMaybe<StringQueryOperatorInput>;
+  readonly nau: InputMaybe<StringQueryOperatorInput>;
+  readonly nbl: InputMaybe<StringQueryOperatorInput>;
+  readonly ndc: InputMaybe<StringQueryOperatorInput>;
+  readonly nde: InputMaybe<StringQueryOperatorInput>;
+  readonly ndo: InputMaybe<StringQueryOperatorInput>;
+  readonly nep: InputMaybe<StringQueryOperatorInput>;
+  readonly nfr: InputMaybe<StringQueryOperatorInput>;
+  readonly niu: InputMaybe<StringQueryOperatorInput>;
+  readonly nld: InputMaybe<StringQueryOperatorInput>;
+  readonly nno: InputMaybe<StringQueryOperatorInput>;
+  readonly nob: InputMaybe<StringQueryOperatorInput>;
+  readonly nor: InputMaybe<StringQueryOperatorInput>;
+  readonly nrf: InputMaybe<StringQueryOperatorInput>;
+  readonly nso: InputMaybe<StringQueryOperatorInput>;
+  readonly nya: InputMaybe<StringQueryOperatorInput>;
+  readonly nzs: InputMaybe<StringQueryOperatorInput>;
+  readonly pap: InputMaybe<StringQueryOperatorInput>;
+  readonly pau: InputMaybe<StringQueryOperatorInput>;
+  readonly pih: InputMaybe<StringQueryOperatorInput>;
+  readonly pol: InputMaybe<StringQueryOperatorInput>;
+  readonly por: InputMaybe<StringQueryOperatorInput>;
+  readonly pov: InputMaybe<StringQueryOperatorInput>;
+  readonly prs: InputMaybe<StringQueryOperatorInput>;
+  readonly pus: InputMaybe<StringQueryOperatorInput>;
+  readonly que: InputMaybe<StringQueryOperatorInput>;
+  readonly rar: InputMaybe<StringQueryOperatorInput>;
+  readonly roh: InputMaybe<StringQueryOperatorInput>;
+  readonly ron: InputMaybe<StringQueryOperatorInput>;
+  readonly run: InputMaybe<StringQueryOperatorInput>;
+  readonly rus: InputMaybe<StringQueryOperatorInput>;
+  readonly sag: InputMaybe<StringQueryOperatorInput>;
+  readonly sin: InputMaybe<StringQueryOperatorInput>;
+  readonly slk: InputMaybe<StringQueryOperatorInput>;
+  readonly slv: InputMaybe<StringQueryOperatorInput>;
+  readonly smi: InputMaybe<StringQueryOperatorInput>;
+  readonly smo: InputMaybe<StringQueryOperatorInput>;
+  readonly sna: InputMaybe<StringQueryOperatorInput>;
+  readonly som: InputMaybe<StringQueryOperatorInput>;
+  readonly sot: InputMaybe<StringQueryOperatorInput>;
+  readonly spa: InputMaybe<StringQueryOperatorInput>;
+  readonly sqi: InputMaybe<StringQueryOperatorInput>;
+  readonly srp: InputMaybe<StringQueryOperatorInput>;
+  readonly ssw: InputMaybe<StringQueryOperatorInput>;
+  readonly swa: InputMaybe<StringQueryOperatorInput>;
+  readonly swe: InputMaybe<StringQueryOperatorInput>;
+  readonly tam: InputMaybe<StringQueryOperatorInput>;
+  readonly tet: InputMaybe<StringQueryOperatorInput>;
+  readonly tgk: InputMaybe<StringQueryOperatorInput>;
+  readonly tha: InputMaybe<StringQueryOperatorInput>;
+  readonly tir: InputMaybe<StringQueryOperatorInput>;
+  readonly tkl: InputMaybe<StringQueryOperatorInput>;
+  readonly toi: InputMaybe<StringQueryOperatorInput>;
+  readonly ton: InputMaybe<StringQueryOperatorInput>;
+  readonly tpi: InputMaybe<StringQueryOperatorInput>;
+  readonly tsn: InputMaybe<StringQueryOperatorInput>;
+  readonly tso: InputMaybe<StringQueryOperatorInput>;
+  readonly tuk: InputMaybe<StringQueryOperatorInput>;
+  readonly tur: InputMaybe<StringQueryOperatorInput>;
+  readonly tvl: InputMaybe<StringQueryOperatorInput>;
+  readonly ukr: InputMaybe<StringQueryOperatorInput>;
+  readonly urd: InputMaybe<StringQueryOperatorInput>;
+  readonly uzb: InputMaybe<StringQueryOperatorInput>;
+  readonly ven: InputMaybe<StringQueryOperatorInput>;
+  readonly vie: InputMaybe<StringQueryOperatorInput>;
+  readonly xho: InputMaybe<StringQueryOperatorInput>;
+  readonly zdj: InputMaybe<StringQueryOperatorInput>;
+  readonly zho: InputMaybe<StringQueryOperatorInput>;
+  readonly zib: InputMaybe<StringQueryOperatorInput>;
+  readonly zul: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryLanguagesSortInput = {
+  readonly afr: InputMaybe<SortOrderEnum>;
+  readonly amh: InputMaybe<SortOrderEnum>;
+  readonly ara: InputMaybe<SortOrderEnum>;
+  readonly arc: InputMaybe<SortOrderEnum>;
+  readonly aym: InputMaybe<SortOrderEnum>;
+  readonly aze: InputMaybe<SortOrderEnum>;
+  readonly bel: InputMaybe<SortOrderEnum>;
+  readonly ben: InputMaybe<SortOrderEnum>;
+  readonly ber: InputMaybe<SortOrderEnum>;
+  readonly bis: InputMaybe<SortOrderEnum>;
+  readonly bjz: InputMaybe<SortOrderEnum>;
+  readonly bos: InputMaybe<SortOrderEnum>;
+  readonly bul: InputMaybe<SortOrderEnum>;
+  readonly bwg: InputMaybe<SortOrderEnum>;
+  readonly cal: InputMaybe<SortOrderEnum>;
+  readonly cat: InputMaybe<SortOrderEnum>;
+  readonly ces: InputMaybe<SortOrderEnum>;
+  readonly cha: InputMaybe<SortOrderEnum>;
+  readonly ckb: InputMaybe<SortOrderEnum>;
+  readonly cnr: InputMaybe<SortOrderEnum>;
+  readonly crs: InputMaybe<SortOrderEnum>;
+  readonly dan: InputMaybe<SortOrderEnum>;
+  readonly de: InputMaybe<SortOrderEnum>;
+  readonly deu: InputMaybe<SortOrderEnum>;
+  readonly div: InputMaybe<SortOrderEnum>;
+  readonly dzo: InputMaybe<SortOrderEnum>;
+  readonly ell: InputMaybe<SortOrderEnum>;
+  readonly eng: InputMaybe<SortOrderEnum>;
+  readonly est: InputMaybe<SortOrderEnum>;
+  readonly eus: InputMaybe<SortOrderEnum>;
+  readonly fao: InputMaybe<SortOrderEnum>;
+  readonly fas: InputMaybe<SortOrderEnum>;
+  readonly fij: InputMaybe<SortOrderEnum>;
+  readonly fil: InputMaybe<SortOrderEnum>;
+  readonly fin: InputMaybe<SortOrderEnum>;
+  readonly fra: InputMaybe<SortOrderEnum>;
+  readonly gil: InputMaybe<SortOrderEnum>;
+  readonly glc: InputMaybe<SortOrderEnum>;
+  readonly gle: InputMaybe<SortOrderEnum>;
+  readonly glv: InputMaybe<SortOrderEnum>;
+  readonly grn: InputMaybe<SortOrderEnum>;
+  readonly gsw: InputMaybe<SortOrderEnum>;
+  readonly hat: InputMaybe<SortOrderEnum>;
+  readonly heb: InputMaybe<SortOrderEnum>;
+  readonly her: InputMaybe<SortOrderEnum>;
+  readonly hgm: InputMaybe<SortOrderEnum>;
+  readonly hif: InputMaybe<SortOrderEnum>;
+  readonly hin: InputMaybe<SortOrderEnum>;
+  readonly hmo: InputMaybe<SortOrderEnum>;
+  readonly hrv: InputMaybe<SortOrderEnum>;
+  readonly hun: InputMaybe<SortOrderEnum>;
+  readonly hye: InputMaybe<SortOrderEnum>;
+  readonly ind: InputMaybe<SortOrderEnum>;
+  readonly isl: InputMaybe<SortOrderEnum>;
+  readonly ita: InputMaybe<SortOrderEnum>;
+  readonly jam: InputMaybe<SortOrderEnum>;
+  readonly jpn: InputMaybe<SortOrderEnum>;
+  readonly kal: InputMaybe<SortOrderEnum>;
+  readonly kat: InputMaybe<SortOrderEnum>;
+  readonly kaz: InputMaybe<SortOrderEnum>;
+  readonly kck: InputMaybe<SortOrderEnum>;
+  readonly khi: InputMaybe<SortOrderEnum>;
+  readonly khm: InputMaybe<SortOrderEnum>;
+  readonly kin: InputMaybe<SortOrderEnum>;
+  readonly kir: InputMaybe<SortOrderEnum>;
+  readonly kon: InputMaybe<SortOrderEnum>;
+  readonly kor: InputMaybe<SortOrderEnum>;
+  readonly kwn: InputMaybe<SortOrderEnum>;
+  readonly lao: InputMaybe<SortOrderEnum>;
+  readonly lat: InputMaybe<SortOrderEnum>;
+  readonly lav: InputMaybe<SortOrderEnum>;
+  readonly lin: InputMaybe<SortOrderEnum>;
+  readonly lit: InputMaybe<SortOrderEnum>;
+  readonly loz: InputMaybe<SortOrderEnum>;
+  readonly ltz: InputMaybe<SortOrderEnum>;
+  readonly lua: InputMaybe<SortOrderEnum>;
+  readonly mah: InputMaybe<SortOrderEnum>;
+  readonly mey: InputMaybe<SortOrderEnum>;
+  readonly mfe: InputMaybe<SortOrderEnum>;
+  readonly mkd: InputMaybe<SortOrderEnum>;
+  readonly mlg: InputMaybe<SortOrderEnum>;
+  readonly mlt: InputMaybe<SortOrderEnum>;
+  readonly mon: InputMaybe<SortOrderEnum>;
+  readonly mri: InputMaybe<SortOrderEnum>;
+  readonly msa: InputMaybe<SortOrderEnum>;
+  readonly mya: InputMaybe<SortOrderEnum>;
+  readonly nau: InputMaybe<SortOrderEnum>;
+  readonly nbl: InputMaybe<SortOrderEnum>;
+  readonly ndc: InputMaybe<SortOrderEnum>;
+  readonly nde: InputMaybe<SortOrderEnum>;
+  readonly ndo: InputMaybe<SortOrderEnum>;
+  readonly nep: InputMaybe<SortOrderEnum>;
+  readonly nfr: InputMaybe<SortOrderEnum>;
+  readonly niu: InputMaybe<SortOrderEnum>;
+  readonly nld: InputMaybe<SortOrderEnum>;
+  readonly nno: InputMaybe<SortOrderEnum>;
+  readonly nob: InputMaybe<SortOrderEnum>;
+  readonly nor: InputMaybe<SortOrderEnum>;
+  readonly nrf: InputMaybe<SortOrderEnum>;
+  readonly nso: InputMaybe<SortOrderEnum>;
+  readonly nya: InputMaybe<SortOrderEnum>;
+  readonly nzs: InputMaybe<SortOrderEnum>;
+  readonly pap: InputMaybe<SortOrderEnum>;
+  readonly pau: InputMaybe<SortOrderEnum>;
+  readonly pih: InputMaybe<SortOrderEnum>;
+  readonly pol: InputMaybe<SortOrderEnum>;
+  readonly por: InputMaybe<SortOrderEnum>;
+  readonly pov: InputMaybe<SortOrderEnum>;
+  readonly prs: InputMaybe<SortOrderEnum>;
+  readonly pus: InputMaybe<SortOrderEnum>;
+  readonly que: InputMaybe<SortOrderEnum>;
+  readonly rar: InputMaybe<SortOrderEnum>;
+  readonly roh: InputMaybe<SortOrderEnum>;
+  readonly ron: InputMaybe<SortOrderEnum>;
+  readonly run: InputMaybe<SortOrderEnum>;
+  readonly rus: InputMaybe<SortOrderEnum>;
+  readonly sag: InputMaybe<SortOrderEnum>;
+  readonly sin: InputMaybe<SortOrderEnum>;
+  readonly slk: InputMaybe<SortOrderEnum>;
+  readonly slv: InputMaybe<SortOrderEnum>;
+  readonly smi: InputMaybe<SortOrderEnum>;
+  readonly smo: InputMaybe<SortOrderEnum>;
+  readonly sna: InputMaybe<SortOrderEnum>;
+  readonly som: InputMaybe<SortOrderEnum>;
+  readonly sot: InputMaybe<SortOrderEnum>;
+  readonly spa: InputMaybe<SortOrderEnum>;
+  readonly sqi: InputMaybe<SortOrderEnum>;
+  readonly srp: InputMaybe<SortOrderEnum>;
+  readonly ssw: InputMaybe<SortOrderEnum>;
+  readonly swa: InputMaybe<SortOrderEnum>;
+  readonly swe: InputMaybe<SortOrderEnum>;
+  readonly tam: InputMaybe<SortOrderEnum>;
+  readonly tet: InputMaybe<SortOrderEnum>;
+  readonly tgk: InputMaybe<SortOrderEnum>;
+  readonly tha: InputMaybe<SortOrderEnum>;
+  readonly tir: InputMaybe<SortOrderEnum>;
+  readonly tkl: InputMaybe<SortOrderEnum>;
+  readonly toi: InputMaybe<SortOrderEnum>;
+  readonly ton: InputMaybe<SortOrderEnum>;
+  readonly tpi: InputMaybe<SortOrderEnum>;
+  readonly tsn: InputMaybe<SortOrderEnum>;
+  readonly tso: InputMaybe<SortOrderEnum>;
+  readonly tuk: InputMaybe<SortOrderEnum>;
+  readonly tur: InputMaybe<SortOrderEnum>;
+  readonly tvl: InputMaybe<SortOrderEnum>;
+  readonly ukr: InputMaybe<SortOrderEnum>;
+  readonly urd: InputMaybe<SortOrderEnum>;
+  readonly uzb: InputMaybe<SortOrderEnum>;
+  readonly ven: InputMaybe<SortOrderEnum>;
+  readonly vie: InputMaybe<SortOrderEnum>;
+  readonly xho: InputMaybe<SortOrderEnum>;
+  readonly zdj: InputMaybe<SortOrderEnum>;
+  readonly zho: InputMaybe<SortOrderEnum>;
+  readonly zib: InputMaybe<SortOrderEnum>;
+  readonly zul: InputMaybe<SortOrderEnum>;
+};
+
+type CountryMaps = {
+  readonly googleMaps: Maybe<Scalars['String']>;
+  readonly openStreetMaps: Maybe<Scalars['String']>;
+};
+
+type CountryMapsFieldSelector = {
+  readonly googleMaps: InputMaybe<FieldSelectorEnum>;
+  readonly openStreetMaps: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryMapsFilterInput = {
+  readonly googleMaps: InputMaybe<StringQueryOperatorInput>;
+  readonly openStreetMaps: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryMapsSortInput = {
+  readonly googleMaps: InputMaybe<SortOrderEnum>;
+  readonly openStreetMaps: InputMaybe<SortOrderEnum>;
+};
+
+type CountryName = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly nativeName: Maybe<CountryNameNativeName>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly nativeName: InputMaybe<CountryNameNativeNameFieldSelector>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly nativeName: InputMaybe<CountryNameNativeNameFilterInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeName = {
+  readonly afr: Maybe<CountryNameNativeNameAfr>;
+  readonly amh: Maybe<CountryNameNativeNameAmh>;
+  readonly ara: Maybe<CountryNameNativeNameAra>;
+  readonly arc: Maybe<CountryNameNativeNameArc>;
+  readonly aym: Maybe<CountryNameNativeNameAym>;
+  readonly aze: Maybe<CountryNameNativeNameAze>;
+  readonly bar: Maybe<CountryNameNativeNameBar>;
+  readonly bel: Maybe<CountryNameNativeNameBel>;
+  readonly ben: Maybe<CountryNameNativeNameBen>;
+  readonly ber: Maybe<CountryNameNativeNameBer>;
+  readonly bis: Maybe<CountryNameNativeNameBis>;
+  readonly bjz: Maybe<CountryNameNativeNameBjz>;
+  readonly bos: Maybe<CountryNameNativeNameBos>;
+  readonly bul: Maybe<CountryNameNativeNameBul>;
+  readonly bwg: Maybe<CountryNameNativeNameBwg>;
+  readonly cal: Maybe<CountryNameNativeNameCal>;
+  readonly cat: Maybe<CountryNameNativeNameCat>;
+  readonly ces: Maybe<CountryNameNativeNameCes>;
+  readonly cha: Maybe<CountryNameNativeNameCha>;
+  readonly ckb: Maybe<CountryNameNativeNameCkb>;
+  readonly cnr: Maybe<CountryNameNativeNameCnr>;
+  readonly crs: Maybe<CountryNameNativeNameCrs>;
+  readonly dan: Maybe<CountryNameNativeNameDan>;
+  readonly deu: Maybe<CountryNameNativeNameDeu>;
+  readonly div: Maybe<CountryNameNativeNameDiv>;
+  readonly dzo: Maybe<CountryNameNativeNameDzo>;
+  readonly ell: Maybe<CountryNameNativeNameEll>;
+  readonly eng: Maybe<CountryNameNativeNameEng>;
+  readonly est: Maybe<CountryNameNativeNameEst>;
+  readonly fao: Maybe<CountryNameNativeNameFao>;
+  readonly fas: Maybe<CountryNameNativeNameFas>;
+  readonly fij: Maybe<CountryNameNativeNameFij>;
+  readonly fil: Maybe<CountryNameNativeNameFil>;
+  readonly fin: Maybe<CountryNameNativeNameFin>;
+  readonly fra: Maybe<CountryNameNativeNameFra>;
+  readonly gil: Maybe<CountryNameNativeNameGil>;
+  readonly gle: Maybe<CountryNameNativeNameGle>;
+  readonly glv: Maybe<CountryNameNativeNameGlv>;
+  readonly grn: Maybe<CountryNameNativeNameGrn>;
+  readonly gsw: Maybe<CountryNameNativeNameGsw>;
+  readonly hat: Maybe<CountryNameNativeNameHat>;
+  readonly heb: Maybe<CountryNameNativeNameHeb>;
+  readonly her: Maybe<CountryNameNativeNameHer>;
+  readonly hgm: Maybe<CountryNameNativeNameHgm>;
+  readonly hif: Maybe<CountryNameNativeNameHif>;
+  readonly hin: Maybe<CountryNameNativeNameHin>;
+  readonly hmo: Maybe<CountryNameNativeNameHmo>;
+  readonly hrv: Maybe<CountryNameNativeNameHrv>;
+  readonly hun: Maybe<CountryNameNativeNameHun>;
+  readonly hye: Maybe<CountryNameNativeNameHye>;
+  readonly ind: Maybe<CountryNameNativeNameInd>;
+  readonly isl: Maybe<CountryNameNativeNameIsl>;
+  readonly ita: Maybe<CountryNameNativeNameIta>;
+  readonly jam: Maybe<CountryNameNativeNameJam>;
+  readonly jpn: Maybe<CountryNameNativeNameJpn>;
+  readonly kal: Maybe<CountryNameNativeNameKal>;
+  readonly kat: Maybe<CountryNameNativeNameKat>;
+  readonly kaz: Maybe<CountryNameNativeNameKaz>;
+  readonly kck: Maybe<CountryNameNativeNameKck>;
+  readonly khi: Maybe<CountryNameNativeNameKhi>;
+  readonly khm: Maybe<CountryNameNativeNameKhm>;
+  readonly kin: Maybe<CountryNameNativeNameKin>;
+  readonly kir: Maybe<CountryNameNativeNameKir>;
+  readonly kon: Maybe<CountryNameNativeNameKon>;
+  readonly kor: Maybe<CountryNameNativeNameKor>;
+  readonly kwn: Maybe<CountryNameNativeNameKwn>;
+  readonly lao: Maybe<CountryNameNativeNameLao>;
+  readonly lat: Maybe<CountryNameNativeNameLat>;
+  readonly lav: Maybe<CountryNameNativeNameLav>;
+  readonly lin: Maybe<CountryNameNativeNameLin>;
+  readonly lit: Maybe<CountryNameNativeNameLit>;
+  readonly loz: Maybe<CountryNameNativeNameLoz>;
+  readonly ltz: Maybe<CountryNameNativeNameLtz>;
+  readonly lua: Maybe<CountryNameNativeNameLua>;
+  readonly mah: Maybe<CountryNameNativeNameMah>;
+  readonly mey: Maybe<CountryNameNativeNameMey>;
+  readonly mfe: Maybe<CountryNameNativeNameMfe>;
+  readonly mkd: Maybe<CountryNameNativeNameMkd>;
+  readonly mlg: Maybe<CountryNameNativeNameMlg>;
+  readonly mlt: Maybe<CountryNameNativeNameMlt>;
+  readonly mon: Maybe<CountryNameNativeNameMon>;
+  readonly mri: Maybe<CountryNameNativeNameMri>;
+  readonly msa: Maybe<CountryNameNativeNameMsa>;
+  readonly mya: Maybe<CountryNameNativeNameMya>;
+  readonly nau: Maybe<CountryNameNativeNameNau>;
+  readonly nbl: Maybe<CountryNameNativeNameNbl>;
+  readonly ndc: Maybe<CountryNameNativeNameNdc>;
+  readonly nde: Maybe<CountryNameNativeNameNde>;
+  readonly ndo: Maybe<CountryNameNativeNameNdo>;
+  readonly nep: Maybe<CountryNameNativeNameNep>;
+  readonly nfr: Maybe<CountryNameNativeNameNfr>;
+  readonly niu: Maybe<CountryNameNativeNameNiu>;
+  readonly nld: Maybe<CountryNameNativeNameNld>;
+  readonly nno: Maybe<CountryNameNativeNameNno>;
+  readonly nob: Maybe<CountryNameNativeNameNob>;
+  readonly nor: Maybe<CountryNameNativeNameNor>;
+  readonly nrf: Maybe<CountryNameNativeNameNrf>;
+  readonly nso: Maybe<CountryNameNativeNameNso>;
+  readonly nya: Maybe<CountryNameNativeNameNya>;
+  readonly nzs: Maybe<CountryNameNativeNameNzs>;
+  readonly pap: Maybe<CountryNameNativeNamePap>;
+  readonly pau: Maybe<CountryNameNativeNamePau>;
+  readonly pih: Maybe<CountryNameNativeNamePih>;
+  readonly pol: Maybe<CountryNameNativeNamePol>;
+  readonly por: Maybe<CountryNameNativeNamePor>;
+  readonly pov: Maybe<CountryNameNativeNamePov>;
+  readonly prs: Maybe<CountryNameNativeNamePrs>;
+  readonly pus: Maybe<CountryNameNativeNamePus>;
+  readonly que: Maybe<CountryNameNativeNameQue>;
+  readonly rar: Maybe<CountryNameNativeNameRar>;
+  readonly roh: Maybe<CountryNameNativeNameRoh>;
+  readonly ron: Maybe<CountryNameNativeNameRon>;
+  readonly run: Maybe<CountryNameNativeNameRun>;
+  readonly rus: Maybe<CountryNameNativeNameRus>;
+  readonly sag: Maybe<CountryNameNativeNameSag>;
+  readonly sin: Maybe<CountryNameNativeNameSin>;
+  readonly slk: Maybe<CountryNameNativeNameSlk>;
+  readonly slv: Maybe<CountryNameNativeNameSlv>;
+  readonly smi: Maybe<CountryNameNativeNameSmi>;
+  readonly smo: Maybe<CountryNameNativeNameSmo>;
+  readonly sna: Maybe<CountryNameNativeNameSna>;
+  readonly som: Maybe<CountryNameNativeNameSom>;
+  readonly sot: Maybe<CountryNameNativeNameSot>;
+  readonly spa: Maybe<CountryNameNativeNameSpa>;
+  readonly sqi: Maybe<CountryNameNativeNameSqi>;
+  readonly srp: Maybe<CountryNameNativeNameSrp>;
+  readonly ssw: Maybe<CountryNameNativeNameSsw>;
+  readonly swa: Maybe<CountryNameNativeNameSwa>;
+  readonly swe: Maybe<CountryNameNativeNameSwe>;
+  readonly tam: Maybe<CountryNameNativeNameTam>;
+  readonly tet: Maybe<CountryNameNativeNameTet>;
+  readonly tgk: Maybe<CountryNameNativeNameTgk>;
+  readonly tha: Maybe<CountryNameNativeNameTha>;
+  readonly tir: Maybe<CountryNameNativeNameTir>;
+  readonly tkl: Maybe<CountryNameNativeNameTkl>;
+  readonly toi: Maybe<CountryNameNativeNameToi>;
+  readonly ton: Maybe<CountryNameNativeNameTon>;
+  readonly tpi: Maybe<CountryNameNativeNameTpi>;
+  readonly tsn: Maybe<CountryNameNativeNameTsn>;
+  readonly tso: Maybe<CountryNameNativeNameTso>;
+  readonly tuk: Maybe<CountryNameNativeNameTuk>;
+  readonly tur: Maybe<CountryNameNativeNameTur>;
+  readonly tvl: Maybe<CountryNameNativeNameTvl>;
+  readonly ukr: Maybe<CountryNameNativeNameUkr>;
+  readonly urd: Maybe<CountryNameNativeNameUrd>;
+  readonly uzb: Maybe<CountryNameNativeNameUzb>;
+  readonly ven: Maybe<CountryNameNativeNameVen>;
+  readonly vie: Maybe<CountryNameNativeNameVie>;
+  readonly xho: Maybe<CountryNameNativeNameXho>;
+  readonly zdj: Maybe<CountryNameNativeNameZdj>;
+  readonly zho: Maybe<CountryNameNativeNameZho>;
+  readonly zib: Maybe<CountryNameNativeNameZib>;
+  readonly zul: Maybe<CountryNameNativeNameZul>;
+};
+
+type CountryNameNativeNameAfr = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameAfrFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameAfrFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameAfrSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameAmh = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameAmhFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameAmhFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameAmhSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameAra = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameAraFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameAraFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameAraSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameArc = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameArcFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameArcFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameArcSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameAym = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameAymFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameAymFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameAymSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameAze = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameAzeFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameAzeFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameAzeSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameBar = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameBarFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameBarFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameBarSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameBel = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameBelFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameBelFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameBelSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameBen = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameBenFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameBenFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameBenSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameBer = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameBerFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameBerFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameBerSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameBis = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameBisFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameBisFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameBisSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameBjz = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameBjzFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameBjzFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameBjzSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameBos = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameBosFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameBosFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameBosSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameBul = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameBulFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameBulFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameBulSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameBwg = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameBwgFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameBwgFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameBwgSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameCal = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameCalFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameCalFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameCalSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameCat = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameCatFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameCatFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameCatSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameCes = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameCesFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameCesFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameCesSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameCha = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameChaFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameChaFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameChaSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameCkb = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameCkbFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameCkbFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameCkbSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameCnr = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameCnrFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameCnrFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameCnrSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameCrs = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameCrsFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameCrsFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameCrsSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameDan = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameDanFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameDanFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameDanSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameDeu = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameDeuFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameDeuFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameDeuSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameDiv = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameDivFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameDivFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameDivSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameDzo = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameDzoFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameDzoFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameDzoSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameEll = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameEllFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameEllFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameEllSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameEng = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameEngFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameEngFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameEngSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameEst = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameEstFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameEstFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameEstSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameFao = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameFaoFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameFaoFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameFaoSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameFas = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameFasFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameFasFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameFasSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameFieldSelector = {
+  readonly afr: InputMaybe<CountryNameNativeNameAfrFieldSelector>;
+  readonly amh: InputMaybe<CountryNameNativeNameAmhFieldSelector>;
+  readonly ara: InputMaybe<CountryNameNativeNameAraFieldSelector>;
+  readonly arc: InputMaybe<CountryNameNativeNameArcFieldSelector>;
+  readonly aym: InputMaybe<CountryNameNativeNameAymFieldSelector>;
+  readonly aze: InputMaybe<CountryNameNativeNameAzeFieldSelector>;
+  readonly bar: InputMaybe<CountryNameNativeNameBarFieldSelector>;
+  readonly bel: InputMaybe<CountryNameNativeNameBelFieldSelector>;
+  readonly ben: InputMaybe<CountryNameNativeNameBenFieldSelector>;
+  readonly ber: InputMaybe<CountryNameNativeNameBerFieldSelector>;
+  readonly bis: InputMaybe<CountryNameNativeNameBisFieldSelector>;
+  readonly bjz: InputMaybe<CountryNameNativeNameBjzFieldSelector>;
+  readonly bos: InputMaybe<CountryNameNativeNameBosFieldSelector>;
+  readonly bul: InputMaybe<CountryNameNativeNameBulFieldSelector>;
+  readonly bwg: InputMaybe<CountryNameNativeNameBwgFieldSelector>;
+  readonly cal: InputMaybe<CountryNameNativeNameCalFieldSelector>;
+  readonly cat: InputMaybe<CountryNameNativeNameCatFieldSelector>;
+  readonly ces: InputMaybe<CountryNameNativeNameCesFieldSelector>;
+  readonly cha: InputMaybe<CountryNameNativeNameChaFieldSelector>;
+  readonly ckb: InputMaybe<CountryNameNativeNameCkbFieldSelector>;
+  readonly cnr: InputMaybe<CountryNameNativeNameCnrFieldSelector>;
+  readonly crs: InputMaybe<CountryNameNativeNameCrsFieldSelector>;
+  readonly dan: InputMaybe<CountryNameNativeNameDanFieldSelector>;
+  readonly deu: InputMaybe<CountryNameNativeNameDeuFieldSelector>;
+  readonly div: InputMaybe<CountryNameNativeNameDivFieldSelector>;
+  readonly dzo: InputMaybe<CountryNameNativeNameDzoFieldSelector>;
+  readonly ell: InputMaybe<CountryNameNativeNameEllFieldSelector>;
+  readonly eng: InputMaybe<CountryNameNativeNameEngFieldSelector>;
+  readonly est: InputMaybe<CountryNameNativeNameEstFieldSelector>;
+  readonly fao: InputMaybe<CountryNameNativeNameFaoFieldSelector>;
+  readonly fas: InputMaybe<CountryNameNativeNameFasFieldSelector>;
+  readonly fij: InputMaybe<CountryNameNativeNameFijFieldSelector>;
+  readonly fil: InputMaybe<CountryNameNativeNameFilFieldSelector>;
+  readonly fin: InputMaybe<CountryNameNativeNameFinFieldSelector>;
+  readonly fra: InputMaybe<CountryNameNativeNameFraFieldSelector>;
+  readonly gil: InputMaybe<CountryNameNativeNameGilFieldSelector>;
+  readonly gle: InputMaybe<CountryNameNativeNameGleFieldSelector>;
+  readonly glv: InputMaybe<CountryNameNativeNameGlvFieldSelector>;
+  readonly grn: InputMaybe<CountryNameNativeNameGrnFieldSelector>;
+  readonly gsw: InputMaybe<CountryNameNativeNameGswFieldSelector>;
+  readonly hat: InputMaybe<CountryNameNativeNameHatFieldSelector>;
+  readonly heb: InputMaybe<CountryNameNativeNameHebFieldSelector>;
+  readonly her: InputMaybe<CountryNameNativeNameHerFieldSelector>;
+  readonly hgm: InputMaybe<CountryNameNativeNameHgmFieldSelector>;
+  readonly hif: InputMaybe<CountryNameNativeNameHifFieldSelector>;
+  readonly hin: InputMaybe<CountryNameNativeNameHinFieldSelector>;
+  readonly hmo: InputMaybe<CountryNameNativeNameHmoFieldSelector>;
+  readonly hrv: InputMaybe<CountryNameNativeNameHrvFieldSelector>;
+  readonly hun: InputMaybe<CountryNameNativeNameHunFieldSelector>;
+  readonly hye: InputMaybe<CountryNameNativeNameHyeFieldSelector>;
+  readonly ind: InputMaybe<CountryNameNativeNameIndFieldSelector>;
+  readonly isl: InputMaybe<CountryNameNativeNameIslFieldSelector>;
+  readonly ita: InputMaybe<CountryNameNativeNameItaFieldSelector>;
+  readonly jam: InputMaybe<CountryNameNativeNameJamFieldSelector>;
+  readonly jpn: InputMaybe<CountryNameNativeNameJpnFieldSelector>;
+  readonly kal: InputMaybe<CountryNameNativeNameKalFieldSelector>;
+  readonly kat: InputMaybe<CountryNameNativeNameKatFieldSelector>;
+  readonly kaz: InputMaybe<CountryNameNativeNameKazFieldSelector>;
+  readonly kck: InputMaybe<CountryNameNativeNameKckFieldSelector>;
+  readonly khi: InputMaybe<CountryNameNativeNameKhiFieldSelector>;
+  readonly khm: InputMaybe<CountryNameNativeNameKhmFieldSelector>;
+  readonly kin: InputMaybe<CountryNameNativeNameKinFieldSelector>;
+  readonly kir: InputMaybe<CountryNameNativeNameKirFieldSelector>;
+  readonly kon: InputMaybe<CountryNameNativeNameKonFieldSelector>;
+  readonly kor: InputMaybe<CountryNameNativeNameKorFieldSelector>;
+  readonly kwn: InputMaybe<CountryNameNativeNameKwnFieldSelector>;
+  readonly lao: InputMaybe<CountryNameNativeNameLaoFieldSelector>;
+  readonly lat: InputMaybe<CountryNameNativeNameLatFieldSelector>;
+  readonly lav: InputMaybe<CountryNameNativeNameLavFieldSelector>;
+  readonly lin: InputMaybe<CountryNameNativeNameLinFieldSelector>;
+  readonly lit: InputMaybe<CountryNameNativeNameLitFieldSelector>;
+  readonly loz: InputMaybe<CountryNameNativeNameLozFieldSelector>;
+  readonly ltz: InputMaybe<CountryNameNativeNameLtzFieldSelector>;
+  readonly lua: InputMaybe<CountryNameNativeNameLuaFieldSelector>;
+  readonly mah: InputMaybe<CountryNameNativeNameMahFieldSelector>;
+  readonly mey: InputMaybe<CountryNameNativeNameMeyFieldSelector>;
+  readonly mfe: InputMaybe<CountryNameNativeNameMfeFieldSelector>;
+  readonly mkd: InputMaybe<CountryNameNativeNameMkdFieldSelector>;
+  readonly mlg: InputMaybe<CountryNameNativeNameMlgFieldSelector>;
+  readonly mlt: InputMaybe<CountryNameNativeNameMltFieldSelector>;
+  readonly mon: InputMaybe<CountryNameNativeNameMonFieldSelector>;
+  readonly mri: InputMaybe<CountryNameNativeNameMriFieldSelector>;
+  readonly msa: InputMaybe<CountryNameNativeNameMsaFieldSelector>;
+  readonly mya: InputMaybe<CountryNameNativeNameMyaFieldSelector>;
+  readonly nau: InputMaybe<CountryNameNativeNameNauFieldSelector>;
+  readonly nbl: InputMaybe<CountryNameNativeNameNblFieldSelector>;
+  readonly ndc: InputMaybe<CountryNameNativeNameNdcFieldSelector>;
+  readonly nde: InputMaybe<CountryNameNativeNameNdeFieldSelector>;
+  readonly ndo: InputMaybe<CountryNameNativeNameNdoFieldSelector>;
+  readonly nep: InputMaybe<CountryNameNativeNameNepFieldSelector>;
+  readonly nfr: InputMaybe<CountryNameNativeNameNfrFieldSelector>;
+  readonly niu: InputMaybe<CountryNameNativeNameNiuFieldSelector>;
+  readonly nld: InputMaybe<CountryNameNativeNameNldFieldSelector>;
+  readonly nno: InputMaybe<CountryNameNativeNameNnoFieldSelector>;
+  readonly nob: InputMaybe<CountryNameNativeNameNobFieldSelector>;
+  readonly nor: InputMaybe<CountryNameNativeNameNorFieldSelector>;
+  readonly nrf: InputMaybe<CountryNameNativeNameNrfFieldSelector>;
+  readonly nso: InputMaybe<CountryNameNativeNameNsoFieldSelector>;
+  readonly nya: InputMaybe<CountryNameNativeNameNyaFieldSelector>;
+  readonly nzs: InputMaybe<CountryNameNativeNameNzsFieldSelector>;
+  readonly pap: InputMaybe<CountryNameNativeNamePapFieldSelector>;
+  readonly pau: InputMaybe<CountryNameNativeNamePauFieldSelector>;
+  readonly pih: InputMaybe<CountryNameNativeNamePihFieldSelector>;
+  readonly pol: InputMaybe<CountryNameNativeNamePolFieldSelector>;
+  readonly por: InputMaybe<CountryNameNativeNamePorFieldSelector>;
+  readonly pov: InputMaybe<CountryNameNativeNamePovFieldSelector>;
+  readonly prs: InputMaybe<CountryNameNativeNamePrsFieldSelector>;
+  readonly pus: InputMaybe<CountryNameNativeNamePusFieldSelector>;
+  readonly que: InputMaybe<CountryNameNativeNameQueFieldSelector>;
+  readonly rar: InputMaybe<CountryNameNativeNameRarFieldSelector>;
+  readonly roh: InputMaybe<CountryNameNativeNameRohFieldSelector>;
+  readonly ron: InputMaybe<CountryNameNativeNameRonFieldSelector>;
+  readonly run: InputMaybe<CountryNameNativeNameRunFieldSelector>;
+  readonly rus: InputMaybe<CountryNameNativeNameRusFieldSelector>;
+  readonly sag: InputMaybe<CountryNameNativeNameSagFieldSelector>;
+  readonly sin: InputMaybe<CountryNameNativeNameSinFieldSelector>;
+  readonly slk: InputMaybe<CountryNameNativeNameSlkFieldSelector>;
+  readonly slv: InputMaybe<CountryNameNativeNameSlvFieldSelector>;
+  readonly smi: InputMaybe<CountryNameNativeNameSmiFieldSelector>;
+  readonly smo: InputMaybe<CountryNameNativeNameSmoFieldSelector>;
+  readonly sna: InputMaybe<CountryNameNativeNameSnaFieldSelector>;
+  readonly som: InputMaybe<CountryNameNativeNameSomFieldSelector>;
+  readonly sot: InputMaybe<CountryNameNativeNameSotFieldSelector>;
+  readonly spa: InputMaybe<CountryNameNativeNameSpaFieldSelector>;
+  readonly sqi: InputMaybe<CountryNameNativeNameSqiFieldSelector>;
+  readonly srp: InputMaybe<CountryNameNativeNameSrpFieldSelector>;
+  readonly ssw: InputMaybe<CountryNameNativeNameSswFieldSelector>;
+  readonly swa: InputMaybe<CountryNameNativeNameSwaFieldSelector>;
+  readonly swe: InputMaybe<CountryNameNativeNameSweFieldSelector>;
+  readonly tam: InputMaybe<CountryNameNativeNameTamFieldSelector>;
+  readonly tet: InputMaybe<CountryNameNativeNameTetFieldSelector>;
+  readonly tgk: InputMaybe<CountryNameNativeNameTgkFieldSelector>;
+  readonly tha: InputMaybe<CountryNameNativeNameThaFieldSelector>;
+  readonly tir: InputMaybe<CountryNameNativeNameTirFieldSelector>;
+  readonly tkl: InputMaybe<CountryNameNativeNameTklFieldSelector>;
+  readonly toi: InputMaybe<CountryNameNativeNameToiFieldSelector>;
+  readonly ton: InputMaybe<CountryNameNativeNameTonFieldSelector>;
+  readonly tpi: InputMaybe<CountryNameNativeNameTpiFieldSelector>;
+  readonly tsn: InputMaybe<CountryNameNativeNameTsnFieldSelector>;
+  readonly tso: InputMaybe<CountryNameNativeNameTsoFieldSelector>;
+  readonly tuk: InputMaybe<CountryNameNativeNameTukFieldSelector>;
+  readonly tur: InputMaybe<CountryNameNativeNameTurFieldSelector>;
+  readonly tvl: InputMaybe<CountryNameNativeNameTvlFieldSelector>;
+  readonly ukr: InputMaybe<CountryNameNativeNameUkrFieldSelector>;
+  readonly urd: InputMaybe<CountryNameNativeNameUrdFieldSelector>;
+  readonly uzb: InputMaybe<CountryNameNativeNameUzbFieldSelector>;
+  readonly ven: InputMaybe<CountryNameNativeNameVenFieldSelector>;
+  readonly vie: InputMaybe<CountryNameNativeNameVieFieldSelector>;
+  readonly xho: InputMaybe<CountryNameNativeNameXhoFieldSelector>;
+  readonly zdj: InputMaybe<CountryNameNativeNameZdjFieldSelector>;
+  readonly zho: InputMaybe<CountryNameNativeNameZhoFieldSelector>;
+  readonly zib: InputMaybe<CountryNameNativeNameZibFieldSelector>;
+  readonly zul: InputMaybe<CountryNameNativeNameZulFieldSelector>;
+};
+
+type CountryNameNativeNameFij = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameFijFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameFijFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameFijSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameFil = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameFilFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameFilFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameFilSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameFilterInput = {
+  readonly afr: InputMaybe<CountryNameNativeNameAfrFilterInput>;
+  readonly amh: InputMaybe<CountryNameNativeNameAmhFilterInput>;
+  readonly ara: InputMaybe<CountryNameNativeNameAraFilterInput>;
+  readonly arc: InputMaybe<CountryNameNativeNameArcFilterInput>;
+  readonly aym: InputMaybe<CountryNameNativeNameAymFilterInput>;
+  readonly aze: InputMaybe<CountryNameNativeNameAzeFilterInput>;
+  readonly bar: InputMaybe<CountryNameNativeNameBarFilterInput>;
+  readonly bel: InputMaybe<CountryNameNativeNameBelFilterInput>;
+  readonly ben: InputMaybe<CountryNameNativeNameBenFilterInput>;
+  readonly ber: InputMaybe<CountryNameNativeNameBerFilterInput>;
+  readonly bis: InputMaybe<CountryNameNativeNameBisFilterInput>;
+  readonly bjz: InputMaybe<CountryNameNativeNameBjzFilterInput>;
+  readonly bos: InputMaybe<CountryNameNativeNameBosFilterInput>;
+  readonly bul: InputMaybe<CountryNameNativeNameBulFilterInput>;
+  readonly bwg: InputMaybe<CountryNameNativeNameBwgFilterInput>;
+  readonly cal: InputMaybe<CountryNameNativeNameCalFilterInput>;
+  readonly cat: InputMaybe<CountryNameNativeNameCatFilterInput>;
+  readonly ces: InputMaybe<CountryNameNativeNameCesFilterInput>;
+  readonly cha: InputMaybe<CountryNameNativeNameChaFilterInput>;
+  readonly ckb: InputMaybe<CountryNameNativeNameCkbFilterInput>;
+  readonly cnr: InputMaybe<CountryNameNativeNameCnrFilterInput>;
+  readonly crs: InputMaybe<CountryNameNativeNameCrsFilterInput>;
+  readonly dan: InputMaybe<CountryNameNativeNameDanFilterInput>;
+  readonly deu: InputMaybe<CountryNameNativeNameDeuFilterInput>;
+  readonly div: InputMaybe<CountryNameNativeNameDivFilterInput>;
+  readonly dzo: InputMaybe<CountryNameNativeNameDzoFilterInput>;
+  readonly ell: InputMaybe<CountryNameNativeNameEllFilterInput>;
+  readonly eng: InputMaybe<CountryNameNativeNameEngFilterInput>;
+  readonly est: InputMaybe<CountryNameNativeNameEstFilterInput>;
+  readonly fao: InputMaybe<CountryNameNativeNameFaoFilterInput>;
+  readonly fas: InputMaybe<CountryNameNativeNameFasFilterInput>;
+  readonly fij: InputMaybe<CountryNameNativeNameFijFilterInput>;
+  readonly fil: InputMaybe<CountryNameNativeNameFilFilterInput>;
+  readonly fin: InputMaybe<CountryNameNativeNameFinFilterInput>;
+  readonly fra: InputMaybe<CountryNameNativeNameFraFilterInput>;
+  readonly gil: InputMaybe<CountryNameNativeNameGilFilterInput>;
+  readonly gle: InputMaybe<CountryNameNativeNameGleFilterInput>;
+  readonly glv: InputMaybe<CountryNameNativeNameGlvFilterInput>;
+  readonly grn: InputMaybe<CountryNameNativeNameGrnFilterInput>;
+  readonly gsw: InputMaybe<CountryNameNativeNameGswFilterInput>;
+  readonly hat: InputMaybe<CountryNameNativeNameHatFilterInput>;
+  readonly heb: InputMaybe<CountryNameNativeNameHebFilterInput>;
+  readonly her: InputMaybe<CountryNameNativeNameHerFilterInput>;
+  readonly hgm: InputMaybe<CountryNameNativeNameHgmFilterInput>;
+  readonly hif: InputMaybe<CountryNameNativeNameHifFilterInput>;
+  readonly hin: InputMaybe<CountryNameNativeNameHinFilterInput>;
+  readonly hmo: InputMaybe<CountryNameNativeNameHmoFilterInput>;
+  readonly hrv: InputMaybe<CountryNameNativeNameHrvFilterInput>;
+  readonly hun: InputMaybe<CountryNameNativeNameHunFilterInput>;
+  readonly hye: InputMaybe<CountryNameNativeNameHyeFilterInput>;
+  readonly ind: InputMaybe<CountryNameNativeNameIndFilterInput>;
+  readonly isl: InputMaybe<CountryNameNativeNameIslFilterInput>;
+  readonly ita: InputMaybe<CountryNameNativeNameItaFilterInput>;
+  readonly jam: InputMaybe<CountryNameNativeNameJamFilterInput>;
+  readonly jpn: InputMaybe<CountryNameNativeNameJpnFilterInput>;
+  readonly kal: InputMaybe<CountryNameNativeNameKalFilterInput>;
+  readonly kat: InputMaybe<CountryNameNativeNameKatFilterInput>;
+  readonly kaz: InputMaybe<CountryNameNativeNameKazFilterInput>;
+  readonly kck: InputMaybe<CountryNameNativeNameKckFilterInput>;
+  readonly khi: InputMaybe<CountryNameNativeNameKhiFilterInput>;
+  readonly khm: InputMaybe<CountryNameNativeNameKhmFilterInput>;
+  readonly kin: InputMaybe<CountryNameNativeNameKinFilterInput>;
+  readonly kir: InputMaybe<CountryNameNativeNameKirFilterInput>;
+  readonly kon: InputMaybe<CountryNameNativeNameKonFilterInput>;
+  readonly kor: InputMaybe<CountryNameNativeNameKorFilterInput>;
+  readonly kwn: InputMaybe<CountryNameNativeNameKwnFilterInput>;
+  readonly lao: InputMaybe<CountryNameNativeNameLaoFilterInput>;
+  readonly lat: InputMaybe<CountryNameNativeNameLatFilterInput>;
+  readonly lav: InputMaybe<CountryNameNativeNameLavFilterInput>;
+  readonly lin: InputMaybe<CountryNameNativeNameLinFilterInput>;
+  readonly lit: InputMaybe<CountryNameNativeNameLitFilterInput>;
+  readonly loz: InputMaybe<CountryNameNativeNameLozFilterInput>;
+  readonly ltz: InputMaybe<CountryNameNativeNameLtzFilterInput>;
+  readonly lua: InputMaybe<CountryNameNativeNameLuaFilterInput>;
+  readonly mah: InputMaybe<CountryNameNativeNameMahFilterInput>;
+  readonly mey: InputMaybe<CountryNameNativeNameMeyFilterInput>;
+  readonly mfe: InputMaybe<CountryNameNativeNameMfeFilterInput>;
+  readonly mkd: InputMaybe<CountryNameNativeNameMkdFilterInput>;
+  readonly mlg: InputMaybe<CountryNameNativeNameMlgFilterInput>;
+  readonly mlt: InputMaybe<CountryNameNativeNameMltFilterInput>;
+  readonly mon: InputMaybe<CountryNameNativeNameMonFilterInput>;
+  readonly mri: InputMaybe<CountryNameNativeNameMriFilterInput>;
+  readonly msa: InputMaybe<CountryNameNativeNameMsaFilterInput>;
+  readonly mya: InputMaybe<CountryNameNativeNameMyaFilterInput>;
+  readonly nau: InputMaybe<CountryNameNativeNameNauFilterInput>;
+  readonly nbl: InputMaybe<CountryNameNativeNameNblFilterInput>;
+  readonly ndc: InputMaybe<CountryNameNativeNameNdcFilterInput>;
+  readonly nde: InputMaybe<CountryNameNativeNameNdeFilterInput>;
+  readonly ndo: InputMaybe<CountryNameNativeNameNdoFilterInput>;
+  readonly nep: InputMaybe<CountryNameNativeNameNepFilterInput>;
+  readonly nfr: InputMaybe<CountryNameNativeNameNfrFilterInput>;
+  readonly niu: InputMaybe<CountryNameNativeNameNiuFilterInput>;
+  readonly nld: InputMaybe<CountryNameNativeNameNldFilterInput>;
+  readonly nno: InputMaybe<CountryNameNativeNameNnoFilterInput>;
+  readonly nob: InputMaybe<CountryNameNativeNameNobFilterInput>;
+  readonly nor: InputMaybe<CountryNameNativeNameNorFilterInput>;
+  readonly nrf: InputMaybe<CountryNameNativeNameNrfFilterInput>;
+  readonly nso: InputMaybe<CountryNameNativeNameNsoFilterInput>;
+  readonly nya: InputMaybe<CountryNameNativeNameNyaFilterInput>;
+  readonly nzs: InputMaybe<CountryNameNativeNameNzsFilterInput>;
+  readonly pap: InputMaybe<CountryNameNativeNamePapFilterInput>;
+  readonly pau: InputMaybe<CountryNameNativeNamePauFilterInput>;
+  readonly pih: InputMaybe<CountryNameNativeNamePihFilterInput>;
+  readonly pol: InputMaybe<CountryNameNativeNamePolFilterInput>;
+  readonly por: InputMaybe<CountryNameNativeNamePorFilterInput>;
+  readonly pov: InputMaybe<CountryNameNativeNamePovFilterInput>;
+  readonly prs: InputMaybe<CountryNameNativeNamePrsFilterInput>;
+  readonly pus: InputMaybe<CountryNameNativeNamePusFilterInput>;
+  readonly que: InputMaybe<CountryNameNativeNameQueFilterInput>;
+  readonly rar: InputMaybe<CountryNameNativeNameRarFilterInput>;
+  readonly roh: InputMaybe<CountryNameNativeNameRohFilterInput>;
+  readonly ron: InputMaybe<CountryNameNativeNameRonFilterInput>;
+  readonly run: InputMaybe<CountryNameNativeNameRunFilterInput>;
+  readonly rus: InputMaybe<CountryNameNativeNameRusFilterInput>;
+  readonly sag: InputMaybe<CountryNameNativeNameSagFilterInput>;
+  readonly sin: InputMaybe<CountryNameNativeNameSinFilterInput>;
+  readonly slk: InputMaybe<CountryNameNativeNameSlkFilterInput>;
+  readonly slv: InputMaybe<CountryNameNativeNameSlvFilterInput>;
+  readonly smi: InputMaybe<CountryNameNativeNameSmiFilterInput>;
+  readonly smo: InputMaybe<CountryNameNativeNameSmoFilterInput>;
+  readonly sna: InputMaybe<CountryNameNativeNameSnaFilterInput>;
+  readonly som: InputMaybe<CountryNameNativeNameSomFilterInput>;
+  readonly sot: InputMaybe<CountryNameNativeNameSotFilterInput>;
+  readonly spa: InputMaybe<CountryNameNativeNameSpaFilterInput>;
+  readonly sqi: InputMaybe<CountryNameNativeNameSqiFilterInput>;
+  readonly srp: InputMaybe<CountryNameNativeNameSrpFilterInput>;
+  readonly ssw: InputMaybe<CountryNameNativeNameSswFilterInput>;
+  readonly swa: InputMaybe<CountryNameNativeNameSwaFilterInput>;
+  readonly swe: InputMaybe<CountryNameNativeNameSweFilterInput>;
+  readonly tam: InputMaybe<CountryNameNativeNameTamFilterInput>;
+  readonly tet: InputMaybe<CountryNameNativeNameTetFilterInput>;
+  readonly tgk: InputMaybe<CountryNameNativeNameTgkFilterInput>;
+  readonly tha: InputMaybe<CountryNameNativeNameThaFilterInput>;
+  readonly tir: InputMaybe<CountryNameNativeNameTirFilterInput>;
+  readonly tkl: InputMaybe<CountryNameNativeNameTklFilterInput>;
+  readonly toi: InputMaybe<CountryNameNativeNameToiFilterInput>;
+  readonly ton: InputMaybe<CountryNameNativeNameTonFilterInput>;
+  readonly tpi: InputMaybe<CountryNameNativeNameTpiFilterInput>;
+  readonly tsn: InputMaybe<CountryNameNativeNameTsnFilterInput>;
+  readonly tso: InputMaybe<CountryNameNativeNameTsoFilterInput>;
+  readonly tuk: InputMaybe<CountryNameNativeNameTukFilterInput>;
+  readonly tur: InputMaybe<CountryNameNativeNameTurFilterInput>;
+  readonly tvl: InputMaybe<CountryNameNativeNameTvlFilterInput>;
+  readonly ukr: InputMaybe<CountryNameNativeNameUkrFilterInput>;
+  readonly urd: InputMaybe<CountryNameNativeNameUrdFilterInput>;
+  readonly uzb: InputMaybe<CountryNameNativeNameUzbFilterInput>;
+  readonly ven: InputMaybe<CountryNameNativeNameVenFilterInput>;
+  readonly vie: InputMaybe<CountryNameNativeNameVieFilterInput>;
+  readonly xho: InputMaybe<CountryNameNativeNameXhoFilterInput>;
+  readonly zdj: InputMaybe<CountryNameNativeNameZdjFilterInput>;
+  readonly zho: InputMaybe<CountryNameNativeNameZhoFilterInput>;
+  readonly zib: InputMaybe<CountryNameNativeNameZibFilterInput>;
+  readonly zul: InputMaybe<CountryNameNativeNameZulFilterInput>;
+};
+
+type CountryNameNativeNameFin = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameFinFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameFinFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameFinSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameFra = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameFraFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameFraFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameFraSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameGil = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameGilFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameGilFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameGilSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameGle = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameGleFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameGleFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameGleSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameGlv = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameGlvFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameGlvFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameGlvSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameGrn = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameGrnFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameGrnFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameGrnSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameGsw = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameGswFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameGswFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameGswSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameHat = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameHatFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameHatFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameHatSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameHeb = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameHebFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameHebFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameHebSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameHer = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameHerFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameHerFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameHerSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameHgm = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameHgmFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameHgmFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameHgmSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameHif = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameHifFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameHifFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameHifSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameHin = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameHinFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameHinFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameHinSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameHmo = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameHmoFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameHmoFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameHmoSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameHrv = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameHrvFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameHrvFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameHrvSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameHun = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameHunFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameHunFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameHunSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameHye = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameHyeFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameHyeFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameHyeSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameInd = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameIndFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameIndFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameIndSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameIsl = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameIslFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameIslFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameIslSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameIta = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameItaFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameItaFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameItaSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameJam = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameJamFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameJamFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameJamSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameJpn = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameJpnFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameJpnFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameJpnSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameKal = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameKalFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameKalFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameKalSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameKat = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameKatFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameKatFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameKatSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameKaz = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameKazFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameKazFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameKazSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameKck = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameKckFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameKckFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameKckSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameKhi = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameKhiFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameKhiFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameKhiSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameKhm = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameKhmFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameKhmFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameKhmSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameKin = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameKinFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameKinFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameKinSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameKir = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameKirFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameKirFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameKirSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameKon = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameKonFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameKonFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameKonSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameKor = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameKorFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameKorFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameKorSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameKwn = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameKwnFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameKwnFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameKwnSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameLao = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameLaoFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameLaoFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameLaoSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameLat = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameLatFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameLatFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameLatSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameLav = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameLavFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameLavFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameLavSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameLin = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameLinFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameLinFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameLinSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameLit = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameLitFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameLitFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameLitSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameLoz = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameLozFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameLozFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameLozSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameLtz = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameLtzFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameLtzFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameLtzSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameLua = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameLuaFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameLuaFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameLuaSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameMah = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameMahFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameMahFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameMahSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameMey = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameMeyFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameMeyFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameMeySortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameMfe = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameMfeFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameMfeFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameMfeSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameMkd = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameMkdFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameMkdFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameMkdSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameMlg = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameMlgFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameMlgFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameMlgSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameMlt = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameMltFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameMltFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameMltSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameMon = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameMonFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameMonFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameMonSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameMri = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameMriFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameMriFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameMriSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameMsa = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameMsaFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameMsaFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameMsaSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameMya = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameMyaFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameMyaFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameMyaSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameNau = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameNauFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameNauFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameNauSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameNbl = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameNblFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameNblFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameNblSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameNdc = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameNdcFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameNdcFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameNdcSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameNde = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameNdeFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameNdeFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameNdeSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameNdo = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameNdoFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameNdoFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameNdoSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameNep = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameNepFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameNepFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameNepSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameNfr = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameNfrFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameNfrFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameNfrSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameNiu = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameNiuFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameNiuFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameNiuSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameNld = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameNldFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameNldFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameNldSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameNno = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameNnoFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameNnoFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameNnoSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameNob = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameNobFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameNobFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameNobSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameNor = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameNorFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameNorFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameNorSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameNrf = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameNrfFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameNrfFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameNrfSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameNso = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameNsoFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameNsoFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameNsoSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameNya = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameNyaFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameNyaFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameNyaSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameNzs = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameNzsFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameNzsFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameNzsSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNamePap = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNamePapFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNamePapFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNamePapSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNamePau = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNamePauFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNamePauFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNamePauSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNamePih = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNamePihFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNamePihFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNamePihSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNamePol = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNamePolFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNamePolFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNamePolSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNamePor = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNamePorFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNamePorFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNamePorSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNamePov = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNamePovFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNamePovFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNamePovSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNamePrs = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNamePrsFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNamePrsFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNamePrsSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNamePus = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNamePusFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNamePusFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNamePusSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameQue = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameQueFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameQueFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameQueSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameRar = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameRarFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameRarFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameRarSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameRoh = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameRohFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameRohFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameRohSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameRon = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameRonFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameRonFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameRonSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameRun = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameRunFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameRunFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameRunSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameRus = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameRusFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameRusFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameRusSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameSag = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameSagFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameSagFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameSagSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameSin = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameSinFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameSinFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameSinSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameSlk = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameSlkFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameSlkFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameSlkSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameSlv = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameSlvFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameSlvFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameSlvSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameSmi = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameSmiFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameSmiFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameSmiSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameSmo = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameSmoFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameSmoFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameSmoSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameSna = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameSnaFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameSnaFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameSnaSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameSom = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameSomFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameSomFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameSomSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameSortInput = {
+  readonly afr: InputMaybe<CountryNameNativeNameAfrSortInput>;
+  readonly amh: InputMaybe<CountryNameNativeNameAmhSortInput>;
+  readonly ara: InputMaybe<CountryNameNativeNameAraSortInput>;
+  readonly arc: InputMaybe<CountryNameNativeNameArcSortInput>;
+  readonly aym: InputMaybe<CountryNameNativeNameAymSortInput>;
+  readonly aze: InputMaybe<CountryNameNativeNameAzeSortInput>;
+  readonly bar: InputMaybe<CountryNameNativeNameBarSortInput>;
+  readonly bel: InputMaybe<CountryNameNativeNameBelSortInput>;
+  readonly ben: InputMaybe<CountryNameNativeNameBenSortInput>;
+  readonly ber: InputMaybe<CountryNameNativeNameBerSortInput>;
+  readonly bis: InputMaybe<CountryNameNativeNameBisSortInput>;
+  readonly bjz: InputMaybe<CountryNameNativeNameBjzSortInput>;
+  readonly bos: InputMaybe<CountryNameNativeNameBosSortInput>;
+  readonly bul: InputMaybe<CountryNameNativeNameBulSortInput>;
+  readonly bwg: InputMaybe<CountryNameNativeNameBwgSortInput>;
+  readonly cal: InputMaybe<CountryNameNativeNameCalSortInput>;
+  readonly cat: InputMaybe<CountryNameNativeNameCatSortInput>;
+  readonly ces: InputMaybe<CountryNameNativeNameCesSortInput>;
+  readonly cha: InputMaybe<CountryNameNativeNameChaSortInput>;
+  readonly ckb: InputMaybe<CountryNameNativeNameCkbSortInput>;
+  readonly cnr: InputMaybe<CountryNameNativeNameCnrSortInput>;
+  readonly crs: InputMaybe<CountryNameNativeNameCrsSortInput>;
+  readonly dan: InputMaybe<CountryNameNativeNameDanSortInput>;
+  readonly deu: InputMaybe<CountryNameNativeNameDeuSortInput>;
+  readonly div: InputMaybe<CountryNameNativeNameDivSortInput>;
+  readonly dzo: InputMaybe<CountryNameNativeNameDzoSortInput>;
+  readonly ell: InputMaybe<CountryNameNativeNameEllSortInput>;
+  readonly eng: InputMaybe<CountryNameNativeNameEngSortInput>;
+  readonly est: InputMaybe<CountryNameNativeNameEstSortInput>;
+  readonly fao: InputMaybe<CountryNameNativeNameFaoSortInput>;
+  readonly fas: InputMaybe<CountryNameNativeNameFasSortInput>;
+  readonly fij: InputMaybe<CountryNameNativeNameFijSortInput>;
+  readonly fil: InputMaybe<CountryNameNativeNameFilSortInput>;
+  readonly fin: InputMaybe<CountryNameNativeNameFinSortInput>;
+  readonly fra: InputMaybe<CountryNameNativeNameFraSortInput>;
+  readonly gil: InputMaybe<CountryNameNativeNameGilSortInput>;
+  readonly gle: InputMaybe<CountryNameNativeNameGleSortInput>;
+  readonly glv: InputMaybe<CountryNameNativeNameGlvSortInput>;
+  readonly grn: InputMaybe<CountryNameNativeNameGrnSortInput>;
+  readonly gsw: InputMaybe<CountryNameNativeNameGswSortInput>;
+  readonly hat: InputMaybe<CountryNameNativeNameHatSortInput>;
+  readonly heb: InputMaybe<CountryNameNativeNameHebSortInput>;
+  readonly her: InputMaybe<CountryNameNativeNameHerSortInput>;
+  readonly hgm: InputMaybe<CountryNameNativeNameHgmSortInput>;
+  readonly hif: InputMaybe<CountryNameNativeNameHifSortInput>;
+  readonly hin: InputMaybe<CountryNameNativeNameHinSortInput>;
+  readonly hmo: InputMaybe<CountryNameNativeNameHmoSortInput>;
+  readonly hrv: InputMaybe<CountryNameNativeNameHrvSortInput>;
+  readonly hun: InputMaybe<CountryNameNativeNameHunSortInput>;
+  readonly hye: InputMaybe<CountryNameNativeNameHyeSortInput>;
+  readonly ind: InputMaybe<CountryNameNativeNameIndSortInput>;
+  readonly isl: InputMaybe<CountryNameNativeNameIslSortInput>;
+  readonly ita: InputMaybe<CountryNameNativeNameItaSortInput>;
+  readonly jam: InputMaybe<CountryNameNativeNameJamSortInput>;
+  readonly jpn: InputMaybe<CountryNameNativeNameJpnSortInput>;
+  readonly kal: InputMaybe<CountryNameNativeNameKalSortInput>;
+  readonly kat: InputMaybe<CountryNameNativeNameKatSortInput>;
+  readonly kaz: InputMaybe<CountryNameNativeNameKazSortInput>;
+  readonly kck: InputMaybe<CountryNameNativeNameKckSortInput>;
+  readonly khi: InputMaybe<CountryNameNativeNameKhiSortInput>;
+  readonly khm: InputMaybe<CountryNameNativeNameKhmSortInput>;
+  readonly kin: InputMaybe<CountryNameNativeNameKinSortInput>;
+  readonly kir: InputMaybe<CountryNameNativeNameKirSortInput>;
+  readonly kon: InputMaybe<CountryNameNativeNameKonSortInput>;
+  readonly kor: InputMaybe<CountryNameNativeNameKorSortInput>;
+  readonly kwn: InputMaybe<CountryNameNativeNameKwnSortInput>;
+  readonly lao: InputMaybe<CountryNameNativeNameLaoSortInput>;
+  readonly lat: InputMaybe<CountryNameNativeNameLatSortInput>;
+  readonly lav: InputMaybe<CountryNameNativeNameLavSortInput>;
+  readonly lin: InputMaybe<CountryNameNativeNameLinSortInput>;
+  readonly lit: InputMaybe<CountryNameNativeNameLitSortInput>;
+  readonly loz: InputMaybe<CountryNameNativeNameLozSortInput>;
+  readonly ltz: InputMaybe<CountryNameNativeNameLtzSortInput>;
+  readonly lua: InputMaybe<CountryNameNativeNameLuaSortInput>;
+  readonly mah: InputMaybe<CountryNameNativeNameMahSortInput>;
+  readonly mey: InputMaybe<CountryNameNativeNameMeySortInput>;
+  readonly mfe: InputMaybe<CountryNameNativeNameMfeSortInput>;
+  readonly mkd: InputMaybe<CountryNameNativeNameMkdSortInput>;
+  readonly mlg: InputMaybe<CountryNameNativeNameMlgSortInput>;
+  readonly mlt: InputMaybe<CountryNameNativeNameMltSortInput>;
+  readonly mon: InputMaybe<CountryNameNativeNameMonSortInput>;
+  readonly mri: InputMaybe<CountryNameNativeNameMriSortInput>;
+  readonly msa: InputMaybe<CountryNameNativeNameMsaSortInput>;
+  readonly mya: InputMaybe<CountryNameNativeNameMyaSortInput>;
+  readonly nau: InputMaybe<CountryNameNativeNameNauSortInput>;
+  readonly nbl: InputMaybe<CountryNameNativeNameNblSortInput>;
+  readonly ndc: InputMaybe<CountryNameNativeNameNdcSortInput>;
+  readonly nde: InputMaybe<CountryNameNativeNameNdeSortInput>;
+  readonly ndo: InputMaybe<CountryNameNativeNameNdoSortInput>;
+  readonly nep: InputMaybe<CountryNameNativeNameNepSortInput>;
+  readonly nfr: InputMaybe<CountryNameNativeNameNfrSortInput>;
+  readonly niu: InputMaybe<CountryNameNativeNameNiuSortInput>;
+  readonly nld: InputMaybe<CountryNameNativeNameNldSortInput>;
+  readonly nno: InputMaybe<CountryNameNativeNameNnoSortInput>;
+  readonly nob: InputMaybe<CountryNameNativeNameNobSortInput>;
+  readonly nor: InputMaybe<CountryNameNativeNameNorSortInput>;
+  readonly nrf: InputMaybe<CountryNameNativeNameNrfSortInput>;
+  readonly nso: InputMaybe<CountryNameNativeNameNsoSortInput>;
+  readonly nya: InputMaybe<CountryNameNativeNameNyaSortInput>;
+  readonly nzs: InputMaybe<CountryNameNativeNameNzsSortInput>;
+  readonly pap: InputMaybe<CountryNameNativeNamePapSortInput>;
+  readonly pau: InputMaybe<CountryNameNativeNamePauSortInput>;
+  readonly pih: InputMaybe<CountryNameNativeNamePihSortInput>;
+  readonly pol: InputMaybe<CountryNameNativeNamePolSortInput>;
+  readonly por: InputMaybe<CountryNameNativeNamePorSortInput>;
+  readonly pov: InputMaybe<CountryNameNativeNamePovSortInput>;
+  readonly prs: InputMaybe<CountryNameNativeNamePrsSortInput>;
+  readonly pus: InputMaybe<CountryNameNativeNamePusSortInput>;
+  readonly que: InputMaybe<CountryNameNativeNameQueSortInput>;
+  readonly rar: InputMaybe<CountryNameNativeNameRarSortInput>;
+  readonly roh: InputMaybe<CountryNameNativeNameRohSortInput>;
+  readonly ron: InputMaybe<CountryNameNativeNameRonSortInput>;
+  readonly run: InputMaybe<CountryNameNativeNameRunSortInput>;
+  readonly rus: InputMaybe<CountryNameNativeNameRusSortInput>;
+  readonly sag: InputMaybe<CountryNameNativeNameSagSortInput>;
+  readonly sin: InputMaybe<CountryNameNativeNameSinSortInput>;
+  readonly slk: InputMaybe<CountryNameNativeNameSlkSortInput>;
+  readonly slv: InputMaybe<CountryNameNativeNameSlvSortInput>;
+  readonly smi: InputMaybe<CountryNameNativeNameSmiSortInput>;
+  readonly smo: InputMaybe<CountryNameNativeNameSmoSortInput>;
+  readonly sna: InputMaybe<CountryNameNativeNameSnaSortInput>;
+  readonly som: InputMaybe<CountryNameNativeNameSomSortInput>;
+  readonly sot: InputMaybe<CountryNameNativeNameSotSortInput>;
+  readonly spa: InputMaybe<CountryNameNativeNameSpaSortInput>;
+  readonly sqi: InputMaybe<CountryNameNativeNameSqiSortInput>;
+  readonly srp: InputMaybe<CountryNameNativeNameSrpSortInput>;
+  readonly ssw: InputMaybe<CountryNameNativeNameSswSortInput>;
+  readonly swa: InputMaybe<CountryNameNativeNameSwaSortInput>;
+  readonly swe: InputMaybe<CountryNameNativeNameSweSortInput>;
+  readonly tam: InputMaybe<CountryNameNativeNameTamSortInput>;
+  readonly tet: InputMaybe<CountryNameNativeNameTetSortInput>;
+  readonly tgk: InputMaybe<CountryNameNativeNameTgkSortInput>;
+  readonly tha: InputMaybe<CountryNameNativeNameThaSortInput>;
+  readonly tir: InputMaybe<CountryNameNativeNameTirSortInput>;
+  readonly tkl: InputMaybe<CountryNameNativeNameTklSortInput>;
+  readonly toi: InputMaybe<CountryNameNativeNameToiSortInput>;
+  readonly ton: InputMaybe<CountryNameNativeNameTonSortInput>;
+  readonly tpi: InputMaybe<CountryNameNativeNameTpiSortInput>;
+  readonly tsn: InputMaybe<CountryNameNativeNameTsnSortInput>;
+  readonly tso: InputMaybe<CountryNameNativeNameTsoSortInput>;
+  readonly tuk: InputMaybe<CountryNameNativeNameTukSortInput>;
+  readonly tur: InputMaybe<CountryNameNativeNameTurSortInput>;
+  readonly tvl: InputMaybe<CountryNameNativeNameTvlSortInput>;
+  readonly ukr: InputMaybe<CountryNameNativeNameUkrSortInput>;
+  readonly urd: InputMaybe<CountryNameNativeNameUrdSortInput>;
+  readonly uzb: InputMaybe<CountryNameNativeNameUzbSortInput>;
+  readonly ven: InputMaybe<CountryNameNativeNameVenSortInput>;
+  readonly vie: InputMaybe<CountryNameNativeNameVieSortInput>;
+  readonly xho: InputMaybe<CountryNameNativeNameXhoSortInput>;
+  readonly zdj: InputMaybe<CountryNameNativeNameZdjSortInput>;
+  readonly zho: InputMaybe<CountryNameNativeNameZhoSortInput>;
+  readonly zib: InputMaybe<CountryNameNativeNameZibSortInput>;
+  readonly zul: InputMaybe<CountryNameNativeNameZulSortInput>;
+};
+
+type CountryNameNativeNameSot = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameSotFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameSotFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameSotSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameSpa = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameSpaFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameSpaFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameSpaSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameSqi = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameSqiFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameSqiFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameSqiSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameSrp = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameSrpFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameSrpFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameSrpSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameSsw = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameSswFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameSswFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameSswSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameSwa = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameSwaFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameSwaFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameSwaSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameSwe = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameSweFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameSweFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameSweSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameTam = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameTamFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameTamFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameTamSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameTet = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameTetFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameTetFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameTetSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameTgk = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameTgkFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameTgkFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameTgkSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameTha = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameThaFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameThaFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameThaSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameTir = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameTirFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameTirFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameTirSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameTkl = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameTklFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameTklFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameTklSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameToi = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameToiFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameToiFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameToiSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameTon = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameTonFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameTonFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameTonSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameTpi = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameTpiFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameTpiFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameTpiSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameTsn = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameTsnFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameTsnFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameTsnSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameTso = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameTsoFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameTsoFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameTsoSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameTuk = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameTukFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameTukFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameTukSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameTur = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameTurFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameTurFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameTurSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameTvl = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameTvlFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameTvlFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameTvlSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameUkr = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameUkrFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameUkrFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameUkrSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameUrd = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameUrdFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameUrdFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameUrdSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameUzb = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameUzbFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameUzbFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameUzbSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameVen = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameVenFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameVenFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameVenSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameVie = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameVieFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameVieFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameVieSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameXho = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameXhoFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameXhoFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameXhoSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameZdj = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameZdjFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameZdjFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameZdjSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameZho = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameZhoFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameZhoFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameZhoSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameZib = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameZibFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameZibFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameZibSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameNativeNameZul = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryNameNativeNameZulFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryNameNativeNameZulFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryNameNativeNameZulSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryNameSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly nativeName: InputMaybe<CountryNameNativeNameSortInput>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryPostalCode = {
+  readonly format: Maybe<Scalars['String']>;
+  readonly regex: Maybe<Scalars['String']>;
+};
+
+type CountryPostalCodeFieldSelector = {
+  readonly format: InputMaybe<FieldSelectorEnum>;
+  readonly regex: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryPostalCodeFilterInput = {
+  readonly format: InputMaybe<StringQueryOperatorInput>;
+  readonly regex: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryPostalCodeSortInput = {
+  readonly format: InputMaybe<SortOrderEnum>;
+  readonly regex: InputMaybe<SortOrderEnum>;
+};
+
+type CountrySortInput = {
+  readonly altSpellings: InputMaybe<SortOrderEnum>;
+  readonly area: InputMaybe<SortOrderEnum>;
+  readonly borders: InputMaybe<SortOrderEnum>;
+  readonly capital: InputMaybe<SortOrderEnum>;
+  readonly capitalInfo: InputMaybe<CountryCapitalInfoSortInput>;
+  readonly car: InputMaybe<CountryCarSortInput>;
+  readonly cca2: InputMaybe<SortOrderEnum>;
+  readonly cca3: InputMaybe<SortOrderEnum>;
+  readonly ccn3: InputMaybe<SortOrderEnum>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly cioc: InputMaybe<SortOrderEnum>;
+  readonly coatOfArms: InputMaybe<CountryCoatOfArmsSortInput>;
+  readonly continents: InputMaybe<SortOrderEnum>;
+  readonly currencies: InputMaybe<CountryCurrenciesSortInput>;
+  readonly demonyms: InputMaybe<CountryDemonymsSortInput>;
+  readonly fifa: InputMaybe<SortOrderEnum>;
+  readonly flag: InputMaybe<SortOrderEnum>;
+  readonly flags: InputMaybe<CountryFlagsSortInput>;
+  readonly gini: InputMaybe<CountryGiniSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly idd: InputMaybe<CountryIddSortInput>;
+  readonly independent: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly landlocked: InputMaybe<SortOrderEnum>;
+  readonly languages: InputMaybe<CountryLanguagesSortInput>;
+  readonly latlng: InputMaybe<SortOrderEnum>;
+  readonly maps: InputMaybe<CountryMapsSortInput>;
+  readonly name: InputMaybe<CountryNameSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly population: InputMaybe<SortOrderEnum>;
+  readonly postalCode: InputMaybe<CountryPostalCodeSortInput>;
+  readonly region: InputMaybe<SortOrderEnum>;
+  readonly startOfWeek: InputMaybe<SortOrderEnum>;
+  readonly status: InputMaybe<SortOrderEnum>;
+  readonly subregion: InputMaybe<SortOrderEnum>;
+  readonly timezones: InputMaybe<SortOrderEnum>;
+  readonly tld: InputMaybe<SortOrderEnum>;
+  readonly translations: InputMaybe<CountryTranslationsSortInput>;
+  readonly unMember: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslations = {
+  readonly ara: Maybe<CountryTranslationsAra>;
+  readonly bre: Maybe<CountryTranslationsBre>;
+  readonly ces: Maybe<CountryTranslationsCes>;
+  readonly cym: Maybe<CountryTranslationsCym>;
+  readonly deu: Maybe<CountryTranslationsDeu>;
+  readonly est: Maybe<CountryTranslationsEst>;
+  readonly fin: Maybe<CountryTranslationsFin>;
+  readonly fra: Maybe<CountryTranslationsFra>;
+  readonly hrv: Maybe<CountryTranslationsHrv>;
+  readonly hun: Maybe<CountryTranslationsHun>;
+  readonly ita: Maybe<CountryTranslationsIta>;
+  readonly jpn: Maybe<CountryTranslationsJpn>;
+  readonly kor: Maybe<CountryTranslationsKor>;
+  readonly nld: Maybe<CountryTranslationsNld>;
+  readonly per: Maybe<CountryTranslationsPer>;
+  readonly pol: Maybe<CountryTranslationsPol>;
+  readonly por: Maybe<CountryTranslationsPor>;
+  readonly rus: Maybe<CountryTranslationsRus>;
+  readonly slk: Maybe<CountryTranslationsSlk>;
+  readonly spa: Maybe<CountryTranslationsSpa>;
+  readonly srp: Maybe<CountryTranslationsSrp>;
+  readonly swe: Maybe<CountryTranslationsSwe>;
+  readonly tur: Maybe<CountryTranslationsTur>;
+  readonly urd: Maybe<CountryTranslationsUrd>;
+  readonly zho: Maybe<CountryTranslationsZho>;
+};
+
+type CountryTranslationsAra = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsAraFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsAraFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsAraSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsBre = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsBreFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsBreFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsBreSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsCes = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsCesFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsCesFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsCesSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsCym = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsCymFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsCymFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsCymSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsDeu = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsDeuFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsDeuFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsDeuSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsEst = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsEstFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsEstFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsEstSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsFieldSelector = {
+  readonly ara: InputMaybe<CountryTranslationsAraFieldSelector>;
+  readonly bre: InputMaybe<CountryTranslationsBreFieldSelector>;
+  readonly ces: InputMaybe<CountryTranslationsCesFieldSelector>;
+  readonly cym: InputMaybe<CountryTranslationsCymFieldSelector>;
+  readonly deu: InputMaybe<CountryTranslationsDeuFieldSelector>;
+  readonly est: InputMaybe<CountryTranslationsEstFieldSelector>;
+  readonly fin: InputMaybe<CountryTranslationsFinFieldSelector>;
+  readonly fra: InputMaybe<CountryTranslationsFraFieldSelector>;
+  readonly hrv: InputMaybe<CountryTranslationsHrvFieldSelector>;
+  readonly hun: InputMaybe<CountryTranslationsHunFieldSelector>;
+  readonly ita: InputMaybe<CountryTranslationsItaFieldSelector>;
+  readonly jpn: InputMaybe<CountryTranslationsJpnFieldSelector>;
+  readonly kor: InputMaybe<CountryTranslationsKorFieldSelector>;
+  readonly nld: InputMaybe<CountryTranslationsNldFieldSelector>;
+  readonly per: InputMaybe<CountryTranslationsPerFieldSelector>;
+  readonly pol: InputMaybe<CountryTranslationsPolFieldSelector>;
+  readonly por: InputMaybe<CountryTranslationsPorFieldSelector>;
+  readonly rus: InputMaybe<CountryTranslationsRusFieldSelector>;
+  readonly slk: InputMaybe<CountryTranslationsSlkFieldSelector>;
+  readonly spa: InputMaybe<CountryTranslationsSpaFieldSelector>;
+  readonly srp: InputMaybe<CountryTranslationsSrpFieldSelector>;
+  readonly swe: InputMaybe<CountryTranslationsSweFieldSelector>;
+  readonly tur: InputMaybe<CountryTranslationsTurFieldSelector>;
+  readonly urd: InputMaybe<CountryTranslationsUrdFieldSelector>;
+  readonly zho: InputMaybe<CountryTranslationsZhoFieldSelector>;
+};
+
+type CountryTranslationsFilterInput = {
+  readonly ara: InputMaybe<CountryTranslationsAraFilterInput>;
+  readonly bre: InputMaybe<CountryTranslationsBreFilterInput>;
+  readonly ces: InputMaybe<CountryTranslationsCesFilterInput>;
+  readonly cym: InputMaybe<CountryTranslationsCymFilterInput>;
+  readonly deu: InputMaybe<CountryTranslationsDeuFilterInput>;
+  readonly est: InputMaybe<CountryTranslationsEstFilterInput>;
+  readonly fin: InputMaybe<CountryTranslationsFinFilterInput>;
+  readonly fra: InputMaybe<CountryTranslationsFraFilterInput>;
+  readonly hrv: InputMaybe<CountryTranslationsHrvFilterInput>;
+  readonly hun: InputMaybe<CountryTranslationsHunFilterInput>;
+  readonly ita: InputMaybe<CountryTranslationsItaFilterInput>;
+  readonly jpn: InputMaybe<CountryTranslationsJpnFilterInput>;
+  readonly kor: InputMaybe<CountryTranslationsKorFilterInput>;
+  readonly nld: InputMaybe<CountryTranslationsNldFilterInput>;
+  readonly per: InputMaybe<CountryTranslationsPerFilterInput>;
+  readonly pol: InputMaybe<CountryTranslationsPolFilterInput>;
+  readonly por: InputMaybe<CountryTranslationsPorFilterInput>;
+  readonly rus: InputMaybe<CountryTranslationsRusFilterInput>;
+  readonly slk: InputMaybe<CountryTranslationsSlkFilterInput>;
+  readonly spa: InputMaybe<CountryTranslationsSpaFilterInput>;
+  readonly srp: InputMaybe<CountryTranslationsSrpFilterInput>;
+  readonly swe: InputMaybe<CountryTranslationsSweFilterInput>;
+  readonly tur: InputMaybe<CountryTranslationsTurFilterInput>;
+  readonly urd: InputMaybe<CountryTranslationsUrdFilterInput>;
+  readonly zho: InputMaybe<CountryTranslationsZhoFilterInput>;
+};
+
+type CountryTranslationsFin = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsFinFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsFinFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsFinSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsFra = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsFraFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsFraFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsFraSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsHrv = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsHrvFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsHrvFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsHrvSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsHun = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsHunFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsHunFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsHunSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsIta = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsItaFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsItaFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsItaSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsJpn = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsJpnFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsJpnFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsJpnSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsKor = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsKorFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsKorFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsKorSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsNld = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsNldFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsNldFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsNldSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsPer = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsPerFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsPerFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsPerSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsPol = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsPolFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsPolFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsPolSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsPor = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsPorFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsPorFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsPorSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsRus = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsRusFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsRusFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsRusSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsSlk = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsSlkFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsSlkFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsSlkSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsSortInput = {
+  readonly ara: InputMaybe<CountryTranslationsAraSortInput>;
+  readonly bre: InputMaybe<CountryTranslationsBreSortInput>;
+  readonly ces: InputMaybe<CountryTranslationsCesSortInput>;
+  readonly cym: InputMaybe<CountryTranslationsCymSortInput>;
+  readonly deu: InputMaybe<CountryTranslationsDeuSortInput>;
+  readonly est: InputMaybe<CountryTranslationsEstSortInput>;
+  readonly fin: InputMaybe<CountryTranslationsFinSortInput>;
+  readonly fra: InputMaybe<CountryTranslationsFraSortInput>;
+  readonly hrv: InputMaybe<CountryTranslationsHrvSortInput>;
+  readonly hun: InputMaybe<CountryTranslationsHunSortInput>;
+  readonly ita: InputMaybe<CountryTranslationsItaSortInput>;
+  readonly jpn: InputMaybe<CountryTranslationsJpnSortInput>;
+  readonly kor: InputMaybe<CountryTranslationsKorSortInput>;
+  readonly nld: InputMaybe<CountryTranslationsNldSortInput>;
+  readonly per: InputMaybe<CountryTranslationsPerSortInput>;
+  readonly pol: InputMaybe<CountryTranslationsPolSortInput>;
+  readonly por: InputMaybe<CountryTranslationsPorSortInput>;
+  readonly rus: InputMaybe<CountryTranslationsRusSortInput>;
+  readonly slk: InputMaybe<CountryTranslationsSlkSortInput>;
+  readonly spa: InputMaybe<CountryTranslationsSpaSortInput>;
+  readonly srp: InputMaybe<CountryTranslationsSrpSortInput>;
+  readonly swe: InputMaybe<CountryTranslationsSweSortInput>;
+  readonly tur: InputMaybe<CountryTranslationsTurSortInput>;
+  readonly urd: InputMaybe<CountryTranslationsUrdSortInput>;
+  readonly zho: InputMaybe<CountryTranslationsZhoSortInput>;
+};
+
+type CountryTranslationsSpa = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsSpaFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsSpaFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsSpaSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsSrp = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsSrpFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsSrpFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsSrpSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsSwe = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsSweFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsSweFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsSweSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsTur = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsTurFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsTurFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsTurSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsUrd = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsUrdFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsUrdFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsUrdSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
+type CountryTranslationsZho = {
+  readonly common: Maybe<Scalars['String']>;
+  readonly official: Maybe<Scalars['String']>;
+};
+
+type CountryTranslationsZhoFieldSelector = {
+  readonly common: InputMaybe<FieldSelectorEnum>;
+  readonly official: InputMaybe<FieldSelectorEnum>;
+};
+
+type CountryTranslationsZhoFilterInput = {
+  readonly common: InputMaybe<StringQueryOperatorInput>;
+  readonly official: InputMaybe<StringQueryOperatorInput>;
+};
+
+type CountryTranslationsZhoSortInput = {
+  readonly common: InputMaybe<SortOrderEnum>;
+  readonly official: InputMaybe<SortOrderEnum>;
+};
+
 type DateQueryOperatorInput = {
   readonly eq: InputMaybe<Scalars['Date']>;
   readonly gt: InputMaybe<Scalars['Date']>;
@@ -765,6 +10159,7 @@ type PageInfo = {
 };
 
 type Query = {
+  readonly allCountry: CountryConnection;
   readonly allDirectory: DirectoryConnection;
   readonly allFile: FileConnection;
   readonly allSite: SiteConnection;
@@ -772,6 +10167,7 @@ type Query = {
   readonly allSiteFunction: SiteFunctionConnection;
   readonly allSitePage: SitePageConnection;
   readonly allSitePlugin: SitePluginConnection;
+  readonly country: Maybe<Country>;
   readonly directory: Maybe<Directory>;
   readonly file: Maybe<File>;
   readonly site: Maybe<Site>;
@@ -779,6 +10175,14 @@ type Query = {
   readonly siteFunction: Maybe<SiteFunction>;
   readonly sitePage: Maybe<SitePage>;
   readonly sitePlugin: Maybe<SitePlugin>;
+};
+
+
+type Query_allCountryArgs = {
+  filter: InputMaybe<CountryFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<CountrySortInput>>>;
 };
 
 
@@ -835,6 +10239,49 @@ type Query_allSitePluginArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<SitePluginSortInput>>>;
+};
+
+
+type Query_countryArgs = {
+  altSpellings: InputMaybe<StringQueryOperatorInput>;
+  area: InputMaybe<FloatQueryOperatorInput>;
+  borders: InputMaybe<StringQueryOperatorInput>;
+  capital: InputMaybe<StringQueryOperatorInput>;
+  capitalInfo: InputMaybe<CountryCapitalInfoFilterInput>;
+  car: InputMaybe<CountryCarFilterInput>;
+  cca2: InputMaybe<StringQueryOperatorInput>;
+  cca3: InputMaybe<StringQueryOperatorInput>;
+  ccn3: InputMaybe<StringQueryOperatorInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  cioc: InputMaybe<StringQueryOperatorInput>;
+  coatOfArms: InputMaybe<CountryCoatOfArmsFilterInput>;
+  continents: InputMaybe<StringQueryOperatorInput>;
+  currencies: InputMaybe<CountryCurrenciesFilterInput>;
+  demonyms: InputMaybe<CountryDemonymsFilterInput>;
+  fifa: InputMaybe<StringQueryOperatorInput>;
+  flag: InputMaybe<StringQueryOperatorInput>;
+  flags: InputMaybe<CountryFlagsFilterInput>;
+  gini: InputMaybe<CountryGiniFilterInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  idd: InputMaybe<CountryIddFilterInput>;
+  independent: InputMaybe<BooleanQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  landlocked: InputMaybe<BooleanQueryOperatorInput>;
+  languages: InputMaybe<CountryLanguagesFilterInput>;
+  latlng: InputMaybe<FloatQueryOperatorInput>;
+  maps: InputMaybe<CountryMapsFilterInput>;
+  name: InputMaybe<CountryNameFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  population: InputMaybe<IntQueryOperatorInput>;
+  postalCode: InputMaybe<CountryPostalCodeFilterInput>;
+  region: InputMaybe<StringQueryOperatorInput>;
+  startOfWeek: InputMaybe<StringQueryOperatorInput>;
+  status: InputMaybe<StringQueryOperatorInput>;
+  subregion: InputMaybe<StringQueryOperatorInput>;
+  timezones: InputMaybe<StringQueryOperatorInput>;
+  tld: InputMaybe<StringQueryOperatorInput>;
+  translations: InputMaybe<CountryTranslationsFilterInput>;
+  unMember: InputMaybe<BooleanQueryOperatorInput>;
 };
 
 
@@ -1766,6 +11213,11 @@ type StringQueryOperatorInput = {
   readonly nin: InputMaybe<ReadonlyArray<InputMaybe<Scalars['String']>>>;
   readonly regex: InputMaybe<Scalars['String']>;
 };
+
+type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type Unnamed_1_Query = { readonly allCountry: { readonly nodes: ReadonlyArray<{ readonly cca3: string | null, readonly name: { readonly common: string | null } | null }> } };
 
 
 }

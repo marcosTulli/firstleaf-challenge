@@ -2,7 +2,7 @@ import axios from 'axios';
 import path from 'path';
 import { GatsbyNode } from 'gatsby';
 import { slugify } from './src/utils/slugify';
-import { ICountry } from './src/types/Country';
+import { ICountry } from './src/models/Country';
 
 interface GraphQLResult {
     data: {
@@ -13,9 +13,11 @@ interface GraphQLResult {
     errors?: any;
 }
 
+const COUNTRIES_URL = process.env.GATSBY_COUNTRIES_API || "";
+
 export const sourceNodes: GatsbyNode['sourceNodes'] = async ({ actions, createNodeId, createContentDigest }) => {
     const { createNode } = actions;
-    const response = await axios.get<ICountry[]>('https://restcountries.com/v3.1/all');
+    const response = await axios.get<ICountry[]>(COUNTRIES_URL);
     const countries = response.data;
 
     countries.forEach((country) => {
